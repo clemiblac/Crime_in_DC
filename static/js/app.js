@@ -5,6 +5,14 @@ function updateMap(){
 
     // function(d) { data.set(d.code, +d.pop); })
 
+    CountryCoordDict = {
+        "USA": [37, -95 ],
+        "China": [35.8617, 104.1954],
+        "Russia": [61.5240, 105.3188],
+        "Venezuela": [6.4238, -66.5897],
+        "Morocco": [31.7917, -7.0926]
+    }
+
     d3.json(geodata).then((d)=>{
         console.log(d);
 
@@ -18,7 +26,7 @@ function updateMap(){
         //console.log(poly)
         //console.log(countrygeo)
 
-        var map = L.map('myMap').setView([37, -95], 4);
+        var map = L.map('myMap').setView([37, -95], 3);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -37,7 +45,20 @@ function updateMap(){
             var countrygeo_new = {"type":"FeatureCollection","features":poly}
             //console.log(poly)
             //console.log(countrygeo)
-            outline2 = L.geoJSON(countrygeo_new).addTo(map)
+
+            if(outline){
+                map.removeLayer(outline)
+            };
+            outline = L.geoJSON(countrygeo_new).addTo(map);
+            var coordinates = CountryCoordDict[userSelection];
+            console.log(coordinates);
+            map.setView(coordinates,5)
+            
+            if(SelectedCountry == 'China' || SelectedCountry == 'Russia'){
+                map.setView(coordinates, 4)
+                
+            }
+            
 
 
         
