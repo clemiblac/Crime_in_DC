@@ -52,11 +52,17 @@ function updateMap(){
             outline = L.geoJSON(countrygeo_new).addTo(map);
             var coordinates = CountryCoordDict[userSelection];
             console.log(coordinates);
-            map.setView(coordinates,5)
             
-            if(SelectedCountry == 'China' || SelectedCountry == 'Russia'){
-                map.setView(coordinates, 4)
+            
+            if(SelectedCountry == 'USA' || SelectedCountry == 'Russia'){
+                map.setView(coordinates, 1)
                 
+            }
+            else if(SelectedCountry == 'Venzuela' || SelectedCountry == 'Morocco'){
+                map.setView(coordinates,14)
+            }
+            else{
+                map.setView(coordinates,4)
             }
             
 
