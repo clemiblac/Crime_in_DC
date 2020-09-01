@@ -14,10 +14,10 @@ function updateMap(){
     }
 
     d3.json(geodata).then((d)=>{
-        console.log(d);
+        //console.log(d);
 
         var boundaries=d.features;
-        console.log(boundaries);
+        //console.log(boundaries);
         
         defaultCountry=boundaries.filter(c=>c.properties.name=="USA")
         //console.log(defaultCountry)
