@@ -1,4 +1,15 @@
 
+/*Beginning of styles that affect all pages*/
+
+/*Navigation bar*/
+.navbar-brand .navbar-text{
+    color:black;
+};
+
+/*End of styles that affet all pages*/
+
+
+/* Beginning of Card on about page */
 #card-group{
     display: flex;
 };
@@ -11,3 +22,5 @@
     border: none;
     
 };
+
+/* End of cards on about page */
