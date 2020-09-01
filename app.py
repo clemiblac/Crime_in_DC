@@ -51,9 +51,25 @@ def news_scrape():
     results=pd.read_sql('SELECT * FROM news_scrape',engine)
     results_json=results.to_json(orient='records')
     return results_json
-    print(results_json)
 
-print(news_scrape())
+@app.route("/china_half_year")
+def china_half_year():
+    results=pd.read_sql('SELECT * FROM china',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/russia_half_year")
+def russia_half_year():
+    results=pd.read_sql('SELECT * FROM russia',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/usa_half_year")
+def usa_half_year():
+    results=pd.read_sql('SELECT * FROM usa',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
 
 
 if __name__ == "__main__":

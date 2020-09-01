@@ -2,6 +2,10 @@
 /*Beginning of styles that affect all pages*/
 
 /*Navigation bar*/
+nav{
+    background-color:red;
+};
+
 .navbar-brand .navbar-text{
     color:black;
 };
