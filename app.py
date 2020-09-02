@@ -45,7 +45,7 @@ def acknowledge():
 def about():
     return render_template("about.html")
 
-
+#Data Routes
 @app.route("/news")
 def news_scrape():
     results=pd.read_sql('SELECT * FROM news_scrape',engine)

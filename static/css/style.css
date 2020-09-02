@@ -8,12 +8,13 @@
 }
 body{
     background-color:#222629;
+    color:white
 };
 
 .navbar-brand .navbar-text{
     color:#e85a4f;
 };
-
+p{color:white}
 
 /*End of styles that affect all pages*/
 
