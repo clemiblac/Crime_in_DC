@@ -17,7 +17,7 @@ function updateMap(){
     d3.json(geodata).then(function(d){
         //console.log(d);
         d3.json(news_list).then(function(article){
-            console.log(article)
+            //console.log(article)
 
 
             ///////////////////////////                Map code             ////////////////////////////////////////////
@@ -51,7 +51,7 @@ function updateMap(){
                 var each_link=each_article.link;
                 //console.log(each_link);
                 var story_link=each_title.link(each_link);
-                console.log(story_link);
+                //console.log(story_link);
                 hyperlinks.push(story_link)
             }
             var news_id=article.map(s=>s.id)
@@ -64,27 +64,40 @@ function updateMap(){
                 hyperlinks
               ]
           
-          var table_data = [{
-            type: 'table',
-        
-            header: {
-               
-              values: [["<b>Date</b>"],
-                           ["<b>Link</b>"]],
-              align: "center",
-              line: {width: 1, color: 'black'},
-              fill: {color: "grey"},
-              font: {family: "Arial", size: 12, color: "white"}
-            },
-            cells: {
-              values: values,
-              align: "center",
-              line: {color: "black", width: 1},
-              font: {family: "Arial", size: 11, color: ["black"]}
-            }
-          }]
+            var table_data = [{
+                type: 'table',
+                columnwidth:[200,600],
+                header: {
+                
+                values: [["<b>Date</b>"],
+                            ["<b>Link</b>"]],
+                align: "center",
+                line: {width: 1, color: 'black'},
+                fill: {color: "grey"},
+                font: {family: "Arial", size: 12, color: "white"}
+                },
+                cells: {
+                values: values,
+                align: "center",
+                line: {color: "black", width: 1},
+                font: {family: "Arial", size: 11, color: ["black"]}
+                }
+            }];
+
           
-          Plotly.newPlot('news', table_data);
+            var layout = {
+                autosize: true,
+                height: 650,
+                margin: {
+                    l: 50,
+                    r: 50,
+                    b: 50,
+                    t: 50,
+                    pad: 4
+                    }
+            };
+            var config = {responsive: true};
+            Plotly.newPlot('news', table_data,layout,config);
 
 
 
