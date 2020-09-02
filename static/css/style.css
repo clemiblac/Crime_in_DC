@@ -2,15 +2,20 @@
 /*Beginning of styles that affect all pages*/
 
 /*Navigation bar*/
-nav{
-    background-color:red;
+
+.navbar-custom {
+    background-color: #61892F;
+}
+body{
+    background-color:#222629;
 };
 
 .navbar-brand .navbar-text{
-    color:black;
+    color:#e85a4f;
 };
 
-/*End of styles that affet all pages*/
+
+/*End of styles that affect all pages*/
 
 
 /* Beginning of Card on about page */

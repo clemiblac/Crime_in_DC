@@ -70,6 +70,18 @@ def usa_half_year():
     results_json=results.to_json(orient='records')
     return results_json
 
+@app.route("/morocco_half_year")
+def morocco_half_year():
+    results=pd.read_sql('SELECT * FROM morocco',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/venezuela_half_year")
+def venezuala_half_year():
+    results=pd.read_sql('SELECT * FROM venezuela',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
 
 
 if __name__ == "__main__":
