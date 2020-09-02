@@ -40,23 +40,36 @@ function updateMap(){
             outline = L.geoJSON(countrygeo).addTo(map)
         
             /////////////////////               News Code                 ///////////////////////////////////////////////
-
+            
+            //turning each news title into a hyperlink
+            hyperlinks=[]
+            for(var i = 0; i < article.length; ++i) {
+                var each_article=article[i]
+                //console.log(each_article);
+                var each_title=each_article.title
+                //console.log(each_title);
+                var each_link=each_article.link;
+                //console.log(each_link);
+                var story_link=each_title.link(each_link);
+                console.log(story_link);
+                hyperlinks.push(story_link)
+            }
             var news_id=article.map(s=>s.id)
-            var news_title=article.map(s=>s.title)
-            var news_link=article.map(s=>s.link)
-            console.log(news_id)
+            var news_date=article.map(s=>s.date)
+
+            //console.log(news_id)
 
             var values = [
-                news_id,
-                news_title,
-                news_link
+                news_date,
+                hyperlinks
               ]
           
           var table_data = [{
             type: 'table',
+        
             header: {
                
-              values: [["<b>ID</b>"], ["<b>title</b>"],
+              values: [["<b>Date</b>"],
                            ["<b>Link</b>"]],
               align: "center",
               line: {width: 1, color: 'black'},
