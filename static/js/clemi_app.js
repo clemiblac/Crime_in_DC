@@ -72,13 +72,39 @@ function updateMap(){
     //
 
 
-    d3.json(crime_2014).then(function(d){
+    d3.json(crime_2014).then(function(c14){
         d3.json(crime_2015).then(function(e){
-            
-            console.log(d);
-            console.log(e);
 
+            console.log(c14);
+           // console.log(e);
 
+           /////// Creating new object with just date and offense type
+           //function to create new ojject
+           function omit(obj, props) {
+            props = props instanceof Array ? props : [props]
+            return eval(`(({${props.join(',')}, ...o}) => o)(obj)`)
+           }
+
+           offense_by_time=[]
+
+           for (var i = 0; i < c14.length;i++){
+               //console.log(c14[i])
+               const obj=c14[i]
+               const offense_time = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
+                                        'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
+                                        'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
+                                        'YBLOCK','XBLOCK'])
+               //console.log(offense_time)
+               offense_by_time.push(offense_time)
+           }
+
+           console.log(offense_by_time)
+          
+            // usage
+            //const obj = { a: 1, b: 2, c: 3, d: 4 }
+            //const clone = omit(obj, ['b', 'c'])
+            //console.log(clone)
+    
 
 
 
