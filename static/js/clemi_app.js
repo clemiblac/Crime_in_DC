@@ -66,14 +66,14 @@ function updateMap(){
           
             var table_data = [{
                 type: 'table',
-                columnwidth:[200,600],
+                columnwidth:[100,300],
                 header: {
                 
                 values: [["<b>Date</b>"],
                             ["<b>Link</b>"]],
                 align: "center",
                 line: {width: 1, color: 'black'},
-                fill: {color: "grey"},
+                fill: {color: "#61892F"},
                 font: {family: "Arial", size: 12, color: "white"}
                 },
                 cells: {
