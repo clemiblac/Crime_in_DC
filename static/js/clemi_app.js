@@ -85,17 +85,17 @@ function updateMap(){
             return eval(`(({${props.join(',')}, ...o}) => o)(obj)`)
             }
 
-            offense_by_time=[]
+            offense_by_time_14=[]
 
            for (var i = 0; i < c14.length; i++){
                //console.log(c14[i])
                const obj=c14[i]
-               const offense_time = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
+               const offense_time_14 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
                                         'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
                                         'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
                                         'YBLOCK','XBLOCK'])
                //console.log(offense_time)
-               offense_by_time.push(offense_time)
+               offense_by_time_14.push(offense_time_14)
            }
            //console.log("OFFENSE AND DATE KEY VALUE PAIRS")
            //console.log(offense_by_time)
@@ -104,7 +104,7 @@ function updateMap(){
 
            /////// Test Code for pulling out hour of the day
            //console.log("Testing hour slice")
-           var test=offense_by_time[14]
+           var test=offense_by_time_14[6]
            //console.log(test)
 
            var date=test.REPORT_DAT
@@ -118,54 +118,152 @@ function updateMap(){
            
            
            ///// Pull out hour of the day for entire object ///
-           var hourly_data=[]
-           for (var i = 0; i < offense_by_time.length; i++){
-               t=offense_by_time[i].REPORT_DAT
+           var hourly_data_14=[]
+           for (var i = 0; i < offense_by_time_14.length; i++){
+               t=offense_by_time_14[i].REPORT_DAT
                //console.log(t)
-               var hour = t.slice(11,13);
+               var hour_14 = t.slice(11,13);
                //console.log(hour)
-               offense_by_time[i].HOUR = hour;
+               offense_by_time_14[i].HOUR = hour_14;
                //console.log(offense_by_time[i])
-               hourly_data.push(offense_by_time[i])
+               hourly_data_14.push(offense_by_time_14[i])
 
             }
 
-            console.log(hourly_data)
+            console.log(hourly_data_14)
 
-            var arson=hourly_data.filter(c=>c.OFFENSE=='ARSON')
-            var assault_weapon=hourly_data.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON')
-            var burglary=hourly_data.filter(c=>c.OFFENSE=='BURGLARY')
-            var homocide=hourly_data.filter(c=>c.OFFENSE=='HOMICIDE')
-            var vehicle_theft=hourly_data.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT')
-            var robbery=hourly_data.filter(c=>c.OFFENSE=='ROBBERY')
-            var sex_abuse=hourly_data.filter(c=>c.OFFENSE=='SEX ABUSE')
-            var auto_theft=hourly_data.filter(c=>c.OFFENSE=='THEFT F/AUTO')
-            var sex_abuse=hourly_data.filter(c=>c.OFFENSE=='THEFT/OTHER')
+            var arson_14=hourly_data_14.filter(c=>c.OFFENSE=='ARSON')
+            var assault_weapon_14=hourly_data_14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON')
+            var burglary_14=hourly_data_14.filter(c=>c.OFFENSE=='BURGLARY')
+            var homocide_14=hourly_data_14.filter(c=>c.OFFENSE=='HOMICIDE')
+            var vehicle_theft_14=hourly_data_14.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT')
+            var robbery_14=hourly_data_14.filter(c=>c.OFFENSE=='ROBBERY')
+            var sex_abuse_14=hourly_data_14.filter(c=>c.OFFENSE=='SEX ABUSE')
+            var auto_theft_14=hourly_data_14.filter(c=>c.OFFENSE=='THEFT F/AUTO')
+            var sex_abuse_14=hourly_data_14.filter(c=>c.OFFENSE=='THEFT/OTHER')
 
-            console.log(arson)
+            //console.log(arson_14)
 
 
             ///\\\ Arson by hour///\\\
-            var time_arson=arson.map(t=>t.HOUR)
+            var time_arson_14=arson_14.map(t=>t.HOUR)
             //console.log(time_day)
-            var result_arson = {};
+            var result_arson_14 = {};
 
-            for(var i = 0; i < time_arson.length; ++i) {
-                if(!result_arson[time_arson[i]])
-                result_arson[time_arson[i]] = 0;
-                ++result_arson[time_arson[i]];
+            for(var i = 0; i < time_arson_14.length; ++i) {
+                if(!result_arson_14[time_arson_14[i]])
+                result_arson_14[time_arson_14[i]] = 0;
+                ++result_arson_14[time_arson_14[i]];
             }
-            console.log(result_arson)
+            console.log(result_arson_14)
 
             ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
-            var time_assault=assault_weapon.map(t=>t.HOUR)
-            //console.log(time_day)
-            var result_assault = {};
-            for(var i = 0; i < time_assault.length; ++i) {
-                if(!result_assault[time_assault[i]])
-                result_assault[time_assault[i]] = 0;
-                ++result_assault[time_assault[i]];
+            var time_assault_14=assault_weapon_14.map(t=>t.HOUR)
+            var result_assault_14 = {};
+            for(var i = 0; i < time_assault_14.length; ++i) {
+                if(!result_assault_14[time_assault_14[i]])
+                result_assault_14[time_assault_14[i]] = 0;
+                ++result_assault_14[time_assault_14[i]];
             }
+
+            ///// Declaring plot variables
+            var arson_hour_14=Object.keys(result_arson_14);
+            var count_arson_14=Object.values(result_arson_14);
+
+            var assault_hour_14=Object.keys(result_assault_14);
+            var count_assault_14=Object.values(result_assault_14);
+
+            var trace1 = {
+                type: 'bar',
+                x: arson_hour_14,
+                y: count_arson_14,
+                marker:{color:'#ff00d2'},
+                visible:true
+            };
+              
+            var trace2 = {
+                type: 'bar',
+                x: assault_hour_14,
+                y: count_assault_14,
+                xaxis: 'x2',
+                yaxis: 'y2'
+                
+            };
+              
+            var trace3 = {
+                type: 'bar',
+                x: arson_hour_14,
+                y: count_arson_14,
+                marker:{color:'#ff00d2'},
+                visible:true
+            };
+              
+            var trace4 = {
+                type: 'bar',
+                x: assault_hour_14,
+                y: count_assault_14,
+                xaxis: 'x2',
+                yaxis: 'y2'
+                
+            };
+
+            var data = [trace1, trace2, trace3, trace4];
+
+              
+            var updatemenus=[{
+                buttons: [   
+                    {
+                        args: [{visible: [true, true,false,false]}],
+                        label: '2014 ',
+                        method: 'update'
+                    },
+                    {
+                        args: [{visible: [false, false,true,true]}],
+                        label:'2015',
+                        method:'update'
+                    
+                    } 
+                                
+                ],
+                direction: 'left',
+                pad: {'r': 10, 't': 10},
+                showactive: true,
+                type: 'buttons',
+                x: 0.15,
+                xanchor: 'left',
+                y: 1.1,
+                yanchor: 'top' 
+            }];
+
+
+            var layout = {
+                updatemenus: updatemenus,
+                xaxis: {//title:"Hour of the day",
+                    autotick: false,
+                    tickangle: 45,
+                    tickcolor: '#000',
+                    tickfont: {size: 12}
+                    },
+                yaxis: {title:"Total crashes",automargin: true,},
+                grid: {rows: 2, columns: 1, pattern: 'independent'},
+                autosize: true,
+                width: 450,
+                height: 500,
+                margin: {
+                    l: 100,
+                    r: 50,
+                    b: 50,
+                    t: 50,
+                    pad: 4
+                }
+            };
+              
+              var layout2 = {
+                grid: {rows: 2, columns: 1, pattern: 'independent'},
+              };
+              
+              Plotly.newPlot('hour', data, layout);
+
 
 
 
