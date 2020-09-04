@@ -78,7 +78,7 @@ function updateMap(){
             console.log(c14);
            // console.log(e);
 
-           /////// Creating new object with just date and offense type
+           ////////////     Creating new object with just date and offense type   ///////////////////////////
            //function to create new ojject
            function omit(obj, props) {
             props = props instanceof Array ? props : [props]
@@ -87,7 +87,7 @@ function updateMap(){
 
            offense_by_time=[]
 
-           for (var i = 0; i < c14.length;i++){
+           for (var i = 0; i < c14.length; i++){
                //console.log(c14[i])
                const obj=c14[i]
                const offense_time = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
@@ -97,14 +97,43 @@ function updateMap(){
                //console.log(offense_time)
                offense_by_time.push(offense_time)
            }
+           //console.log("OFFENSE AND DATE KEY VALUE PAIRS")
+           //console.log(offense_by_time)
 
-           console.log(offense_by_time)
+
+
+           /////// Test Code for pulling out hour of the day
+           //console.log("Testing hour slice")
+           var test=offense_by_time[14]
+           //console.log(test)
+
+           var date=test.REPORT_DAT
+           //console.log(date)
+
+           var res = date.slice(11,13);
+           //console.log(res)
+
+           test.HOUR = res;
+           console.log(test)
+           
+           
+           ///// Pull out hour of the day for entire object ///
+           var hourly_data=[]
+           for (var i = 0; i < offense_by_time.length; i++){
+               t=offense_by_time[i].REPORT_DAT
+               //console.log(t)
+               var hour = t.slice(11,13);
+               //console.log(hour)
+               offense_by_time[i].HOUR = hour;
+               //console.log(offense_by_time[i])
+               hourly_data.push(offense_by_time[i])
+
+           }
+
+           console.log(hourly_data)
+
+          //var date=test.map(s=>s.REPORT_DAT)
           
-            // usage
-            //const obj = { a: 1, b: 2, c: 3, d: 4 }
-            //const clone = omit(obj, ['b', 'c'])
-            //console.log(clone)
-    
 
 
 
