@@ -149,9 +149,7 @@ function updateMap(){
 
             ///\\\ ARSON by hour///\\\
             var time_arson_14=arson_14.map(t=>t.HOUR)
-            //console.log(time_day)
             var result_arson_14 = {};
-
             for(var i = 0; i < time_arson_14.length; ++i) {
                 if(!result_arson_14[time_arson_14[i]])
                 result_arson_14[time_arson_14[i]] = 0;
@@ -188,12 +186,21 @@ function updateMap(){
             console.log(result_homicide_14)
 
             ///\\\ MOTOR VEHICLE THEFT by hour///\\
-            var time_homicide_14=homicide_14.map(t=>t.HOUR)
-            var result_homicide_14 = {};
-            for(var i = 0; i < time_homicide_14.length; ++i) {
-                if(!result_homicide_14[time_homicide_14[i]])
-                result_homicide_14[time_homicide_14[i]] = 0;
-                ++result_homicide_14[time_homicide_14[i]];
+            var time_vehicle_theft_14=vehicle_theft_14.map(t=>t.HOUR)
+            var result_vehicle_theft_14 = {};
+            for(var i = 0; i < time_vehicle_theft_14.length; ++i) {
+                if(!result_vehicle_theft_14[time_vehicle_theft_14[i]])
+                result_vehicle_theft_14[time_vehicle_theft_14[i]] = 0;
+                ++result_vehicle_theft_14[time_vehicle_theft_14[i]];
+            }
+
+            ///\\\ ROBBERY by hour///\\
+            var time_robbery_14=robbery_14.map(t=>t.HOUR)
+            var result_robbery_14 = {};
+            for(var i = 0; i < time_robbery_14.length; ++i) {
+                if(!result_robbery_14[time_robbery_14[i]])
+                result_robbery_14[time_robbery_14[i]] = 0;
+                ++result_robbery_14[time_robbery_14[i]];
             }
 
 
@@ -210,6 +217,15 @@ function updateMap(){
 
             var homicide_hour_14=Object.keys(result_homicide_14);
             var count_homicide_14=Object.values(result_homicide_14);
+
+            var vehicle_theft_hour_14=Object.keys(result_vehicle_theft_14);
+            var count_vehicle_theft_14=Object.values(result_vehicle_theft_14);
+
+            var robbery_hour_14=Object.keys(result_robbery_14);
+            var count_robbery_14=Object.values(result_robbery_14);
+
+
+
 
             var arson14 = {
                 type: 'bar',
@@ -248,6 +264,26 @@ function updateMap(){
                 visible:true
                 
             };
+
+            var vehicle_theft14 = {
+                type: 'bar',
+                x: vehicle_theft_hour_14,
+                y: count_vehicle_theft_14,
+                xaxis: 'x5',
+                yaxis: 'y5',
+                visible:true
+            };
+
+            var robbery14 = {
+                type: 'bar',
+                x: robbery_hour_14,
+                y: count_robbery_14,
+                xaxis: 'x6',
+                yaxis: 'y6',
+                visible:true
+                
+            };
+
 
 
               
@@ -291,18 +327,18 @@ function updateMap(){
 
             
 
-            var data = [arson14, assault14, buglary14, homicide14, trace3, trace4, trace5,trace6];
+            var data = [arson14, assault14, buglary14, homicide14,vehicle_theft14,robbery14, trace3, trace4, trace5,trace6];
 
               
             var updatemenus=[{
                 buttons: [   
                     {
-                        args: [{visible: [true, true,true,true,false,false,false,false]}],
+                        args: [{visible: [true,true,true,true,true,true,false,false,false,false]}],
                         label: '2014 ',
                         method: 'update'
                     },
                     {
-                        args: [{visible: [false, false,false,false,true,true,true,true]}],
+                        args: [{visible: [false,false,false,false,false,false,true,true,true,true]}],
                         label:'2015',
                         method:'update'
                     
