@@ -76,16 +76,16 @@ function updateMap(){
         d3.json(crime_2015).then(function(e){
 
             console.log(c14);
-           // console.log(e);
+            // console.log(e);
 
-           ////////////     Creating new object with just date and offense type   ///////////////////////////
-           //function to create new ojject
-           function omit(obj, props) {
+            ////////////     Creating new object with just date and offense type   ///////////////////////////
+            //function to create new ojject
+            function omit(obj, props) {
             props = props instanceof Array ? props : [props]
             return eval(`(({${props.join(',')}, ...o}) => o)(obj)`)
-           }
+            }
 
-           offense_by_time=[]
+            offense_by_time=[]
 
            for (var i = 0; i < c14.length; i++){
                //console.log(c14[i])
@@ -114,7 +114,7 @@ function updateMap(){
            //console.log(res)
 
            test.HOUR = res;
-           console.log(test)
+           //console.log(test)
            
            
            ///// Pull out hour of the day for entire object ///
@@ -128,12 +128,44 @@ function updateMap(){
                //console.log(offense_by_time[i])
                hourly_data.push(offense_by_time[i])
 
-           }
+            }
 
-           console.log(hourly_data)
+            console.log(hourly_data)
 
-          //var date=test.map(s=>s.REPORT_DAT)
-          
+            var arson=hourly_data.filter(c=>c.OFFENSE=='ARSON')
+            var assault_weapon=hourly_data.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON')
+            var burglary=hourly_data.filter(c=>c.OFFENSE=='BURGLARY')
+            var homocide=hourly_data.filter(c=>c.OFFENSE=='HOMICIDE')
+            var vehicle_theft=hourly_data.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT')
+            var robbery=hourly_data.filter(c=>c.OFFENSE=='ROBBERY')
+            var sex_abuse=hourly_data.filter(c=>c.OFFENSE=='SEX ABUSE')
+            var auto_theft=hourly_data.filter(c=>c.OFFENSE=='THEFT F/AUTO')
+            var sex_abuse=hourly_data.filter(c=>c.OFFENSE=='THEFT/OTHER')
+
+            console.log(arson)
+
+
+            ///\\\ Arson by hour///\\\
+            var time_arson=arson.map(t=>t.HOUR)
+            //console.log(time_day)
+            var result_arson = {};
+
+            for(var i = 0; i < time_arson.length; ++i) {
+                if(!result_arson[time_arson[i]])
+                result_arson[time_arson[i]] = 0;
+                ++result_arson[time_arson[i]];
+            }
+            console.log(result_arson)
+
+            ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
+            var time_assault=assault_weapon.map(t=>t.HOUR)
+            //console.log(time_day)
+            var result_assault = {};
+            for(var i = 0; i < time_assault.length; ++i) {
+                if(!result_assault[time_assault[i]])
+                result_assault[time_assault[i]] = 0;
+                ++result_assault[time_assault[i]];
+            }
 
 
 
