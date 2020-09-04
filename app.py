@@ -45,43 +45,72 @@ def acknowledge():
 def about():
     return render_template("about.html")
 
-#Data Routes
+##############   Data Routes  ######################
 @app.route("/news")
 def news_scrape():
     results=pd.read_sql('SELECT * FROM news_scrape',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
-@app.route("/china_half_year")
-def china_half_year():
-    results=pd.read_sql('SELECT * FROM china',engine)
+@app.route("/crime2010")
+def crime2010():
+    results=pd.read_sql('SELECT * FROM crime2010',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
-@app.route("/russia_half_year")
-def russia_half_year():
-    results=pd.read_sql('SELECT * FROM russia',engine)
+@app.route("/crime2011")
+def crime2011():
+    results=pd.read_sql('SELECT * FROM crime2011',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
-@app.route("/usa_half_year")
-def usa_half_year():
-    results=pd.read_sql('SELECT * FROM usa',engine)
+@app.route("/crime2012")
+def crime2012():
+    results=pd.read_sql('SELECT * FROM crime2012',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
-@app.route("/morocco_half_year")
-def morocco_half_year():
-    results=pd.read_sql('SELECT * FROM morocco',engine)
+@app.route("/crime2013")
+def crime2013():
+    results=pd.read_sql('SELECT * FROM crime2013',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
-@app.route("/venezuela_half_year")
-def venezuala_half_year():
-    results=pd.read_sql('SELECT * FROM venezuela',engine)
+@app.route("/crime2014")
+def crime2014():
+    results=pd.read_sql('SELECT * FROM crime2014',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
+@app.route("/crime2015")
+def crime2015():
+    results=pd.read_sql('SELECT * FROM crime2015',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/crime2016")
+def crime2016():
+    results=pd.read_sql('SELECT * FROM crime2016',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/crime2017")
+def crime2017():
+    results=pd.read_sql('SELECT * FROM crime2017',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/crime2018")
+def crime2018():
+    results=pd.read_sql('SELECT * FROM crime2018',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/crime2019")
+def crime2019():
+    results=pd.read_sql('SELECT * FROM crime2019',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
 
 
 if __name__ == "__main__":
