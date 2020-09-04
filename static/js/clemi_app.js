@@ -142,7 +142,7 @@ function updateMap(){
             var robbery_14=hourly_data_14.filter(c=>c.OFFENSE=='ROBBERY')
             var sex_abuse_14=hourly_data_14.filter(c=>c.OFFENSE=='SEX ABUSE')
             var auto_theft_14=hourly_data_14.filter(c=>c.OFFENSE=='THEFT F/AUTO')
-            var sex_abuse_14=hourly_data_14.filter(c=>c.OFFENSE=='THEFT/OTHER')
+            var theft_other_14=hourly_data_14.filter(c=>c.OFFENSE=='THEFT/OTHER')
 
             //console.log(arson_14)
 
@@ -203,9 +203,37 @@ function updateMap(){
                 ++result_robbery_14[time_robbery_14[i]];
             }
 
+            ///\\\ SEX ABUSE by hour///\\
+            var time_sex_abuse_14=sex_abuse_14.map(t=>t.HOUR)
+            var result_sex_abuse_14 = {};
+            for(var i = 0; i < time_sex_abuse_14.length; ++i) {
+                if(!result_sex_abuse_14[time_sex_abuse_14[i]])
+                result_sex_abuse_14[time_sex_abuse_14[i]] = 0;
+                ++result_sex_abuse_14[time_sex_abuse_14[i]];
+            }
+
+            ///\\\ THEFT F/AUTO by hour///\\
+            var time_auto_theft_14=auto_theft_14.map(t=>t.HOUR)
+            var result_auto_theft_14 = {};
+            for(var i = 0; i < time_auto_theft_14.length; ++i) {
+                if(!result_auto_theft_14[time_auto_theft_14[i]])
+                result_auto_theft_14[time_auto_theft_14[i]] = 0;
+                ++result_auto_theft_14[time_auto_theft_14[i]];
+            }
+            
+             ///\\\ THEFT OTHER by hour///\\
+             var time_theft_other_14=theft_other_14.map(t=>t.HOUR)
+             var result_theft_other_14 = {};
+             for(var i = 0; i < time_theft_other_14.length; ++i) {
+                 if(!result_theft_other_14[time_theft_other_14[i]])
+                 result_theft_other_14[time_theft_other_14[i]] = 0;
+                 ++result_theft_other_14[time_theft_other_14[i]];
+             }
 
 
-            ///// Declaring plot variables
+
+
+            ///// Declaring plot variables 2014
             var arson_hour_14=Object.keys(result_arson_14);
             var count_arson_14=Object.values(result_arson_14);
 
@@ -224,6 +252,15 @@ function updateMap(){
             var robbery_hour_14=Object.keys(result_robbery_14);
             var count_robbery_14=Object.values(result_robbery_14);
 
+            var sex_abuse_hour_14=Object.keys(result_sex_abuse_14);
+            var count_sex_abuse_14=Object.values(result_sex_abuse_14);
+
+            var auto_theft_hour_14=Object.keys(result_auto_theft_14);
+            var count_auto_theft_14=Object.values(result_auto_theft_14);
+
+            var theft_other_hour_14=Object.keys(result_theft_other_14);
+            var count_theft_other_14=Object.values(result_theft_other_14);
+
 
 
 
@@ -231,6 +268,8 @@ function updateMap(){
                 type: 'bar',
                 x: arson_hour_14,
                 y: count_arson_14,
+                xaxis: 'x1',
+                yaxis: 'y1',
                 marker:{color:'#ff00d2'},
                 visible:true
             };
@@ -241,6 +280,7 @@ function updateMap(){
                 y: count_assault_14,
                 xaxis: 'x2',
                 yaxis: 'y2',
+                marker:{color:'#c41130'},
                 visible:true
                 
             };
@@ -251,6 +291,7 @@ function updateMap(){
                 y: count_burglary_14,
                 xaxis: 'x3',
                 yaxis: 'y3',
+                marker:{color:'#ffc107'},
                 visible:true
                 
             };
@@ -261,6 +302,7 @@ function updateMap(){
                 y: count_homicide_14,
                 xaxis: 'x4',
                 yaxis: 'y4',
+                marker:{color:'#999966'},
                 visible:true
                 
             };
@@ -271,6 +313,7 @@ function updateMap(){
                 y: count_vehicle_theft_14,
                 xaxis: 'x5',
                 yaxis: 'y5',
+                marker:{color:'#339933'},
                 visible:true
             };
 
@@ -280,8 +323,42 @@ function updateMap(){
                 y: count_robbery_14,
                 xaxis: 'x6',
                 yaxis: 'y6',
+                marker:{color:'#dc3545'},
                 visible:true
                 
+            };
+
+            var sex_abuse14 = {
+                type: 'bar',
+                x: sex_abuse_hour_14,
+                y: count_sex_abuse_14,
+                xaxis: 'x7',
+                yaxis: 'y7',
+                marker:{color:'#600600'},
+                visible:true
+            
+            };
+
+            var auto_theft14 = {
+                type: 'bar',
+                x: auto_theft_hour_14,
+                y: count_auto_theft_14,
+                xaxis: 'x8',
+                yaxis: 'y8',
+                marker:{color:'#212529'},
+                visible:true
+            
+            };
+
+            var theft_other14 = {
+                type: 'bar',
+                x: theft_other_hour_14,
+                y: count_theft_other_14,
+                xaxis: 'x9',
+                yaxis: 'y9',
+                marker:{color:'#cc9966'},
+                visible:true
+            
             };
 
 
@@ -327,18 +404,21 @@ function updateMap(){
 
             
 
-            var data = [arson14, assault14, buglary14, homicide14,vehicle_theft14,robbery14, trace3, trace4, trace5,trace6];
+            var data = [arson14, assault14, buglary14, homicide14,vehicle_theft14,robbery14,sex_abuse14,auto_theft14,theft_other14,
+                         trace3, trace4, trace5,trace6];
 
               
             var updatemenus=[{
                 buttons: [   
                     {
-                        args: [{visible: [true,true,true,true,true,true,false,false,false,false]}],
+                        args: [{visible: [true,true,true,true,true,true,true,true,true,
+                                        false,false,false,false]}],
                         label: '2014 ',
                         method: 'update'
                     },
                     {
-                        args: [{visible: [false,false,false,false,false,false,true,true,true,true]}],
+                        args: [{visible: [false,false,false,false,false,false,false,false,false,
+                                        true,true,true,true]}],
                         label:'2015',
                         method:'update'
                     
@@ -365,7 +445,7 @@ function updateMap(){
                     tickfont: {size: 12}
                     },
                 yaxis: {title:"Total crashes",automargin: true,},
-                grid: {rows: 8, columns: 1, pattern: 'independent'},
+                grid: {rows: 9, columns: 1, pattern: 'independent'},
                 autosize: true,
                 width: 450,
                 height: 800,
