@@ -15,7 +15,7 @@ d3.json(crime_2014).then(function(c14){
                 d3.json(crime_2018).then(function(c18){
 
 
-                    console.log(c14);
+                    //console.log(c14);
                     // console.log(c15);
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     ////////////           Creating new object with just date and offense type         ///////////////////////////
@@ -124,7 +124,7 @@ d3.json(crime_2014).then(function(c14){
 
                     }
 
-                    console.log(hourly_data_14)
+                    //console.log(hourly_data_14)
 
                     //////////////////////////////////////////    2  0  1  5    /////////////////////////////////////////////////////////
                     var hourly_data_15=[]
@@ -259,7 +259,7 @@ d3.json(crime_2014).then(function(c14){
                     result_arson_14["21"] = 0;
                     result_arson_14["22"] = 0;
                     result_arson_14["23"] = 0;
-                    console.log(result_arson_14)
+                    //console.log(result_arson_14)
 
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
@@ -297,7 +297,7 @@ d3.json(crime_2014).then(function(c14){
                     result_homicide_14["19"] = 0; result_homicide_14["20"] = 0; result_homicide_14["21"] = 0;
                     result_homicide_14["22"] = 0; result_homicide_14["23"] = 0;
 
-                    console.log(result_homicide_14)
+                    //console.log(result_homicide_14)
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_14=vehicle_theft_14.map(t=>t.HOUR)
@@ -1052,72 +1052,398 @@ d3.json(crime_2014).then(function(c14){
 
 
 
-
-
-
-
-                    ///////////////////////////////////////
-                    
-                    var trace3 = {
+                    ///////////////////////////////////////          2    0    1    6   /////////////////////////////////////
+                    var arson16 = {
                         type: 'bar',
-                        x: arson_hour_14,
-                        y: count_arson_14,
+                        x: arson_hour_16,
+                        y: count_arson_16,
+                        xaxis: 'x1',
+                        yaxis: 'y1',
                         marker:{color:'#ff00d2'},
+                        showlegend: false,
                         visible:false
                     };
                     
-                    var trace4 = {
+                    var assault16 = {
                         type: 'bar',
-                        x: assault_hour_14,
-                        y: count_assault_14,
+                        x: assault_hour_16,
+                        y: count_assault_16,
                         xaxis: 'x2',
                         yaxis: 'y2',
+                        marker:{color:'#c41130'},
+                        showlegend: false,
                         visible:false
                         
                     };
 
-                    var trace5 = {
+                    var burglary16 = {
                         type: 'bar',
-                        x: assault_hour_14,
-                        y: count_assault_14,
+                        x: burglary_hour_16,
+                        y: count_burglary_16,
                         xaxis: 'x3',
                         yaxis: 'y3',
+                        marker:{color:'#ffc107'},
+                        showlegend: false,
                         visible:false
                         
                     };
 
-                    var trace6 = {
+                    var homicide16 = {
                         type: 'bar',
-                        x: assault_hour_14,
-                        y: count_assault_14,
+                        x: homicide_hour_16,
+                        y: count_homicide_16,
                         xaxis: 'x4',
                         yaxis: 'y4',
+                        marker:{color:'#999966'},
+                        showlegend: false,
                         visible:false
                         
                     };
+
+                    var vehicle_theft16 = {
+                        type: 'bar',
+                        x: vehicle_theft_hour_16,
+                        y: count_vehicle_theft_16,
+                        xaxis: 'x5',
+                        yaxis: 'y5',
+                        marker:{color:'#339933'},
+                        showlegend: false,
+                        visible:false
+                    };
+
+                    var robbery16 = {
+                        type: 'bar',
+                        x: robbery_hour_16,
+                        y: count_robbery_16,
+                        xaxis: 'x6',
+                        yaxis: 'y6',
+                        marker:{color:'#dc3545'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var sex_abuse16 = {
+                        type: 'bar',
+                        x: sex_abuse_hour_16,
+                        y: count_sex_abuse_16,
+                        xaxis: 'x7',
+                        yaxis: 'y7',
+                        marker:{color:'#600600'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var auto_theft16 = {
+                        type: 'bar',
+                        x: auto_theft_hour_16,
+                        y: count_auto_theft_16,
+                        xaxis: 'x8',
+                        yaxis: 'y8',
+                        marker:{color:'#212529'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var theft_other16 = {
+                        type: 'bar',
+                        x: theft_other_hour_16,
+                        y: count_theft_other_16,
+                        xaxis: 'x9',
+                        yaxis: 'y9',
+                        marker:{color:'#cc9966'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+                   
+
+                    
+                    ///////////////////////////////////////          2    0    1    7   /////////////////////////////////////
+                    var arson17 = {
+                        type: 'bar',
+                        x: arson_hour_17,
+                        y: count_arson_17,
+                        xaxis: 'x1',
+                        yaxis: 'y1',
+                        marker:{color:'#ff00d2'},
+                        showlegend: false,
+                        visible:false
+                    };
+                    
+                    var assault17 = {
+                        type: 'bar',
+                        x: assault_hour_17,
+                        y: count_assault_17,
+                        xaxis: 'x2',
+                        yaxis: 'y2',
+                        marker:{color:'#c41130'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var burglary17 = {
+                        type: 'bar',
+                        x: burglary_hour_17,
+                        y: count_burglary_17,
+                        xaxis: 'x3',
+                        yaxis: 'y3',
+                        marker:{color:'#ffc107'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var homicide17 = {
+                        type: 'bar',
+                        x: homicide_hour_17,
+                        y: count_homicide_17,
+                        xaxis: 'x4',
+                        yaxis: 'y4',
+                        marker:{color:'#999966'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var vehicle_theft17 = {
+                        type: 'bar',
+                        x: vehicle_theft_hour_17,
+                        y: count_vehicle_theft_17,
+                        xaxis: 'x5',
+                        yaxis: 'y5',
+                        marker:{color:'#339933'},
+                        showlegend: false,
+                        visible:false
+                    };
+
+                    var robbery17 = {
+                        type: 'bar',
+                        x: robbery_hour_17,
+                        y: count_robbery_17,
+                        xaxis: 'x6',
+                        yaxis: 'y6',
+                        marker:{color:'#dc3545'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var sex_abuse17 = {
+                        type: 'bar',
+                        x: sex_abuse_hour_17,
+                        y: count_sex_abuse_17,
+                        xaxis: 'x7',
+                        yaxis: 'y7',
+                        marker:{color:'#600600'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var auto_theft17 = {
+                        type: 'bar',
+                        x: auto_theft_hour_17,
+                        y: count_auto_theft_17,
+                        xaxis: 'x8',
+                        yaxis: 'y8',
+                        marker:{color:'#212529'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var theft_other17 = {
+                        type: 'bar',
+                        x: theft_other_hour_17,
+                        y: count_theft_other_17,
+                        xaxis: 'x9',
+                        yaxis: 'y9',
+                        marker:{color:'#cc9966'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+                   
+                    ///////////////////////////////////////      2     0    1     8      //////////////////////////////////////
+                    var arson18 = {
+                        type: 'bar',
+                        x: arson_hour_18,
+                        y: count_arson_18,
+                        xaxis: 'x1',
+                        yaxis: 'y1',
+                        marker:{color:'#ff00d2'},
+                        showlegend: false,
+                        visible:false
+                    };
+                    
+                    var assault18 = {
+                        type: 'bar',
+                        x: assault_hour_18,
+                        y: count_assault_18,
+                        xaxis: 'x2',
+                        yaxis: 'y2',
+                        marker:{color:'#c41130'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var burglary18 = {
+                        type: 'bar',
+                        x: burglary_hour_18,
+                        y: count_burglary_18,
+                        xaxis: 'x3',
+                        yaxis: 'y3',
+                        marker:{color:'#ffc107'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var homicide18 = {
+                        type: 'bar',
+                        x: homicide_hour_18,
+                        y: count_homicide_18,
+                        xaxis: 'x4',
+                        yaxis: 'y4',
+                        marker:{color:'#999966'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var vehicle_theft18 = {
+                        type: 'bar',
+                        x: vehicle_theft_hour_18,
+                        y: count_vehicle_theft_18,
+                        xaxis: 'x5',
+                        yaxis: 'y5',
+                        marker:{color:'#339933'},
+                        showlegend: false,
+                        visible:false
+                    };
+
+                    var robbery18 = {
+                        type: 'bar',
+                        x: robbery_hour_18,
+                        y: count_robbery_18,
+                        xaxis: 'x6',
+                        yaxis: 'y6',
+                        marker:{color:'#dc3545'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var sex_abuse18 = {
+                        type: 'bar',
+                        x: sex_abuse_hour_18,
+                        y: count_sex_abuse_18,
+                        xaxis: 'x7',
+                        yaxis: 'y7',
+                        marker:{color:'#600600'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var auto_theft18 = {
+                        type: 'bar',
+                        x: auto_theft_hour_18,
+                        y: count_auto_theft_18,
+                        xaxis: 'x8',
+                        yaxis: 'y8',
+                        marker:{color:'#212529'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var theft_other18 = {
+                        type: 'bar',
+                        x: theft_other_hour_18,
+                        y: count_theft_other_18,
+                        xaxis: 'x9',
+                        yaxis: 'y9',
+                        marker:{color:'#cc9966'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+
+                    
 
             
 
-                    var data = [arson14, assault14, burglary14, homicide14,vehicle_theft14,robbery14,sex_abuse14,auto_theft14,theft_other14,
-                                arson15, assault15, burglary15, homicide15,vehicle_theft15,robbery15,sex_abuse15,auto_theft15,theft_other15,
-                                trace3, trace4, trace5,trace6];
+                    var data = [arson14, assault14, burglary14, homicide14, vehicle_theft14, robbery14, sex_abuse14, auto_theft14, theft_other14,
+                                arson15, assault15, burglary15, homicide15, vehicle_theft15, robbery15, sex_abuse15, auto_theft15, theft_other15,
+                                arson16, assault16, burglary16, homicide16, vehicle_theft16, robbery16, sex_abuse16, auto_theft16, theft_other16,
+                                arson17, assault17, burglary17, homicide17, vehicle_theft17, robbery17, sex_abuse17, auto_theft17, theft_other17,
+                                arson18, assault18, burglary18, homicide18, vehicle_theft18, robbery18, sex_abuse18, auto_theft18, theft_other18,
+                            ];
 
                     
                     var updatemenus=[{
                         buttons: [   
                             {
                                 args: [{visible: [true,true,true,true,true,true,true,true,true,
-                                                false,false,false,false,false,false,false,false,false]}],
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false
+                                            ]}],
                                 label: '2014 ',
                                 method: 'update'
                             },
                             {
                                 args: [{visible: [false,false,false,false,false,false,false,false,false,
-                                                true,true,true,true,true,true,true,true,true]}],
+                                                true,true,true,true,true,true,true,true,true,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false
+                                            ]}],
                                 label:'2015',
                                 method:'update'
                             
-                            } 
+                            },
+                            {
+                                args: [{visible: [false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                true,true,true,true,true,true,true,true,true,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false
+                                            ]}],
+                                label:'2016',
+                                method:'update'
+                            
+                            },
+                            {
+                                args: [{visible: [false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                true,true,true,true,true,true,true,true,true,
+                                                false,false,false,false,false,false,false,false,false
+                                            ]}],
+                                label:'2017',
+                                method:'update'
+                            
+                            },
+                            {
+                                args: [{visible: [false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                false,false,false,false,false,false,false,false,false,
+                                                true,true,true,true,true,true,true,true,true
+                                            ]}],
+                                label:'2018',
+                                method:'update'
+                            
+                            }
                                         
                         ],
                         direction: 'left',
