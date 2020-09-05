@@ -73,21 +73,21 @@ function updateMap(){
 
 
     d3.json(crime_2014).then(function(c14){
-        d3.json(crime_2015).then(function(e){
+        d3.json(crime_2015).then(function(c15){
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                 /////////////////////////////// 2   0   1   4       2   0   1   4       2   0   1   4    ///////////////////////////////////////// 
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             console.log(c14);
             // console.log(e);
 
             ////////////     Creating new object with just date and offense type   ///////////////////////////
-            //function to create new ojject
+            // function to create new object
             function omit(obj, props) {
             props = props instanceof Array ? props : [props]
             return eval(`(({${props.join(',')}, ...o}) => o)(obj)`)
             }
 
-            offense_by_time_14=[]
+         
+           offense_by_time_14=[];
 
            for (var i = 0; i < c14.length; i++){
                //console.log(c14[i])
@@ -102,6 +102,7 @@ function updateMap(){
            //console.log("OFFENSE AND DATE KEY VALUE PAIRS")
            //console.log(offense_by_time)
 
+           offense_by_time_15=[];
 
 
            /////// Test Code for pulling out hour of the day
@@ -155,7 +156,12 @@ function updateMap(){
                 result_arson_14[time_arson_14[i]] = 0;
                 ++result_arson_14[time_arson_14[i]];
             }
+            result_arson_14["00"] = 0;
+            result_arson_14["21"] = 0;
+            result_arson_14["22"] = 0;
+            result_arson_14["23"] = 0;
             console.log(result_arson_14)
+
 
             ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
             var time_assault_14=assault_weapon_14.map(t=>t.HOUR)
@@ -183,6 +189,15 @@ function updateMap(){
                 result_homicide_14[time_homicide_14[i]] = 0;
                 ++result_homicide_14[time_homicide_14[i]];
             }
+            result_homicide_14["01"] = 0; result_homicide_14["02"] = 0; result_homicide_14["03"] = 0;
+            result_homicide_14["04"] = 0; result_homicide_14["05"] = 0; result_homicide_14["06"] = 0;
+            result_homicide_14["07"] = 0; result_homicide_14["08"] = 0; result_homicide_14["09"] = 0;
+            result_homicide_14["10"] = 0; result_homicide_14["11"] = 0; result_homicide_14["12"] = 0;
+            result_homicide_14["13"] = 0; result_homicide_14["14"] = 0; result_homicide_14["15"] = 0;
+            result_homicide_14["16"] = 0; result_homicide_14["17"] = 0; result_homicide_14["18"] = 0;
+            result_homicide_14["19"] = 0; result_homicide_14["20"] = 0; result_homicide_14["21"] = 0;
+            result_homicide_14["22"] = 0; result_homicide_14["23"] = 0;
+
             console.log(result_homicide_14)
 
             ///\\\ MOTOR VEHICLE THEFT by hour///\\
@@ -271,6 +286,7 @@ function updateMap(){
                 xaxis: 'x1',
                 yaxis: 'y1',
                 marker:{color:'#ff00d2'},
+                showlegend: false,
                 visible:true
             };
               
@@ -281,17 +297,19 @@ function updateMap(){
                 xaxis: 'x2',
                 yaxis: 'y2',
                 marker:{color:'#c41130'},
+                showlegend: false,
                 visible:true
                 
             };
 
-            var buglary14 = {
+            var burglary14 = {
                 type: 'bar',
                 x: burglary_hour_14,
                 y: count_burglary_14,
                 xaxis: 'x3',
                 yaxis: 'y3',
                 marker:{color:'#ffc107'},
+                showlegend: false,
                 visible:true
                 
             };
@@ -303,6 +321,7 @@ function updateMap(){
                 xaxis: 'x4',
                 yaxis: 'y4',
                 marker:{color:'#999966'},
+                showlegend: false,
                 visible:true
                 
             };
@@ -314,6 +333,7 @@ function updateMap(){
                 xaxis: 'x5',
                 yaxis: 'y5',
                 marker:{color:'#339933'},
+                showlegend: false,
                 visible:true
             };
 
@@ -324,6 +344,7 @@ function updateMap(){
                 xaxis: 'x6',
                 yaxis: 'y6',
                 marker:{color:'#dc3545'},
+                showlegend: false,
                 visible:true
                 
             };
@@ -335,6 +356,7 @@ function updateMap(){
                 xaxis: 'x7',
                 yaxis: 'y7',
                 marker:{color:'#600600'},
+                showlegend: false,
                 visible:true
             
             };
@@ -346,6 +368,7 @@ function updateMap(){
                 xaxis: 'x8',
                 yaxis: 'y8',
                 marker:{color:'#212529'},
+                showlegend: false,
                 visible:true
             
             };
@@ -357,6 +380,7 @@ function updateMap(){
                 xaxis: 'x9',
                 yaxis: 'y9',
                 marker:{color:'#cc9966'},
+                showlegend: false,
                 visible:true
             
             };
@@ -404,7 +428,7 @@ function updateMap(){
 
             
 
-            var data = [arson14, assault14, buglary14, homicide14,vehicle_theft14,robbery14,sex_abuse14,auto_theft14,theft_other14,
+            var data = [arson14, assault14, burglary14, homicide14,vehicle_theft14,robbery14,sex_abuse14,auto_theft14,theft_other14,
                          trace3, trace4, trace5,trace6];
 
               
@@ -438,17 +462,148 @@ function updateMap(){
 
             var layout = {
                 updatemenus: updatemenus,
-                xaxis: {//title:"Hour of the day",
+
+                xaxis1: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis2: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis3: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis4: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis5: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis6: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis7: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis8: {  autotick: false,
+                    tickangle: 45,
+                    automargin: true,
+                    tickfont: {size: 10}
+                },
+                xaxis9: {title:"Hour of the day",
                     autotick: false,
                     tickangle: 45,
-                    tickcolor: '#000',
-                    tickfont: {size: 12}
+                    tickfont: {size: 10}
                     },
-                yaxis: {title:"Total crashes",automargin: true,},
+                //yaxis: {title:"count of incidents",automargin: true,},
+                //yaxis2:{title:"Total", automargin:true},
+                
+                annotations: [
+                    {
+                        text: "Arson",
+                        font: {size: 16, color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.2,
+                        y: 1,
+                        xref: 'paper',
+                        yref: 'paper'
+                    },
+                    {
+                        text: "Assault",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.13,
+                        y: 0.89,
+                        xref: 'paper',
+                        yref: 'paper'
+                    },
+                    {
+                        text: "Burglary",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.13,
+                        y: 0.76,
+                        xref: 'paper',
+                        yref: 'paper'
+                    },
+                    {
+                        text: "Homicide",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.13,
+                        y: 0.66,
+                        xref: 'paper',
+                        yref: 'paper'
+                    },
+                    {
+                        text: "Vehicle Theft",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 1.0,
+                        y: 0.53,
+                        xref: 'paper',
+                        yref: 'paper'
+                    }, {
+                        text: "Robbery",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.13,
+                        y: 0.41,
+                        xref: 'paper',
+                        yref: 'paper'
+                    }, {
+                        text: "Sex Abuse",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.13,
+                        y: 0.28,
+                        xref: 'paper',
+                        yref: 'paper'
+                    }, {
+                        text: "Auto Theft",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.01,
+                        y: 0.17,
+                        xref: 'paper',
+                        yref: 'paper'
+                    }, {
+                        text: "Theft Other",
+                        font: {size: 16,color: 'black'},
+                        showarrow: false,
+                        align: 'center',
+                        x: 0.07,
+                        y: 0.05,
+                        xref: 'paper',
+                        yref: 'paper'
+                    }
+                ],
+
                 grid: {rows: 9, columns: 1, pattern: 'independent'},
                 autosize: true,
                 width: 450,
-                height: 800,
+                height: 1000,
                 margin: {
                     l: 100,
                     r: 50,
