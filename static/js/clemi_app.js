@@ -1641,10 +1641,8 @@ d3.json(crime_2014).then(function(c14){
 
                         grid: {rows: 9, columns: 1, pattern: 'independent'},
                         autosize: true,
-                        width: 450,
-                        height: 1000,
                         margin: {
-                            l: 100,
+                            l: 50,
                             r: 50,
                             b: 50,
                             t: 50,
