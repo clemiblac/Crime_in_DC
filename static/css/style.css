@@ -4,17 +4,20 @@
 /*Navigation bar*/
 
 .navbar-custom {
-    background-color: #61892F;
+    background-color: #FEEB00;
 }
 body{
-    background-color:#222629;
-    color:white
+    background-color:#E1E2DB;
+  
 };
 
-.navbar-brand .navbar-text{
-    color:#e85a4f;
+.nav .nav-item .nav-link {
+    color:red
 };
-p{color:white}
+
+p{
+    color:#000000
+};
 
 /*End of styles that affect all pages*/
 
