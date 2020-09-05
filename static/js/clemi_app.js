@@ -16,7 +16,7 @@ d3.json(crime_2014).then(function(c14){
 
 
                     //console.log(c14);
-                    console.log(c18);
+                    //console.log(c18);
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     ////////////           Creating new object with just date and offense type         ///////////////////////////
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -355,7 +355,7 @@ d3.json(crime_2014).then(function(c14){
                         result_arson_15[time_arson_15[i]] = 0;
                         ++result_arson_15[time_arson_15[i]];
                     }
-
+                    result_arson_15["23"] = 0;
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_15=assault_weapon_15.map(t=>t.HOUR)
@@ -383,7 +383,16 @@ d3.json(crime_2014).then(function(c14){
                         result_homicide_15[time_homicide_15[i]] = 0;
                         ++result_homicide_15[time_homicide_15[i]];
                     }
-                  
+
+                    result_homicide_15["01"] = 0; result_homicide_15["02"] = 0; result_homicide_15["03"] = 0;
+                    result_homicide_15["04"] = 0; result_homicide_15["05"] = 0; result_homicide_15["06"] = 0;
+                    result_homicide_15["07"] = 0; result_homicide_15["08"] = 0; result_homicide_15["09"] = 0;
+                    result_homicide_15["10"] = 0; result_homicide_15["11"] = 0; result_homicide_15["12"] = 0;
+                    result_homicide_15["13"] = 0; result_homicide_15["14"] = 0; result_homicide_15["15"] = 0;
+                    result_homicide_15["16"] = 0; result_homicide_15["17"] = 0; result_homicide_15["18"] = 0;
+                    result_homicide_15["19"] = 0; result_homicide_15["20"] = 0; result_homicide_15["21"] = 0;
+                    result_homicide_15["22"] = 0; result_homicide_15["23"] = 0;
+
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_15=vehicle_theft_15.map(t=>t.HOUR)
@@ -439,7 +448,10 @@ d3.json(crime_2014).then(function(c14){
                         result_arson_16[time_arson_16[i]] = 0;
                         ++result_arson_16[time_arson_16[i]];
                     }
-
+                    result_arson_16["00"] = 0; result_arson_16["01"] = 0; result_arson_16["03"] = 0; result_arson_16["04"] = 0;
+                    result_arson_16["05"] = 0; result_arson_16["06"] = 0; result_arson_16["07"] = 0; result_arson_16["08"] = 0;
+                    result_arson_16["09"] = 0; result_arson_16["20"] = 0; result_arson_16["21"] = 0; result_arson_16["22"] = 0;
+                    result_arson_16["23"] = 0;
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_16=assault_weapon_16.map(t=>t.HOUR)
@@ -467,6 +479,15 @@ d3.json(crime_2014).then(function(c14){
                         result_homicide_16[time_homicide_16[i]] = 0;
                         ++result_homicide_16[time_homicide_16[i]];
                     }
+                    
+                    result_homicide_16["01"] = 0; result_homicide_16["02"] = 0; result_homicide_16["03"] = 0;
+                    result_homicide_16["04"] = 0; result_homicide_16["05"] = 0; result_homicide_16["06"] = 0;
+                    result_homicide_16["07"] = 0; result_homicide_16["08"] = 0; result_homicide_16["09"] = 0;
+                    result_homicide_16["10"] = 0; result_homicide_16["11"] = 0; result_homicide_16["12"] = 0;
+                    result_homicide_16["13"] = 0; result_homicide_16["14"] = 0; result_homicide_16["15"] = 0;
+                    result_homicide_16["16"] = 0; result_homicide_16["17"] = 0; result_homicide_16["18"] = 0;
+                    result_homicide_16["19"] = 0; result_homicide_16["20"] = 0; result_homicide_16["21"] = 0;
+                    result_homicide_16["22"] = 0; result_homicide_16["23"] = 0;
                   
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
@@ -503,7 +524,7 @@ d3.json(crime_2014).then(function(c14){
                         if(!result_auto_theft_16[time_auto_theft_16[i]])
                         result_auto_theft_16[time_auto_theft_16[i]] = 0;
                         ++result_auto_theft_16[time_auto_theft_16[i]];
-                    }
+                    };
                     
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_16=theft_other_16.map(t=>t.HOUR)
@@ -513,6 +534,9 @@ d3.json(crime_2014).then(function(c14){
                         result_theft_other_16[time_theft_other_16[i]] = 0;
                         ++result_theft_other_16[time_theft_other_16[i]];
                     }
+
+
+
 
                     //////////////////////////////////////////   2   0   1   7   ///////////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
@@ -594,8 +618,8 @@ d3.json(crime_2014).then(function(c14){
                     var result_theft_other_17 = {};
                     for(var i = 0; i < time_theft_other_17.length; ++i) {
                         if(!result_theft_other_17[time_theft_other_17[i]])
-                        result_theft_other_16[time_theft_other_17[i]] = 0;
-                        ++result_theft_other_16[time_theft_other_17[i]];
+                        result_theft_other_17[time_theft_other_17[i]] = 0;
+                        ++result_theft_other_17[time_theft_other_17[i]];
                     }
 
                     /////////////////////////////////////    2   0  1   8    //////////////////////////////////////////////////////////
@@ -772,7 +796,7 @@ d3.json(crime_2014).then(function(c14){
 
                     var theft_other_hour_16=Object.keys(result_theft_other_16);
                     var count_theft_other_16=Object.values(result_theft_other_16);
-
+                  
 
                     ///////////////////////////////////////  2   0   1   7   ///////////////////////////////////////////////////////////
                     var arson_hour_17=Object.keys(result_arson_17);
