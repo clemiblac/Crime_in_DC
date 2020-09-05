@@ -52,6 +52,14 @@ def news_scrape():
     results_json=results.to_json(orient='records')
     return results_json
 
+
+@app.route("/census")
+def census():
+    results=pd.read_sql('SELECT * FROM census',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+
 @app.route("/crime2010")
 def crime2010():
     results=pd.read_sql('SELECT * FROM crime2010',engine)
