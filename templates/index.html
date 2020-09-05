@@ -45,18 +45,15 @@
                 <a class="nav-item nav-link active" href="{{ url_for('home') }}"><h5>Home </h5><span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{{ url_for('machine') }}"><h5>Machine Learning</h5></a>
                 <a class="nav-item nav-link" href="{{ url_for('about') }}"><h5>About</h5></a>
-
-               
-                
               </div>
             </div>
-          </nav>
+        </nav>
 
- 
-        <div class="container">
+    
+        <div class="container-fluid">
             <!--First Row-->
             <div class="row">
-                <div class="col" id="empty-div" ><h6> </h6></div>
+                <div class="col" id="empty-div" ></div>
             </div>
             <!--End of First Row-->
             <!--Drop down-->
@@ -73,26 +70,31 @@
 
             <!-- Second Row-->
             <div class="row">
-                <div class="col" id="myMap" style="height:500px;"></div>
+                <div class="col-8">
+                    <h4>Map of Crime in Washington DC</h4>
+                    <div  id="myMap" style="height:800px;background-color: blue;"></div>
+                </div>
+                <div class="col-4" >
+                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
+                    <div id="hour" style="height:800px"></div>
+                </div>
+                
             </div>
             <!--End of Second Row -->
             <!--Third Row-->
             <div class="row">
                 <div id="time-series"></div>
                 <div id="news">
-                   
+                
                 </div>
             </div>
             <!--End of Third row-->
-            <!--Fourth Row-->
-            <div class="row">
-                <div id="hour"></div>
-                
-            </div>
+        
 
-         
+        
 
         </div>
+        
 
         
         <!--<script src="../static/js/config.js"></script>-->

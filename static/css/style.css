@@ -5,18 +5,35 @@
 
 .navbar-custom {
     background-color: #FEEB00;
-}
+};
+
 body{
     background-color:#E1E2DB;
-  
 };
 
-.nav .nav-item .nav-link {
-    color:red
-};
 
 p{
-    color:#000000
+    color:#000000;
+};
+
+.container {
+    clear:both;
+    max-width: 1540px;
+    margin-right: auto;
+    margin-left: 50px;
+  };
+
+
+
+#myMap{
+ 
+    width:95%;
+    height:800px;
+};
+
+#hour{
+    width:95%;
+    height:800px;
 };
 
 /*End of styles that affect all pages*/
