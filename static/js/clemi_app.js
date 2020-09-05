@@ -514,14 +514,178 @@ d3.json(crime_2014).then(function(c14){
                         ++result_theft_other_16[time_theft_other_16[i]];
                     }
 
-                    ////
+                    //////////////////////////////////////////   2   0   1   7   ///////////////////////////////////////////////
+                    ///\\\ ARSON by hour///\\\
+                    var time_arson_17=arson_17.map(t=>t.HOUR)
+                    var result_arson_17 = {};
+                    for(var i = 0; i < time_arson_17.length; ++i) {
+                        if(!result_arson_17[time_arson_17[i]])
+                        result_arson_17[time_arson_17[i]] = 0;
+                        ++result_arson_17[time_arson_17[i]];
+                    }
+
+      
+                    ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
+                    var time_assault_17=assault_weapon_17.map(t=>t.HOUR)
+                    var result_assault_17 = {};
+                    for(var i = 0; i < time_assault_17.length; ++i) {
+                        if(!result_assault_17[time_assault_17[i]])
+                        result_assault_17[time_assault_17[i]] = 0;
+                        ++result_assault_17[time_assault_17[i]];
+                    }
+      
+                    ///\\\ BURGLARY by hour///\\\
+                    var time_burglary_17=burglary_17.map(t=>t.HOUR)
+                    var result_burglary_17 = {};
+                    for(var i = 0; i < time_burglary_17.length; ++i) {
+                        if(!result_burglary_17[time_burglary_17[i]])
+                        result_burglary_17[time_burglary_17[i]] = 0;
+                        ++result_burglary_17[time_burglary_17[i]];
+                    }
+      
+                    ///\\\ HOMICIDE by hour///\\\
+                    var time_homicide_17=homicide_17.map(t=>t.HOUR)
+                    var result_homicide_17 = {};
+                    for(var i = 0; i < time_homicide_17.length; ++i) {
+                        if(!result_homicide_17[time_homicide_17[i]])
+                        result_homicide_17[time_homicide_17[i]] = 0;
+                        ++result_homicide_17[time_homicide_17[i]];
+                    }
+                        
+      
+                    ///\\\ MOTOR VEHICLE THEFT by hour///\\
+                    var time_vehicle_theft_17=vehicle_theft_17.map(t=>t.HOUR)
+                    var result_vehicle_theft_17 = {};
+                    for(var i = 0; i < time_vehicle_theft_17.length; ++i) {
+                        if(!result_vehicle_theft_17[time_vehicle_theft_17[i]])
+                        result_vehicle_theft_17[time_vehicle_theft_17[i]] = 0;
+                        ++result_vehicle_theft_17[time_vehicle_theft_17[i]];
+                    }
+      
+                    ///\\\ ROBBERY by hour///\\
+                    var time_robbery_17=robbery_17.map(t=>t.HOUR)
+                    var result_robbery_17 = {};
+                    for(var i = 0; i < time_robbery_17.length; ++i) {
+                        if(!result_robbery_17[time_robbery_17[i]])
+                        result_robbery_17[time_robbery_17[i]] = 0;
+                        ++result_robbery_17[time_robbery_17[i]];
+                    }
+      
+                    ///\\\ SEX ABUSE by hour///\\
+                    var time_sex_abuse_17=sex_abuse_17.map(t=>t.HOUR)
+                    var result_sex_abuse_17 = {};
+                    for(var i = 0; i < time_sex_abuse_17.length; ++i) {
+                        if(!result_sex_abuse_17[time_sex_abuse_17[i]])
+                        result_sex_abuse_17[time_sex_abuse_17[i]] = 0;
+                        ++result_sex_abuse_17[time_sex_abuse_17[i]];
+                    }
+      
+                    ///\\\ THEFT F/AUTO by hour///\\
+                    var time_auto_theft_17=auto_theft_17.map(t=>t.HOUR)
+                    var result_auto_theft_17 = {};
+                    for(var i = 0; i < time_auto_theft_17.length; ++i) {
+                        if(!result_auto_theft_17[time_auto_theft_17[i]])
+                        result_auto_theft_17[time_auto_theft_17[i]] = 0;
+                        ++result_auto_theft_17[time_auto_theft_17[i]];
+                    }
+                          
+                    ///\\\ THEFT OTHER by hour///\\
+                    var time_theft_other_17=theft_other_17.map(t=>t.HOUR)
+                    var result_theft_other_17 = {};
+                    for(var i = 0; i < time_theft_other_17.length; ++i) {
+                        if(!result_theft_other_17[time_theft_other_17[i]])
+                        result_theft_other_16[time_theft_other_17[i]] = 0;
+                        ++result_theft_other_16[time_theft_other_17[i]];
+                    }
+
+                    /////////////////////////////////////    2   0  1   8    //////////////////////////////////////////////////////////
+                    ///\\\ ARSON by hour///\\\
+                    var time_arson_18=arson_18.map(t=>t.HOUR)
+                    var result_arson_18 = {};
+                    for(var i = 0; i < time_arson_18.length; ++i) {
+                        if(!result_arson_18[time_arson_18[i]])
+                        result_arson_18[time_arson_18[i]] = 0;
+                        ++result_arson_18[time_arson_18[i]];
+                    }
+       
+                    ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
+                    var time_assault_18=assault_weapon_18.map(t=>t.HOUR)
+                    var result_assault_18 = {};
+                    for(var i = 0; i < time_assault_18.length; ++i) {
+                         if(!result_assault_18[time_assault_18[i]])
+                         result_assault_18[time_assault_18[i]] = 0;
+                         ++result_assault_18[time_assault_18[i]];
+                    }
+       
+                    ///\\\ BURGLARY by hour///\\\
+                    var time_burglary_18=burglary_18.map(t=>t.HOUR)
+                    var result_burglary_18 = {};
+                    for(var i = 0; i < time_burglary_18.length; ++i) {
+                        if(!result_burglary_18[time_burglary_18[i]])
+                        result_burglary_18[time_burglary_18[i]] = 0;
+                        ++result_burglary_18[time_burglary_18[i]];
+                    }
+       
+                    ///\\\ HOMICIDE by hour///\\\
+                    var time_homicide_18=homicide_18.map(t=>t.HOUR)
+                    var result_homicide_18 = {};
+                    for(var i = 0; i < time_homicide_18.length; ++i) {
+                        if(!result_homicide_18[time_homicide_18[i]])
+                        result_homicide_18[time_homicide_18[i]] = 0;
+                        ++result_homicide_18[time_homicide_18[i]];
+                    }
+                         
+                    ///\\\ MOTOR VEHICLE THEFT by hour///\\
+                    var time_vehicle_theft_18=vehicle_theft_18.map(t=>t.HOUR)
+                    var result_vehicle_theft_18 = {};
+                    for(var i = 0; i < time_vehicle_theft_18.length; ++i) {
+                        if(!result_vehicle_theft_18[time_vehicle_theft_18[i]])
+                        result_vehicle_theft_18[time_vehicle_theft_18[i]] = 0;
+                        ++result_vehicle_theft_18[time_vehicle_theft_18[i]];
+                    }
+       
+                    ///\\\ ROBBERY by hour///\\
+                    var time_robbery_18=robbery_18.map(t=>t.HOUR)
+                    var result_robbery_18 = {};
+                    for(var i = 0; i < time_robbery_18.length; ++i) {
+                        if(!result_robbery_18[time_robbery_18[i]])
+                        result_robbery_18[time_robbery_18[i]] = 0;
+                        ++result_robbery_18[time_robbery_18[i]];
+                    }
+       
+                    ///\\\ SEX ABUSE by hour///\\
+                    var time_sex_abuse_18=sex_abuse_18.map(t=>t.HOUR)
+                    var result_sex_abuse_18 = {};
+                    for(var i = 0; i < time_sex_abuse_18.length; ++i) {
+                        if(!result_sex_abuse_18[time_sex_abuse_18[i]])
+                        result_sex_abuse_18[time_sex_abuse_18[i]] = 0;
+                        ++result_sex_abuse_18[time_sex_abuse_18[i]];
+                    }
+       
+                    ///\\\ THEFT F/AUTO by hour///\\
+                    var time_auto_theft_18=auto_theft_18.map(t=>t.HOUR)
+                    var result_auto_theft_18 = {};
+                    for(var i = 0; i < time_auto_theft_18.length; ++i) {
+                        if(!result_auto_theft_18[time_auto_theft_18[i]])
+                        result_auto_theft_18[time_auto_theft_18[i]] = 0;
+                        ++result_auto_theft_18[time_auto_theft_18[i]];
+                    }
+                           
+                    ///\\\ THEFT OTHER by hour///\\
+                    var time_theft_other_18=theft_other_18.map(t=>t.HOUR)
+                    var result_theft_other_18 = {};
+                    for(var i = 0; i < time_theft_other_18.length; ++i) {
+                        if(!result_theft_other_18[time_theft_other_18[i]])
+                        result_theft_other_18[time_theft_other_18[i]] = 0;
+                        ++result_theft_other_18[time_theft_other_18[i]];
+                    }
 
 
-
-
-
-
-                    ///// Declaring plot variables 2014
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    /////////////////////////////////////      Declaring plot variables         ////////////////////////////////////
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    
+                    /////////////////////////////////////           2   0   1   4   ////////////////////////////////////////////////
                     var arson_hour_14=Object.keys(result_arson_14);
                     var count_arson_14=Object.values(result_arson_14);
 
@@ -551,7 +715,127 @@ d3.json(crime_2014).then(function(c14){
 
 
 
+                    ///////////////////////////////////////  2   0   1   5   ///////////////////////////////////////////////////////////
+                    var arson_hour_15=Object.keys(result_arson_15);
+                    var count_arson_15=Object.values(result_arson_15);
 
+                    var assault_hour_15=Object.keys(result_assault_15);
+                    var count_assault_15=Object.values(result_assault_15);
+
+                    var burglary_hour_15=Object.keys(result_burglary_15);
+                    var count_burglary_15=Object.values(result_burglary_15);
+
+                    var homicide_hour_15=Object.keys(result_homicide_15);
+                    var count_homicide_15=Object.values(result_homicide_15);
+
+                    var vehicle_theft_hour_15=Object.keys(result_vehicle_theft_15);
+                    var count_vehicle_theft_15=Object.values(result_vehicle_theft_15);
+
+                    var robbery_hour_15=Object.keys(result_robbery_15);
+                    var count_robbery_15=Object.values(result_robbery_15);
+
+                    var sex_abuse_hour_15=Object.keys(result_sex_abuse_15);
+                    var count_sex_abuse_15=Object.values(result_sex_abuse_15);
+
+                    var auto_theft_hour_15=Object.keys(result_auto_theft_15);
+                    var count_auto_theft_15=Object.values(result_auto_theft_15);
+
+                    var theft_other_hour_15=Object.keys(result_theft_other_15);
+                    var count_theft_other_15=Object.values(result_theft_other_15);
+
+
+                    
+                    ///////////////////////////////////////  2   0   1   6   ///////////////////////////////////////////////////////////
+                    var arson_hour_16=Object.keys(result_arson_16);
+                    var count_arson_16=Object.values(result_arson_16);
+
+                    var assault_hour_16=Object.keys(result_assault_16);
+                    var count_assault_16=Object.values(result_assault_16);
+
+                    var burglary_hour_16=Object.keys(result_burglary_16);
+                    var count_burglary_16=Object.values(result_burglary_16);
+
+                    var homicide_hour_16=Object.keys(result_homicide_16);
+                    var count_homicide_16=Object.values(result_homicide_16);
+
+                    var vehicle_theft_hour_16=Object.keys(result_vehicle_theft_16);
+                    var count_vehicle_theft_16=Object.values(result_vehicle_theft_16);
+
+                    var robbery_hour_16=Object.keys(result_robbery_16);
+                    var count_robbery_16=Object.values(result_robbery_16);
+
+                    var sex_abuse_hour_16=Object.keys(result_sex_abuse_16);
+                    var count_sex_abuse_16=Object.values(result_sex_abuse_16);
+
+                    var auto_theft_hour_16=Object.keys(result_auto_theft_16);
+                    var count_auto_theft_16=Object.values(result_auto_theft_16);
+
+                    var theft_other_hour_16=Object.keys(result_theft_other_16);
+                    var count_theft_other_16=Object.values(result_theft_other_16);
+
+
+                    ///////////////////////////////////////  2   0   1   7   ///////////////////////////////////////////////////////////
+                    var arson_hour_17=Object.keys(result_arson_17);
+                    var count_arson_17=Object.values(result_arson_17);
+
+                    var assault_hour_17=Object.keys(result_assault_17);
+                    var count_assault_17=Object.values(result_assault_17);
+
+                    var burglary_hour_17=Object.keys(result_burglary_17);
+                    var count_burglary_17=Object.values(result_burglary_17);
+
+                    var homicide_hour_17=Object.keys(result_homicide_17);
+                    var count_homicide_17=Object.values(result_homicide_17);
+
+                    var vehicle_theft_hour_17=Object.keys(result_vehicle_theft_17);
+                    var count_vehicle_theft_17=Object.values(result_vehicle_theft_17);
+
+                    var robbery_hour_17=Object.keys(result_robbery_17);
+                    var count_robbery_17=Object.values(result_robbery_17);
+
+                    var sex_abuse_hour_17=Object.keys(result_sex_abuse_17);
+                    var count_sex_abuse_17=Object.values(result_sex_abuse_17);
+
+                    var auto_theft_hour_17=Object.keys(result_auto_theft_17);
+                    var count_auto_theft_17=Object.values(result_auto_theft_17);
+
+                    var theft_other_hour_17=Object.keys(result_theft_other_17);
+                    var count_theft_other_17=Object.values(result_theft_other_17);
+
+                    
+                    ///////////////////////////////////////  2   0   1   8   ///////////////////////////////////////////////////////////
+                    var arson_hour_18=Object.keys(result_arson_18);
+                    var count_arson_18=Object.values(result_arson_18);
+
+                    var assault_hour_18=Object.keys(result_assault_18);
+                    var count_assault_18=Object.values(result_assault_18);
+
+                    var burglary_hour_18=Object.keys(result_burglary_18);
+                    var count_burglary_18=Object.values(result_burglary_18);
+
+                    var homicide_hour_18=Object.keys(result_homicide_18);
+                    var count_homicide_18=Object.values(result_homicide_18);
+
+                    var vehicle_theft_hour_18=Object.keys(result_vehicle_theft_18);
+                    var count_vehicle_theft_18=Object.values(result_vehicle_theft_18);
+
+                    var robbery_hour_18=Object.keys(result_robbery_18);
+                    var count_robbery_18=Object.values(result_robbery_18);
+
+                    var sex_abuse_hour_18=Object.keys(result_sex_abuse_18);
+                    var count_sex_abuse_18=Object.values(result_sex_abuse_18);
+
+                    var auto_theft_hour_18=Object.keys(result_auto_theft_18);
+                    var count_auto_theft_18=Object.values(result_auto_theft_18);
+
+                    var theft_other_hour_18=Object.keys(result_theft_other_18);
+                    var count_theft_other_18=Object.values(result_theft_other_18);
+
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    ////////////////////////////////////    P l o t t i n g   G r a p h s  ////////////////////////////////////
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                    ///////////////////////////////////////  2   0   1   4   /////////////////////////////////////////////////
                     var arson14 = {
                         type: 'bar',
                         x: arson_hour_14,
@@ -658,8 +942,121 @@ d3.json(crime_2014).then(function(c14){
                     
                     };
 
+                    //////////////////////////////////////////////////   2     0     1      5      ////////////////////////////////////
+                    var arson15 = {
+                        type: 'bar',
+                        x: arson_hour_15,
+                        y: count_arson_15,
+                        xaxis: 'x1',
+                        yaxis: 'y1',
+                        marker:{color:'#ff00d2'},
+                        showlegend: false,
+                        visible:false
+                    };
+                    
+                    var assault15 = {
+                        type: 'bar',
+                        x: assault_hour_15,
+                        y: count_assault_15,
+                        xaxis: 'x2',
+                        yaxis: 'y2',
+                        marker:{color:'#c41130'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var burglary15 = {
+                        type: 'bar',
+                        x: burglary_hour_15,
+                        y: count_burglary_15,
+                        xaxis: 'x3',
+                        yaxis: 'y3',
+                        marker:{color:'#ffc107'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var homicide15 = {
+                        type: 'bar',
+                        x: homicide_hour_15,
+                        y: count_homicide_15,
+                        xaxis: 'x4',
+                        yaxis: 'y4',
+                        marker:{color:'#999966'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var vehicle_theft15 = {
+                        type: 'bar',
+                        x: vehicle_theft_hour_15,
+                        y: count_vehicle_theft_15,
+                        xaxis: 'x5',
+                        yaxis: 'y5',
+                        marker:{color:'#339933'},
+                        showlegend: false,
+                        visible:false
+                    };
+
+                    var robbery15 = {
+                        type: 'bar',
+                        x: robbery_hour_15,
+                        y: count_robbery_15,
+                        xaxis: 'x6',
+                        yaxis: 'y6',
+                        marker:{color:'#dc3545'},
+                        showlegend: false,
+                        visible:false
+                        
+                    };
+
+                    var sex_abuse15 = {
+                        type: 'bar',
+                        x: sex_abuse_hour_15,
+                        y: count_sex_abuse_15,
+                        xaxis: 'x7',
+                        yaxis: 'y7',
+                        marker:{color:'#600600'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var auto_theft15 = {
+                        type: 'bar',
+                        x: auto_theft_hour_15,
+                        y: count_auto_theft_15,
+                        xaxis: 'x8',
+                        yaxis: 'y8',
+                        marker:{color:'#212529'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
+
+                    var theft_other15 = {
+                        type: 'bar',
+                        x: theft_other_hour_15,
+                        y: count_theft_other_15,
+                        xaxis: 'x9',
+                        yaxis: 'y9',
+                        marker:{color:'#cc9966'},
+                        showlegend: false,
+                        visible:false
+                    
+                    };
 
 
+
+
+
+
+
+
+                    ///////////////////////////////////////
                     
                     var trace3 = {
                         type: 'bar',
@@ -702,6 +1099,7 @@ d3.json(crime_2014).then(function(c14){
             
 
                     var data = [arson14, assault14, burglary14, homicide14,vehicle_theft14,robbery14,sex_abuse14,auto_theft14,theft_other14,
+                                arson15, assault15, burglary15, homicide15,vehicle_theft15,robbery15,sex_abuse15,auto_theft15,theft_other15,
                                 trace3, trace4, trace5,trace6];
 
                     
@@ -709,13 +1107,13 @@ d3.json(crime_2014).then(function(c14){
                         buttons: [   
                             {
                                 args: [{visible: [true,true,true,true,true,true,true,true,true,
-                                                false,false,false,false]}],
+                                                false,false,false,false,false,false,false,false,false]}],
                                 label: '2014 ',
                                 method: 'update'
                             },
                             {
                                 args: [{visible: [false,false,false,false,false,false,false,false,false,
-                                                true,true,true,true]}],
+                                                true,true,true,true,true,true,true,true,true]}],
                                 label:'2015',
                                 method:'update'
                             
