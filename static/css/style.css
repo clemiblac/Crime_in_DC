@@ -3,52 +3,67 @@
 
 /*Navigation bar*/
 
-.navbar-custom {
-    background-color: #FEEB00;
-};
+.navbar-custom {background-color: #FEEB00;}
 
-body{
-    background-color:#E1E2DB;
-};
+body {background-color:#E1E2DB;}
+
+p{color:#000000;}
 
 
-p{
-    color:#000000;
-};
 
 
 /*End of styles that affect all pages*/
 
 /* Home page graphs*/
-#myMap{
- 
-    width:95%;
-    height:800px;
-};
+#hour1{
+    border-style: solid;
+    border-color:red;
+    height: 400px;
+}
 
-#hour{
-    width:95%;
-    height:800px;
-};
-#heatmap{
-    width: 95%;
-};
+#heatmap1 {
+    border-style: solid;
+    border-color:black;
+    height: 400px;
+}
 
-#news{
-    background-color: coral
-};
 /* Beginning of Card on about page */
 #card-group{
     display: flex;
-};
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-};
+}
 
 #invisible-card{
     border: none;
     
-};
+}
 
 /* End of cards on about page */
+
+
+/*Home page media query*/
+
+@media screen and (min-width: 1140px) {
+    .tablet{
+        display:none;
+    }
+
+    
+ }
+
+/* Hide desktop class if screen width is 800px or less */
+@media screen and (max-width: 1000px){
+    .dsktop{
+        display:none;
+        
+    }
+
+
+}   
+
+
+
+
