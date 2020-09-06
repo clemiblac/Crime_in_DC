@@ -672,6 +672,15 @@ d3.json(crime_2014).then(function(c14){
                         result_homicide_18[time_homicide_18[i]] = 0;
                         ++result_homicide_18[time_homicide_18[i]];
                     }
+
+                    result_homicide_18["01"] = 0; result_homicide_18["02"] = 0; result_homicide_18["03"] = 0;
+                    result_homicide_18["04"] = 0; result_homicide_18["05"] = 0; result_homicide_18["06"] = 0;
+                    result_homicide_18["07"] = 0; result_homicide_18["08"] = 0; result_homicide_18["09"] = 0;
+                    result_homicide_18["10"] = 0; result_homicide_18["11"] = 0; result_homicide_18["12"] = 0;
+                    result_homicide_18["13"] = 0; result_homicide_18["14"] = 0; result_homicide_18["15"] = 0;
+                    result_homicide_18["16"] = 0; result_homicide_18["17"] = 0; result_homicide_18["18"] = 0;
+                    result_homicide_18["19"] = 0; result_homicide_18["20"] = 0; result_homicide_18["21"] = 0;
+                    result_homicide_18["22"] = 0; result_homicide_18["23"] = 0;
                          
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_18=vehicle_theft_18.map(t=>t.HOUR)
@@ -1651,7 +1660,8 @@ d3.json(crime_2014).then(function(c14){
                     };
             
            
-                    Plotly.newPlot('hour', data, layout);
+                    Plotly.newPlot('hour1', data, layout);
+                    Plotly.newPlot('hour2', data, layout);
 
                 });
 
