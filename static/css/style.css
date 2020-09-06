@@ -47,6 +47,7 @@ p{color:#000000;}
 
 }
 
+/*   Home page Tablet view */
 #myMap2{
     border-style: solid;
     border-color:red;
@@ -78,7 +79,38 @@ p{color:#000000;}
 
 }
 
+/* Home page phone view */
+#myMap3{
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+}
 
+#hour3{
+    border-style: solid;
+    border-color:green;
+    height: 840px;
+}
+
+#heatmap3 {
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+}
+
+#timeseries3 {
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+}
+
+#news3 {
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+
+}
+/* End of Home page Views*/
 
 
 /* Beginning of Card on about page */
@@ -99,22 +131,37 @@ p{color:#000000;}
 
 
 /*Home page media query*/
-/*Hide tablet if screen os 1140px or more*/
-@media screen and (min-width: 1140px) {
+
+/* Media Query for Mobile Devices */ 
+@media (max-width: 480px) { 
     .tablet{
         display:none;
     }
-    
- }
-
-/* Hide desktop class if screen width is 1140px or less */
-@media screen and (max-width: 1140px){
     .dsktop{
-        display:none;
-        
+        display:none; 
     }
-}   
+} 
+  
+/* Media Query for Tablets, Ipads */ 
+@media (min-width: 481px) and (max-width: 1024px) { 
+    .dsktop{
+        display:none; 
+    }
+    .phone{
+        display:none;  
+    }
+} 
+  
 
-
-
+  
+/* Media Query for Laptops and Desktops */ 
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    .tablet{
+        display:none;
+    }
+    .phone{
+        display:none;  
+    }
+} 
+  
 
