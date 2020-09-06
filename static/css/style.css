@@ -16,15 +16,10 @@ p{
     color:#000000;
 };
 
-.container {
-    clear:both;
-    max-width: 1540px;
-    margin-right: auto;
-    margin-left: 50px;
-  };
 
+/*End of styles that affect all pages*/
 
-
+/* Home page graphs*/
 #myMap{
  
     width:95%;
@@ -35,10 +30,13 @@ p{
     width:95%;
     height:800px;
 };
+#heatmap{
+    width: 95%;
+};
 
-/*End of styles that affect all pages*/
-
-
+#news{
+    background-color: coral
+};
 /* Beginning of Card on about page */
 #card-group{
     display: flex;
