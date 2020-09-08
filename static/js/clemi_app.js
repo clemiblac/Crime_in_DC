@@ -16,7 +16,7 @@ d3.json(crime_2014).then(function(c14){
 
 
                     //console.log(c14);
-                    //console.log(c18);
+                    console.log(c18);
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     ////////////           Creating new object with just date and offense type         ///////////////////////////
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -548,6 +548,11 @@ d3.json(crime_2014).then(function(c14){
                         ++result_arson_17[time_arson_17[i]];
                     }
 
+                    result_arson_17["00"] = 0; result_arson_17["01"] = 0; result_arson_17["17"] = 0; result_arson_17["18"] = 0;
+                    result_arson_17["19"] = 0; result_arson_17["20"] = 0; result_arson_17["21"] = 0; result_arson_17["22"] = 0;
+                    result_arson_17["23"] = 0;
+
+                    
       
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_17=assault_weapon_17.map(t=>t.HOUR)
@@ -575,7 +580,16 @@ d3.json(crime_2014).then(function(c14){
                         result_homicide_17[time_homicide_17[i]] = 0;
                         ++result_homicide_17[time_homicide_17[i]];
                     }
-                        
+                    
+
+                    result_homicide_17["01"] = 0; result_homicide_17["02"] = 0; result_homicide_17["03"] = 0;
+                    result_homicide_17["04"] = 0; result_homicide_17["05"] = 0; result_homicide_17["06"] = 0;
+                    result_homicide_17["07"] = 0; result_homicide_17["08"] = 0; result_homicide_17["09"] = 0;
+                    result_homicide_17["10"] = 0; result_homicide_17["11"] = 0; result_homicide_17["12"] = 0;
+                    result_homicide_17["13"] = 0; result_homicide_17["14"] = 0; result_homicide_17["15"] = 0;
+                    result_homicide_17["16"] = 0; result_homicide_17["17"] = 0; result_homicide_17["18"] = 0;
+                    result_homicide_17["19"] = 0; result_homicide_17["20"] = 0; result_homicide_17["21"] = 0;
+                    result_homicide_17["22"] = 0; result_homicide_17["23"] = 0;
       
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_17=vehicle_theft_17.map(t=>t.HOUR)
@@ -658,6 +672,15 @@ d3.json(crime_2014).then(function(c14){
                         result_homicide_18[time_homicide_18[i]] = 0;
                         ++result_homicide_18[time_homicide_18[i]];
                     }
+
+                    result_homicide_18["01"] = 0; result_homicide_18["02"] = 0; result_homicide_18["03"] = 0;
+                    result_homicide_18["04"] = 0; result_homicide_18["05"] = 0; result_homicide_18["06"] = 0;
+                    result_homicide_18["07"] = 0; result_homicide_18["08"] = 0; result_homicide_18["09"] = 0;
+                    result_homicide_18["10"] = 0; result_homicide_18["11"] = 0; result_homicide_18["12"] = 0;
+                    result_homicide_18["13"] = 0; result_homicide_18["14"] = 0; result_homicide_18["15"] = 0;
+                    result_homicide_18["16"] = 0; result_homicide_18["17"] = 0; result_homicide_18["18"] = 0;
+                    result_homicide_18["19"] = 0; result_homicide_18["20"] = 0; result_homicide_18["21"] = 0;
+                    result_homicide_18["22"] = 0; result_homicide_18["23"] = 0;
                          
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_18=vehicle_theft_18.map(t=>t.HOUR)
@@ -1474,10 +1497,13 @@ d3.json(crime_2014).then(function(c14){
                         pad: {'r': 10, 't': 10},
                         showactive: true,
                         type: 'buttons',
-                        x: 0.15,
-                        xanchor: 'left',
+                        x: 1,
+                        xanchor: 'right',
                         y: 1.1,
-                        yanchor: 'top' 
+                        yanchor: 'top',
+                        active: 0,
+                        bgcolor: "#00FFFF"
+                        //font: {color: '#5072a8'} 
                     }];
 
 
@@ -1532,13 +1558,14 @@ d3.json(crime_2014).then(function(c14){
                         //yaxis: {title:"count of incidents",automargin: true,},
                         //yaxis2:{title:"Total", automargin:true},
                     
+                    
                         annotations: [
                             {
                                 text: "Arson",
                                 font: {size: 16, color: 'black'},
                                 showarrow: false,
                                 align: 'center',
-                                x: 0.2,
+                                x: 0.9,
                                 y: 1,
                                 xref: 'paper',
                                 yref: 'paper'
@@ -1548,7 +1575,7 @@ d3.json(crime_2014).then(function(c14){
                                 font: {size: 16,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
-                                x: 0.13,
+                                x: 0.3,
                                 y: 0.89,
                                 xref: 'paper',
                                 yref: 'paper'
@@ -1596,8 +1623,8 @@ d3.json(crime_2014).then(function(c14){
                                 font: {size: 16,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
-                                x: 0.13,
-                                y: 0.28,
+                                x: 0.2,
+                                y: 0.29,
                                 xref: 'paper',
                                 yref: 'paper'
                             }, {
@@ -1623,10 +1650,8 @@ d3.json(crime_2014).then(function(c14){
 
                         grid: {rows: 9, columns: 1, pattern: 'independent'},
                         autosize: true,
-                        width: 450,
-                        height: 1000,
                         margin: {
-                            l: 100,
+                            l: 50,
                             r: 50,
                             b: 50,
                             t: 50,
@@ -1635,7 +1660,9 @@ d3.json(crime_2014).then(function(c14){
                     };
             
            
-                    Plotly.newPlot('hour', data, layout);
+                    Plotly.newPlot('hour1', data, layout);
+                    Plotly.newPlot('hour2', data, layout);
+                    Plotly.newPlot('hour3', data, layout);
 
                 });
 

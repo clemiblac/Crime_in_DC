@@ -3,34 +3,216 @@
 
 /*Navigation bar*/
 
-.navbar-custom {
-    background-color: #61892F;
-}
-body{
-    background-color:#222629;
-    color:white
-};
+.navbar-custom {background-color: #FEEB00;}
 
-.navbar-brand .navbar-text{
-    color:#e85a4f;
-};
-p{color:white}
+body {background-color:#E1E2DB;}
+
+p{color:#000000;}
+
+
 
 /*End of styles that affect all pages*/
+
+/* Home page graphs Desktop*/
+#empty-div{height:20px}
+
+#myMap1{
+    margin-bottom:20px;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#hour1{
+    margin-bottom:20px;
+    height: 855px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#heatmap1 {
+    margin-bottom:20px;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#timeseries1 {
+    margin-bottom:20px;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#news1 {
+    margin-bottom:20px;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+/*   Home page Tablet view */
+#myMap2{
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:red;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#hour2{
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:red;
+    height: 840px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#heatmap2 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:red;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#timeseries2 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:red;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#news2 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:red;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+/* Home page phone view */
+#myMap3{
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#hour3{
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:green;
+    height: 840px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#heatmap3 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#timeseries3 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#news3 {
+    margin-bottom:20px;
+    border-style: solid;
+    border-color:green;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+/* End of Home page Views*/
 
 
 /* Beginning of Card on about page */
 #card-group{
     display: flex;
-};
+}
+
+.card-deck{
+    margin-top: 30px;
+
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-};
+}
 
 #invisible-card{
-    border: none;
-    
-};
+    background-color:#E1E2DB;
+   
+}
+.noshadow{
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+#sources{
+    height: 200px;
+    background-color: white;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* End of cards on about page */
+
+
+/*Home page media query*/
+
+/* Media Query for Mobile Devices */ 
+@media (max-width: 480px) { 
+    .tablet{
+        display:none;
+    }
+    .dsktop{
+        display:none; 
+    }
+} 
+  
+/* Media Query for Tablets, Ipads */ 
+@media (min-width: 481px) and (max-width: 1024px) { 
+    .dsktop{
+        display:none; 
+    }
+    .phone{
+        display:none;  
+    }
+} 
+  
+
+  
+/* Media Query for Laptops and Desktops */ 
+@media (min-width: 1025px) and (max-width: 2560px){ 
+    .tablet{
+        display:none;
+    }
+    .phone{
+        display:none;  
+    }
+} 
+  
+
