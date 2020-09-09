@@ -11,6 +11,12 @@
     color:black;
     padding-left:5px;
 }
+#logo{
+    margin-top: 0px;
+    padding-top:0px;
+    width:50px;
+    height:50pxs;
+}
 
 body {background-color:#E1E2DB;
     font-family: Helvetica;
@@ -100,14 +106,20 @@ p{
 
 /*   Home page Tablet view */
 #myMap2{
+    height: 600px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-bottom:20px;
     border-style: solid;
     border-color:red;
-    height: 400px;
-    background-color:#FFFFFF;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+} 
+#tablet-selector{
+    padding-top:20px;
+    padding-bottom:20px;
 }
-
+#tablet-checkbox{
+    padding-bottom:50px
+}
 #hour2{
     margin-bottom:20px;
     border-style: solid;
