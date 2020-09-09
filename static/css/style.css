@@ -18,24 +18,39 @@ p{color:#000000;}
 
 #myMap1{
     margin-bottom:20px;
-    height: 400px;
+    height: 600px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+#news1 {
+    margin-bottom:20px;
+    height: 600px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
+}
+#usertip1{
+    font-size: small;
+    font-style: italic;
+    margin-top:30px;
+}
 #hour1{
     margin-bottom:20px;
     height: 855px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+#rhythmtext1{
+    font-size: smaller;
+    font-style: italic;
+}
 #heatmap1 {
     margin-bottom:20px;
     height: 400px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 #timeseries1 {
     margin-bottom:20px;
@@ -44,7 +59,15 @@ p{color:#000000;}
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#news1 {
+
+#monthlyCrime1{
+    margin-bottom:20px;
+    height: 400px;
+    background-color:#FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+#yearlyCrime1{
     margin-bottom:20px;
     height: 400px;
     background-color:#FFFFFF;

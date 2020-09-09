@@ -67,18 +67,6 @@
             </div>
             <!--End of First Row-->
 
-            <!--Drop down-->
-            <!--<div class="row">
-                <select name="countries" id="selectCountry">
-                    <option value="USA">United States</option>
-                    <option value="China">China</option>
-                    <option value="Russia">Russia</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Morocco">Morroco</option>
-                </select>
-            </div> -->
-            <!--End of dropdown-->
-
             <!-- Second Row-->
             <div class="row">
 
@@ -88,9 +76,13 @@
                             <h4>Map of Crime in Washington DC</h4>
                             <div class="col-12">
                                 <div id="myMap1"></div>
+                            
                             </div>
                         </div>
                         <div class="col-3">
+                           <p id="usertip1"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
+                                interest and click the submit button to see the resulting map and news articles.
+                            </p>
                             <h4>Select Year</h4>
                             <select name="year" id="selectYear">
                                 <option value="2010">2010</option>
@@ -144,9 +136,43 @@
                             <input type="checkbox" id="pri-school" name="prischool" value="Boat">
                             <label for="prischool"> Private Schools</label><br>
                             <button class ="button text-center" id ="submit">Submit Selections</button>
+
+                            
                         </div>
                     </div>
+                    
+                </div>
+                <div class="col-4">
+                    <h4>Latest Washington D.C. Crime News</h4>
+                    <div id="news1"></div>
+                </div>
+                
+            </div>
 
+            <!--End of Second Row-->
+
+
+
+
+            <!--Third Row-->
+            <div class="row">
+                <div class="col-4">
+                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
+                    <p id ="rhythmtext1">(Select one of the blue buttons to view the rhythm of crime for that year)</p>
+                    <div id="hour1"></div>
+
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
+                            <div id="monthlyCrime1"></div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
+                            <div  id="yearlyCrime1"></div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-6">
                             <h4> Heatmap of Offenses by Ward</h4>
@@ -156,29 +182,13 @@
                             <h4> Change in Crime over Time</h4>
                             <div  id="timeseries1"></div>
                         </div>
+
                     </div>
+                    
                 </div>
 
-                <div class="col-4" >
-                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
-                    <div id="hour1"></div>
-                </div>
-                
             </div>
-            <!--End of Second Row -->
-            <!--Third Row-->
-            <div class="row" >
-                <div class="col-12">
-                    <h4>Latest Washington D.C. Crime News</h4>
-                    <div id="news1">
-                </div>
-                
-            </div>
-           
             <!--End of Third row-->
-        
-
-            </div>
         </div>
         
 
@@ -291,9 +301,9 @@
 
 
         
-        <script src="../static/js/config.js"></script>
-        <!-- <script src="../static/js/clemi_app.js"></script> -->
-        <script src="../static/js/chris_app.js"></script>
+        <!--<script src="../static/js/config.js"></script>-->
+        <script src="../static/js/clemi_app.js"></script>
+        <!--<script src="../static/js/chris_app.js"></script>-->
         <!--<script src="../static/js/clemi_app2.js"></script>-->
         
         
