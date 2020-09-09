@@ -23,13 +23,20 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
+        <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js">
+        </script>
+        <!-- Icons-->
+        <script src="https://kit.fontawesome.com/ec86bdd85f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+        <link rel="stylesheet" href="static/css/leaflet.awesome-markers.css">
+        <script src="static/js/leaflet.awesome-markers.js"></script>
 
-        <!-- CSS FILE-->
+        <!-- CSS FILE--> 
         <link rel="stylesheet" href="../static/css/style.css">
         
 
         <title>Crime in DC Home</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../static/steal.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../static/crime.jpg">
       
        
        
@@ -38,7 +45,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <a class="navbar-brand" href="#">
-                <img src="../static/steal.png" alt="logo icon" width='50' height='50'><h4 class ="navbar-text">Crime in Washington, D.C.</h4>
+                <img src="../static/crime.jpg" alt="logo icon" id=logo><h4 class ="navbar-text" id="name">Crime in Washington, D.C.</h4>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -60,31 +67,119 @@
             </div>
             <!--End of First Row-->
 
-            <!--Drop down-->
-            <!--<div class="row">
-                <select name="countries" id="selectCountry">
-                    <option value="USA">United States</option>
-                    <option value="China">China</option>
-                    <option value="Russia">Russia</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Morocco">Morroco</option>
-                </select>
-            </div> -->
-            <!--End of dropdown-->
-
             <!-- Second Row-->
             <div class="row">
 
                 <div class="col-8">
                     <div class="row" >
-                        <div class="col-12">
+                        <div class="col-9">
                             <h4>Map of Crime in Washington DC</h4>
                             <div class="col-12">
                                 <div id="myMap1"></div>
+                                <p id="mapdescription1"><strong> Map Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-3">
+                           <p id="usertip1"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
+                                interest and click the submit button to see the resulting map and news articles.
+                            </p>
+                            <h4>Select Year</h4>
+                            <select name="year" id="selectYear">
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                            </select>
+                            <hr>
+                            <h4>Select Month</h4>
+                            <select name="month" id="selectMonth">
+                                <option value="/01/">January</option>
+                                <option value="/02/">February</option>
+                                <option value="/03/">March</option>
+                                <option value="/04/">April</option>
+                                <option value="/05/">May</option>
+                                <option value="/06/">June</option>
+                                <option value="/07/">July</option>
+                                <option value="/08/">August</option>
+                                <option value="/09/">September</option>
+                                <option value="/10/">October</option>
+                                <option value="/11/">November</option>
+                                <option value="/12/">December</option>
+                            </select>
+                            <hr>
+                            <h4>Select Crime Type</h4>
+                            <select name="crimetype" id="selectCrime">
+                                <option value="ARSON">Arson</option>
+                                <option value="ASSAULT W/DANGEROUS WEAPON">Assault</option>
+                                <option value="BURGLARY">Burglary</option>
+                                <option value="HOMICIDE">Homicide</option>
+                                <option value="ROBBERY">Robbery</option>
+                                <option value="SEX ABUSE">Sex Abuse</option>
+                                <option value="THEFT F/AUTO">Theft, Auto</option>
+                                <option value="MOTOR VEHICLE THEFT">Theft, Vehicle</option>
+                                <option value="THEFT/OTHER">Theft, Other</option>
+                            </select>
+                            <hr>
+                            <h4>Select Infrastructure</h4>
+                            <input type="checkbox" id="police" name="police" value="Bike">
+                            <label for="police"> Police Stations</label><br>
+                            <input type="checkbox" id="grocery" name="grocery" value="Car">
+                            <label for="grocery"> Grocery Stores</label><br>
+                            <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
+                            <label for="pubschool"> Public Schools</label><br>
+                            <input type="checkbox" id="pri-school" name="prischool" value="Boat">
+                            <label for="prischool"> Private Schools</label><br>
+                            <button class ="button text-center" id ="submit">Submit Selections</button>
 
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-4">
+                    <h4>Latest Washington D.C. Crime News</h4>
+                    <div id="news1"></div>
+                    <p id="newsdescription1"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                
+            </div>
+
+            <!--End of Second Row-->
+
+
+
+
+            <!--Third Row-->
+            <div class="row">
+                <div class="col-4">
+                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
+                    <p id ="rhythmtext1">(Select one of the blue buttons to view the daily rhythm of crime for that year)</p>
+                    <div id="hour1"></div>
+
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
+                            <div id="monthlyCrime1"></div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
+                            <div  id="yearlyCrime1"></div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-6">
                             <h4> Heatmap of Offenses by Ward</h4>
@@ -94,78 +189,173 @@
                             <h4> Change in Crime over Time</h4>
                             <div  id="timeseries1"></div>
                         </div>
+
                     </div>
+                    
                 </div>
 
-                <div class="col-4" >
-                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
-                    <div id="hour1"></div>
-                </div>
-                
             </div>
-            <!--End of Second Row -->
-            <!--Third Row-->
-            <div class="row" >
-                <div class="col-12">
-                    <h4>Latest Washington D.C. Crime News</h4>
-                    <div id="news1">
-                </div>
-                
-            </div>
-           
             <!--End of Third row-->
-        
-
-            </div>
         </div>
         
 
         <!--Tablets-->
 
         <div class="container-fluid tablet">
+
             <!--First Row-->
-            <div class="row">
-                <div class="col-12">
-                    <h4>Map of Crime in Washington DC</h4>
-                    <div class="col-12" id="myMap2"></div>
+            <div class="row" id="tablet-selector">
+                
+                <div class="col-4">
+                    <h4>Select Year</h4>
+                    <select name="year" id="selectYear">
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                    </select>
                 </div>
+
+                <div class="col-4">
+                    <h4>Select Month</h4>
+                    <select name="month" id="selectMonth">
+                        <option value="/01/">January</option>
+                        <option value="/02/">February</option>
+                        <option value="/03/">March</option>
+                        <option value="/04/">April</option>
+                        <option value="/05/">May</option>
+                        <option value="/06/">June</option>
+                        <option value="/07/">July</option>
+                        <option value="/08/">August</option>
+                        <option value="/09/">September</option>
+                        <option value="/10/">October</option>
+                        <option value="/11/">November</option>
+                        <option value="/12/">December</option>
+                    </select>
+                </div>
+                
+                <div class="col-4" >
+                    <h4>Select Crime Type</h4>
+                    <select name="crimetype" id="selectCrime">
+                        <option value="ARSON">Arson</option>
+                        <option value="ASSAULT W/DANGEROUS WEAPON">Assault</option>
+                        <option value="BURGLARY">Burglary</option>
+                        <option value="HOMICIDE">Homicide</option>
+                        <option value="ROBBERY">Robbery</option>
+                        <option value="SEX ABUSE">Sex Abuse</option>
+                        <option value="THEFT F/AUTO">Theft, Auto</option>
+                        <option value="MOTOR VEHICLE THEFT">Theft, Vehicle</option>
+                        <option value="THEFT/OTHER">Theft, Other</option>
+                    </select>
+                </div>
+
             </div>
             <!--End of First Row-->
+
             <!--Second Row-->
+
             <div class="row">
-                <!--Row 2 column 1-->
-                <div class="col-6">
-                    <!--Column1 Row 1-->
-                    <div class="row">
-                        <div class="col-12">
-                            <h4> Heatmap of Offenses by Ward</h4>
-                            <div id="heatmap2"></div>
-                        </div>
-                    </div>
-                    <!--Coumn1 Row 2-->
-                    <div class="row">
-                        <div class="col-12">
-                            <h4> Change in Crime over Time</h4>
-                            <div  id="timeseries2"></div>
-                        </div>
-                    </div>
+                <div class="col-9">
+                    <h4>Map of Crime in Washington DC</h4>
+                        <div id="myMap2"></div>
+                        
                 </div>
-                <!-- Row 2 Column 2-->
-                <div class="col-6">
-                    <h5>Daily Rhythm of Crime in Washington, D.C.</h5>
-                    <div id="hour2"></div>
+
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Select Infrastructure</h4>
+                            <input type="checkbox" id="police" name="police" value="Bike">
+                            <label for="police"> Police Stations</label><br>
+                            <input type="checkbox" id="grocery" name="grocery" value="Car">
+                            <label for="grocery"> Grocery Stores</label><br>
+                            <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
+                            <label for="pubschool"> Public Schools</label><br>
+                            <input type="checkbox" id="pri-school" name="prischool" value="Boat">
+                            <label for="prischool"> Private Schools</label><br>
+                            <button class ="button text-center" id ="submit">Submit Selections</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="usertip2"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
+                                interest and click the submit button to see the resulting map and news articles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="mapdescription2"><strong> Map Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            
             <!--End of Second Row-->
 
             <!--Row 3-->
             <div class="row">
                 <div class="col-12">
                     <h4>Latest Washington D.C. Crime News</h4>
+
                     <div id="news2"></div>
+                    <p id="newsdescription2"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </div>
             </div>
             <!--End of Third row-->
+
+            <!--Forth Row-->
+            <div class="row">
+                <div class="col-6">
+                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
+                    <p id ="rhythmtext2">(Select one of the blue buttons to view the daily rhythm of crime for that year)</p>
+                    <div id="hour2"></div>
+
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
+                            <div id="monthlyCrime2"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
+                            <div  id="yearlyCrime2"></div>
+                        </div>
+                    </div>
+
+                </div>
+                    
+
+            </div>
+
+          
+            <div class="row">
+                <div class="col-6">
+                    <h4> Heatmap of Offenses by Ward</h4>
+                    <div id="heatmap2"></div>
+                </div>
+                <div class="col-6">
+                    <h4> Change in Crime over Time</h4>
+                    <div  id="timeseries2"></div>
+                </div>
+
+            </div>
 
         </div>
 
@@ -229,8 +419,9 @@
 
 
         
-        <!--<script src="../static/js/config.js"></script>-->
-        <script src="../static/js/clemi_app.js"></script>
+        <script src="../static/js/config.js"></script>
+        <!-- <script src="../static/js/clemi_app.js"></script> -->
+        <script src="../static/js/chris_app.js"></script>
         <!--<script src="../static/js/clemi_app2.js"></script>-->
         
         
@@ -254,8 +445,12 @@
     <footer class="footer navbar-fixed-bottom">
         <div class="two-toned-footer-color"></div>
         <p class="text-muted text-muted-footer text-center">
+            <!--Steal png-->
             Icons made by <a href="https://www.flaticon.com/authors/pongsakornred" title="pongsakornRed">pongsakornRed</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
             <br><br>
+
+            <!-- Crime png-->
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </p>
     </footer>
     <!--End of footer-->    
