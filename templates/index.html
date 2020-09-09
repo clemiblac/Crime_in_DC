@@ -76,7 +76,7 @@
                             <h4>Map of Crime in Washington DC</h4>
                             <div class="col-12">
                                 <div id="myMap1"></div>
-                                <p id="mapdescription1"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                <p id="mapdescription1"><strong> Map Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
@@ -148,7 +148,7 @@
                 <div class="col-4">
                     <h4>Latest Washington D.C. Crime News</h4>
                     <div id="news1"></div>
-                    <p id="newsdescription1"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    <p id="newsdescription1"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
@@ -267,9 +267,9 @@
                         
                 </div>
 
-                <div class="col-3" id="tablet-checkbox">
+                <div class="col-3">
                     <div class="row">
-                        <div>
+                        <div class="col-12">
                             <h4>Select Infrastructure</h4>
                             <input type="checkbox" id="police" name="police" value="Bike">
                             <label for="police"> Police Stations</label><br>
@@ -282,58 +282,80 @@
                             <button class ="button text-center" id ="submit">Submit Selections</button>
                         </div>
                     </div>
-
-                </div>
-
-                 <p id="usertip2"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
-                    interest and click the submit button to see the resulting map and news articles.
-                </p>
-               
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p id="mapdescription2"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </div>
-            <!--End of First Row-->
-            <!--Second Row-->
-            <div class="row">
-                <!--Row 2 column 1-->
-                <div class="col-6">
-                    <!--Column1 Row 1-->
                     <div class="row">
                         <div class="col-12">
-                            <h4> Heatmap of Offenses by Ward</h4>
-                            <div id="heatmap2"></div>
+                            <p id="usertip2"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
+                                interest and click the submit button to see the resulting map and news articles.
+                            </p>
                         </div>
                     </div>
-                    <!--Coumn1 Row 2-->
                     <div class="row">
                         <div class="col-12">
-                            <h4> Change in Crime over Time</h4>
-                            <div  id="timeseries2"></div>
+                            <p id="mapdescription2"><strong> Map Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <!-- Row 2 Column 2-->
-                <div class="col-6">
-                    <h5>Daily Rhythm of Crime in Washington, D.C.</h5>
-                    <div id="hour2"></div>
+
                 </div>
             </div>
+            
             <!--End of Second Row-->
 
             <!--Row 3-->
             <div class="row">
                 <div class="col-12">
                     <h4>Latest Washington D.C. Crime News</h4>
+
                     <div id="news2"></div>
+                    <p id="newsdescription2"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </div>
             </div>
             <!--End of Third row-->
+
+            <!--Forth Row-->
+            <div class="row">
+                <div class="col-6">
+                    <h4>Daily Rhythm of Crime in Washington, D.C.</h4>
+                    <p id ="rhythmtext2">(Select one of the blue buttons to view the daily rhythm of crime for that year)</p>
+                    <div id="hour2"></div>
+
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
+                            <div id="monthlyCrime2"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
+                            <div  id="yearlyCrime2"></div>
+                        </div>
+                    </div>
+
+                </div>
+                    
+
+            </div>
+
+          
+            <div class="row">
+                <div class="col-6">
+                    <h4> Heatmap of Offenses by Ward</h4>
+                    <div id="heatmap2"></div>
+                </div>
+                <div class="col-6">
+                    <h4> Change in Crime over Time</h4>
+                    <div  id="timeseries2"></div>
+                </div>
+
+            </div>
 
         </div>
 
