@@ -120,6 +120,30 @@ def crime2019():
     results_json=results.to_json(orient='records')
     return results_json
 
+@app.route("/police")
+def police():
+    results=pd.read_sql('SELECT * FROM dc_police',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/grocery")
+def grocery():
+    results=pd.read_sql('SELECT * FROM dc_grocery',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/pubschool")
+def pubschool():
+    results=pd.read_sql('SELECT * FROM dc_pub_schools',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
+@app.route("/prischool")
+def prischool():
+    results=pd.read_sql('SELECT * FROM dc_pri_schools',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+
 
 if __name__ == "__main__":
     app.run(debug=True)
