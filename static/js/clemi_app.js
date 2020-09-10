@@ -891,7 +891,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y1',
                         marker:{color:'#ff00d2'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text: count_arson_14.map(String),
+                        //textposition: 'auto'
                     };
                     
                     var assault14 = {
@@ -902,7 +904,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y2',
                         marker:{color:'#c41130'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_assault_14.map(String),
+                        //textposition: 'outside'
                         
                     };
 
@@ -914,7 +918,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y3',
                         marker:{color:'#ffc107'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_burglary_14.map(String),
+                        //textposition: 'auto'
                         
                     };
 
@@ -926,7 +932,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y4',
                         marker:{color:'#999966'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_homicide_14.map(String),
+                        //textposition: 'auto'
                         
                     };
 
@@ -938,7 +946,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y5',
                         marker:{color:'#339933'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_vehicle_theft_14.map(String),
+                        //textposition: 'auto'
                     };
 
                     var robbery14 = {
@@ -949,7 +959,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y6',
                         marker:{color:'#dc3545'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_robbery_14.map(String),
+                        //textposition: 'auto'
                         
                     };
 
@@ -961,7 +973,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y7',
                         marker:{color:'#600600'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_sex_abuse_14.map(String),
+                        //textposition: 'auto'
                     
                     };
 
@@ -973,7 +987,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y8',
                         marker:{color:'#212529'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_auto_theft_14.map(String),
+                        //textposition: 'auto'
                     
                     };
 
@@ -985,7 +1001,9 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y9',
                         marker:{color:'#cc9966'},
                         showlegend: false,
-                        visible:true
+                        visible:true,
+                        //text:count_theft_other_14.map(String),
+                        //textposition: 'auto'
                     
                     };
 
@@ -1660,10 +1678,10 @@ d3.json(crime_2014).then(function(c14){
                     };
             
            
-                    Plotly.newPlot('hour1', data, layout);
-                    Plotly.newPlot('hour2', data, layout);
-                    Plotly.newPlot('hour3', data, layout);
-
+                    Plotly.newPlot('hour1', data, layout,{responsive: true});
+                    Plotly.newPlot('hour2', data, layout,{responsive: true});
+                    Plotly.newPlot('hour3', data, layout,{responsive: true});
+                   
                 });
 
             });

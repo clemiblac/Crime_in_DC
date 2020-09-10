@@ -195,9 +195,9 @@ d3.json(c_2014).then(function(c14){
                       };
                       
                       
-                      Plotly.newPlot('sunburst1', data, layout);
-                      Plotly.newPlot('sunburst2', data, layout);
-                      Plotly.newPlot('sunburst3', data, layout);
+                      Plotly.newPlot('sunburst1', data, layout,{responsive: true});
+                      Plotly.newPlot('sunburst2', data, layout,{responsive: true});
+                      Plotly.newPlot('sunburst3', data, layout,{responsive: true});
 
 
 
