@@ -36,7 +36,7 @@
         
 
         <title>Crime in DC Home</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../static/crime.jpg">
+        <link rel="shortcut icon" type="image/x-icon" href="../static/steal.png">
       
        
        
@@ -45,7 +45,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <a class="navbar-brand" href="#">
-                <img src="../static/crime.jpg" alt="logo icon" id=logo><h4 class ="navbar-text" id="name">Crime in Washington, D.C.</h4>
+                <img src="../static/steal.png" alt="logo icon" id=logo><h4 class ="navbar-text" id="name">Crime in Washington, D.C.</h4>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -172,21 +172,21 @@
                 <div class="col-8">
                     <div class="row">
                         <div class="col-6">
-                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
-                            <div id="monthlyCrime1"></div>
+                            <h4> The fine print</h4>
+                            <div id="explanation1"></div>
                         </div>
                         <div class="col-6">
-                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
-                            <div  id="yearlyCrime1"></div>
+                            <h4> Unemployment to total crime per year</h4>
+                            <div  id="unemployment-crime1"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <h4> Heatmap of Offenses by Ward</h4>
-                            <div id="heatmap1"></div>
+                            <h4> Sunburst for crime by year</h4>
+                            <div id="sunburst1"></div>
                         </div>
                         <div class="col-6">
-                            <h4> Change in Crime over Time</h4>
+                            <h4>Annual change in crime over time</h4>
                             <div  id="timeseries1"></div>
                         </div>
 
@@ -328,14 +328,14 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-12">
-                            <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
-                            <div id="monthlyCrime2"></div>
+                            <h4>The fine print</h4>
+                            <div id="explanation2"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
-                            <div  id="yearlyCrime2"></div>
+                            <h4> Unemployment to total crime per year</h4>
+                            <div  id="unemployment-crime1"></div>
                         </div>
                     </div>
 
@@ -349,8 +349,8 @@
           
             <div class="row">
                 <div class="col-6">
-                    <h4> Heatmap of Offenses by Ward</h4>
-                    <div id="heatmap2"></div>
+                    <h4> Sunburst for crime by year</h4>
+                    <div id="sunburst2"></div>
                 </div>
                 <div class="col-6">
                     <h4> Change in Crime over Time</h4>
@@ -428,7 +428,7 @@
                 </div>
             </div> 
             <div class="row">
-                <div class="row">
+               
                     <div class="col-12" id="phone-checkbox">
                         <h4>Select Infrastructure</h4>
                         <input type="checkbox" id="police" name="police" value="Bike">
@@ -441,12 +441,11 @@
                         <label for="prischool"> Private Schools</label><br>
                         <button class ="button text-center" id ="submit">Submit Selections</button>
                     </div>
-                </div>
+                
             </div>
             <!--End of Selector Rows-->
 
             <!--Map Row-->
-
             <div class="row">
                 <div class="col-12">
                     <h4>Map of Crime in Washington DC</h4>
@@ -482,18 +481,18 @@
             </div>
             <!--End Hour graph row-->
 
-            <!-- Monthly Crime Row-->
+            <!-- Explantion Crime Row-->
             <div class="row">
                 <div class="col-12">
-                    <h4> Monthly Rhythm of Crime in Washington, D.C.</h4>
-                    <div id="monthlyCrime3"></div>
+                    <h4>The fine print</h4>
+                    <div id="explanation3"></div>
                 </div>
             </div>
             <!-- End monthly crime row-->
             <!-- Annual crime row-->
             <div class="row">
                 <div class="col-12">
-                    <h4>Annual Rhythm of Crime in Washington, D.C.</h4>
+                    <h4>Change in Crime by Year Washington, D.C.</h4>
                     <div  id="yearlyCrime3"></div>
                 </div>
             </div>
@@ -503,8 +502,8 @@
             <!--Heat map Row-->
             <div class="row">
                 <div class="col-12">
-                    <h4> Heatmap of Offenses by Ward</h4>
-                    <div id="heatmap3"></div>
+                    <h4> Sunburst for crime by year</h4>
+                    <div id="sunburst3"></div>
                 </div>
             </div>
             <!-- End heat map row-->
@@ -522,9 +521,9 @@
 
 
         
-        <script src="../static/js/config.js"></script>
-        <!-- <script src="../static/js/clemi_app.js"></script> -->
-        <script src="../static/js/chris_app.js"></script>
+        <!--<script src="../static/js/config.js"></script>-->
+        <script src="../static/js/clemi_app.js"></script>
+        <!--<script src="../static/js/chris_app.js"></script>-->
         <!--<script src="../static/js/clemi_app2.js"></script>-->
         
         
@@ -551,9 +550,6 @@
             <!--Steal png-->
             Icons made by <a href="https://www.flaticon.com/authors/pongsakornred" title="pongsakornRed">pongsakornRed</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
             <br><br>
-
-            <!-- Crime png-->
-            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </p>
     </footer>
     <!--End of footer-->    
