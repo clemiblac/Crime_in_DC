@@ -310,6 +310,31 @@ p{
 /* End of cards on about page */
 
 
+/* Page 2 */
+  
+#filter-btn {
+    height: 50px;
+    width: 100px;
+    top: 0; 
+    left: 60%; 
+    transform: translateX(50%);
+    margin-bottom: 50px;
+}
+
+  
+  
+#result{
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+#mtitle{
+    margin-top: 10px;
+}
+
+
 /*Home page media query*/
 
 /* Media Query for Mobile Devices */ 

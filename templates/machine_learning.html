@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         
         <a class="navbar-brand" href="#">
-          <img src="../static/steal.png" width='50' height='50'><h4 class ="navbar-text">Crime in Washington, D.C.</h4></a>
+          <img src="../static/steal.png" width='50' height='50'><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3></a>
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,98 @@
         </div>
       </nav>
 
-      <div class="container"></div>
+      <div class="container">
+        <div class="row">
+          <h3 id="mtitle">Machine Learning</h3>
+        
+        </div>
+        <!-- Selector row-->
+
+        <div class="row">
+          <div class="col-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a ward (1-8)</label>
+                        <input class="form-control" id="time" type="text" placeholder="1">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+             
+          </div>
+          <div class="col-4">
+                
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a time</label>
+                        <input class="form-control" id="time" type="text" placeholder="21:00">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+             
+              
+          </div>
+
+          <div class="col-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a date</label>
+                        <input class="form-control" id="date" type="text" placeholder="2014/01/31">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!--End Selector Row-->
+
+        <!--Start button Row-->
+        <div class="row">
+          <div class="col-4"></div>
+
+          <div class="col-4">
+            <button type="button" id="filter-btn" class="btn btn-primary">Submit</button>
+          </div>
+
+          <div class="col-4"></div>
+          
+        </div>
+        <!--End button Row-->
+
+        <!--Result-->
+        <div class="row">
+          <h4>Prediction</h4>
+          <div class="col-12" id="result">
+
+          </div>
+        </div>
+
+        <!--End result div-->
+
+        
+
+      </div>
  
         
         <!-- Optional JavaScript -->
