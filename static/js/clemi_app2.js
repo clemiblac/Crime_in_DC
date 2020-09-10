@@ -120,6 +120,16 @@ d3.json(c_2014).then(function(c14){
                     var total_2017=offense_by_time_17.length
                     //console.log(total_2017)
 
+                    var arson_17=offense_by_time_17.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_17=offense_by_time_17.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_17=offense_by_time_17.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_17=offense_by_time_17.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_17=offense_by_time_17.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_17=offense_by_time_17.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_17=offense_by_time_17.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_17=offense_by_time_17.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_17=offense_by_time_17.filter(c=>c.OFFENSE=='THEFT/OTHER').length
+
                     ///////////////////////                 2018                     //////////////////////////////
                     offense_by_time_18=[];
                     
@@ -134,9 +144,16 @@ d3.json(c_2014).then(function(c14){
 
                     var total_2018=offense_by_time_18.length
                     //console.log(total_2018)
-        
-
-
+                    
+                    var arson_18=offense_by_time_18.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_18=offense_by_time_18.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_18=offense_by_time_18.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_18=offense_by_time_18.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_18=offense_by_time_18.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_18=offense_by_time_18.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_18=offense_by_time_18.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_18=offense_by_time_18.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_18=offense_by_time_18.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
 
 
@@ -148,24 +165,33 @@ d3.json(c_2014).then(function(c14){
                         labels: [
                             "2014","2015","2016","2017","2018",//parent labels
                             "ARSON14","ASSAULT W/DANGEROUS WEAPON14","BURGLARY14","HOMICIDE14","MOTOR VEHICLE THEFT14","ROBBERY14","SEX ABUSE14", "THEFT F/AUTO14","THEFT/OTHER14",
-                            "ARSON15","ASSAULT W/DANGEROUS WEAPON15","BURGLARY15","HOMICIDE15","MOTOR VEHICLE THEFT15","ROBBERY15","SEX ABUSE15", "THEFT F/AUTO15","THEFT/OTHER15"
+                            "ARSON15","ASSAULT W/DANGEROUS WEAPON15","BURGLARY15","HOMICIDE15","MOTOR VEHICLE THEFT15","ROBBERY15","SEX ABUSE15", "THEFT F/AUTO15","THEFT/OTHER15",
+                            "ARSON16","ASSAULT W/DANGEROUS WEAPON16","BURGLARY16","HOMICIDE16","MOTOR VEHICLE THEFT16","ROBBERY16","SEX ABUSE16", "THEFT F/AUTO16","THEFT/OTHER16",
+                            "ARSON17","ASSAULT W/DANGEROUS WEAPON17","BURGLARY17","HOMICIDE17","MOTOR VEHICLE THEFT17","ROBBERY17","SEX ABUSE17", "THEFT F/AUTO17","THEFT/OTHER17",
+                            "ARSON18","ASSAULT W/DANGEROUS WEAPON18","BURGLARY18","HOMICIDE18","MOTOR VEHICLE THEFT18","ROBBERY18","SEX ABUSE18", "THEFT F/AUTO18","THEFT/OTHER18"
                         ],
                         parents: [
                             "","","","","",
                             "2014","2014","2014","2014","2014","2014","2014","2014","2014",
-                            "2015","2015","2015","2015","2015","2015","2015","2015","2015"
+                            "2015","2015","2015","2015","2015","2015","2015","2015","2015",
+                            "2016","2016","2016","2016","2016","2016","2016","2016","2016",
+                            "2017","2017","2017","2017","2017","2017","2017","2017","2017",
+                            "2018","2018","2018","2018","2018","2018","2018","2018","2018"
                         ],
                         values:  [total_2014,total_2015,total_2016,total_2017,total_2018,//parent values(inner circle)
-                                    arson_14,assault_weapon_14,burglary_14,homicide_14,vehicle_theft_14,robbery_14,sex_abuse_14,auto_theft_14,theft_other_14,//2014 offenses
-                                    arson_15,assault_weapon_15,burglary_15,homicide_15,vehicle_theft_15,robbery_15,sex_abuse_15,auto_theft_15,theft_other_15// 2015 offenses
+                                    arson_14,assault_weapon_14,burglary_14,homicide_14,vehicle_theft_14,robbery_14,sex_abuse_14,auto_theft_14,theft_other_14, // 2014 offenses values
+                                    arson_15,assault_weapon_15,burglary_15,homicide_15,vehicle_theft_15,robbery_15,sex_abuse_15,auto_theft_15,theft_other_15, // 2015 offenses values
+                                    arson_16,assault_weapon_16,burglary_16,homicide_16,vehicle_theft_16,robbery_16,sex_abuse_16,auto_theft_16,theft_other_16, // 2016 offenses values
+                                    arson_17,assault_weapon_17,burglary_17,homicide_17,vehicle_theft_17,robbery_17,sex_abuse_17,auto_theft_17,theft_other_17, // 2017 offenses  values
+                                    arson_18,assault_weapon_18,burglary_18,homicide_18,vehicle_theft_18,robbery_18,sex_abuse_18,auto_theft_18,theft_other_18  // 2018 offenses  values
                                 ],
                         outsidetextfont: {size: 20, color: "#377eb8"},
-                        leaf: {opacity: 0.4},
-                        marker: {line: {width: 2}},
+                        leaf: {opacity: 0.6},
+                        marker: {line: {width: 4}},
                       }];
                       
                       var layout = {
-                        margin: {l: 0, r: 0, b: 0, t: 0},
+                        margin: {l: 0, r: 0, b: 10, t: 10},
                       };
                       
                       
