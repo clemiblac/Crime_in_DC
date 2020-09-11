@@ -258,74 +258,139 @@ d3.json(crime_2014).then(function(c14){
                     
                     ///\\\ ARSON by hour///\\\
                     var time_arson_14=arson_14.map(t=>t.HOUR)
-                    var result_arson_14_o = {};
+                    var result_arson_14_unsorted = {};
                     for(var i = 0; i < time_arson_14.length; ++i) {
-                        if(!result_arson_14_o[time_arson_14[i]])
-                        result_arson_14_o[time_arson_14[i]] = 0;
-                        ++result_arson_14_o[time_arson_14[i]];
+                        if(!result_arson_14_unsorted[time_arson_14[i]])
+                        result_arson_14_unsorted[time_arson_14[i]] = 0;
+                        ++result_arson_14_unsorted[time_arson_14[i]];
                     }
-                    result_arson_14_o["00"] = 0;
-                    result_arson_14_o["02"] = 0;
-                    result_arson_14_o["10"] = 0;
-                    result_arson_14_o["13"] = 0;
-                    result_arson_14_o["15"] = 0;
-                    result_arson_14_o["21"] = 0;
-                    result_arson_14_o["22"] = 0;
-                    result_arson_14_o["23"] = 0;
-                    console.log("Arson baby")
-                    console.log(result_arson_14_o)
+                    result_arson_14_unsorted["00"] = 0;
+                    result_arson_14_unsorted["02"] = 0;
+                    result_arson_14_unsorted["10"] = 0;
+                    result_arson_14_unsorted["13"] = 0;
+                    result_arson_14_unsorted["15"] = 0;
+                    result_arson_14_unsorted["21"] = 0;
+                    result_arson_14_unsorted["22"] = 0;
+                    result_arson_14_unsorted["23"] = 0;
+                  
+                    //console.log(result_arson_14_unsorted)
 
-                    const rep_ = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    const replace_time1_arson_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
                                             '07':'7', '08':'8', '09':'9'
                                             };
 
-                    let replacedItems0 = Object.keys(result_arson_14_o).map((key) => {
-                        const newKey = replacements0[key] || key;
-                        return { [newKey] : result_arson_14_o[key] };
+                    let repItems_arson14t = Object.keys(result_arson_14_unsorted).map((key) => {
+                        const newKey = replace_time1_arson_14[key] || key;
+                        return { [newKey] : result_arson_14_unsorted[key] };
                         });
-                    const result_arson_14_t = replacedItems0.reduce((a, b) => Object.assign({}, a, b));
+                    const result_arson_14_t = repItems_arson14t.reduce((a, b) => Object.assign({}, a, b));
                     
-                    console.log(result_arson_14_t)
+                    //console.log(result_arson_14_t)
                   
-                     let result_arson_14_sorted = sortObj(result_arson_14_t);
-                     console.log("sorted")
-                    console.log(result_arson_14_sorted);
+                    let result_arson_14_sorted = sortObj(result_arson_14_t);
+                    //console.log("sorted")
+                    //console.log(result_arson_14_sorted);
 
 
-                    const replacements1 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                    const reptime_arson14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
                                             '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
                                             '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
                                             '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
 
 
 
-                    let replacedItems1 = Object.keys(result_arson_14_sorted).map((key) => {
-                    const newKey = replacements1[key] || key;
+                    let repItems_arson14 = Object.keys(result_arson_14_sorted).map((key) => {
+                    const newKey = reptime_arson14[key] || key;
                     return { [newKey] : result_arson_14_sorted[key] };
                     });
-                    const result_arson_14 = replacedItems1.reduce((a, b) => Object.assign({}, a, b));
-                    console.log("new");
-                    console.log(result_arson_14);
+                    const result_arson_14 = repItems_arson14.reduce((a, b) => Object.assign({}, a, b));
+                    //console.log("new");
+                    //console.log(result_arson_14);
 
 
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_14=assault_weapon_14.map(t=>t.HOUR)
-                    var result_assault_14 = {};
+                    var result_assault_14_unsorted = {};
                     for(var i = 0; i < time_assault_14.length; ++i) {
-                        if(!result_assault_14[time_assault_14[i]])
-                        result_assault_14[time_assault_14[i]] = 0;
-                        ++result_assault_14[time_assault_14[i]];
+                        if(!result_assault_14_unsorted[time_assault_14[i]])
+                        result_assault_14_unsorted[time_assault_14[i]] = 0;
+                        ++result_assault_14_unsorted[time_assault_14[i]];
                     }
+
+                    const replace_time1_assault_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_assault14t = Object.keys(result_assault_14_unsorted).map((key) => {
+                        const newKey = replace_time1_assault_14[key] || key;
+                        return { [newKey] : result_assault_14_unsorted[key] };
+                        });
+                    const result_assault_14_t = repItems_assault14t.reduce((a, b) => Object.assign({}, a, b));
+                    
+                    console.log(result_assault_14_t)
+                  
+                    let result_assault_14_sorted = sortObj(result_assault_14_t);
+                    console.log("sorted")
+                    console.log(result_assault_14_sorted);
+
+
+                    const reptime_assault14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_assault14 = Object.keys(result_assault_14_sorted).map((key) => {
+                    const newKey = reptime_assault14[key] || key;
+                    return { [newKey] : result_assault_14_sorted[key] };
+                    });
+                    const result_assault_14 = repItems_assault14.reduce((a, b) => Object.assign({}, a, b));
+                    console.log("new");
+                    console.log(result_assault_14);
+                   
+
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_14=burglary_14.map(t=>t.HOUR)
-                    var result_burglary_14 = {};
+                    var result_burglary_14_unsorted = {};
                     for(var i = 0; i < time_burglary_14.length; ++i) {
-                        if(!result_burglary_14[time_burglary_14[i]])
-                        result_burglary_14[time_burglary_14[i]] = 0;
-                        ++result_burglary_14[time_burglary_14[i]];
+                        if(!result_burglary_14_unsorted[time_burglary_14[i]])
+                        result_burglary_14_unsorted[time_burglary_14[i]] = 0;
+                        ++result_burglary_14_unsorted[time_burglary_14[i]];
                     }
+
+                    const replace_time1_burglary_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_burglary14t = Object.keys(result_burglary_14_unsorted).map((key) => {
+                        const newKey = replace_time1_burglary_14[key] || key;
+                        return { [newKey] : result_burglary_14_unsorted[key] };
+                        });
+                    const result_burglary_14_t = repItems_burglary14t.reduce((a, b) => Object.assign({}, a, b));
+                    
+                    console.log(result_burglary_14_t)
+                  
+                    let result_burglary_14_sorted = sortObj(result_burglary_14_t);
+                   ;
+
+
+                    const reptime_burglary14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_burglary14 = Object.keys(result_burglary_14_sorted).map((key) => {
+                    const newKey = reptime_burglary14[key] || key;
+                    return { [newKey] : result_burglary_14_sorted[key] };
+                    });
+                    const result_burglary_14 = repItems_burglary14.reduce((a, b) => Object.assign({}, a, b));
+                
+
 
                     ///\\\ HOMICIDE by hour///\\\
                     var time_homicide_14=homicide_14.map(t=>t.HOUR)
@@ -396,22 +461,89 @@ d3.json(crime_2014).then(function(c14){
                     ////////////////////////////////////////////   2   0   1   5    ///////////////////////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
                     var time_arson_15=arson_15.map(t=>t.HOUR)
-                    var result_arson_15 = {};
+                    var result_arson_15_unsorted = {};
                     for(var i = 0; i < time_arson_15.length; ++i) {
-                        if(!result_arson_15[time_arson_15[i]])
-                        result_arson_15[time_arson_15[i]] = 0;
-                        ++result_arson_15[time_arson_15[i]];
+                        if(!result_arson_15_unsorted[time_arson_15[i]])
+                        result_arson_15_unsorted[time_arson_15[i]] = 0;
+                        ++result_arson_15_unsorted[time_arson_15[i]];
                     }
-                    result_arson_15["23"] = 0;
+                    result_arson_15_unsorted["23"] = 0;
+                    result_arson_15_unsorted["01"] = 0;
+                    result_arson_15_unsorted["02"] = 0;
+                    result_arson_15_unsorted["04"] = 0;
+                    result_arson_15_unsorted["08"] = 0;
+                    result_arson_15_unsorted["09"] = 0;
+                    result_arson_15_unsorted["11"] = 0;
+                    result_arson_15_unsorted["13"] = 0;
+                    result_arson_15_unsorted["15"] = 0;
+                    result_arson_15_unsorted["16"] = 0;
+                    result_arson_15_unsorted["17"] = 0;
+                    result_arson_15_unsorted["18"] = 0;
+
+                    const replace_time1_arson_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_arson15t = Object.keys(result_arson_15_unsorted).map((key) => {
+                    const newKey = replace_time1_arson_15[key] || key;
+                    return { [newKey] : result_arson_15_unsorted[key] };
+                    });
+                    const result_arson_15_t = repItems_arson15t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_arson_15_sorted = sortObj(result_arson_15_t);
+
+
+                    const reptime_arson15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_arson15 = Object.keys(result_arson_15_sorted).map((key) => {
+                    const newKey = reptime_arson15[key] || key;
+                    return { [newKey] : result_arson_15_sorted[key] };
+                    });
+                    const result_arson_15 = repItems_arson15.reduce((a, b) => Object.assign({}, a, b));
+
+
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_15=assault_weapon_15.map(t=>t.HOUR)
-                    var result_assault_15 = {};
+                    var result_assault_15_unsorted = {};
                     for(var i = 0; i < time_assault_15.length; ++i) {
-                        if(!result_assault_15[time_assault_15[i]])
-                        result_assault_15[time_assault_15[i]] = 0;
-                        ++result_assault_15[time_assault_15[i]];
+                        if(!result_assault_15_unsorted[time_assault_15[i]])
+                        result_assault_15_unsorted[time_assault_15[i]] = 0;
+                        ++result_assault_15_unsorted[time_assault_15[i]];
                     }
+
+                    const replace_time1_assault_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_assault15t = Object.keys(result_assault_15_unsorted).map((key) => {
+                    const newKey = replace_time1_assault_15[key] || key;
+                    return { [newKey] : result_assault_15_unsorted[key] };
+                    });
+                    const result_assault_15_t = repItems_assault15t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_assault_15_sorted = sortObj(result_assault_15_t);
+
+
+                    const reptime_assault15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_assault15 = Object.keys(result_assault_15_sorted).map((key) => {
+                    const newKey = reptime_assault15[key] || key;
+                    return { [newKey] : result_assault_15_sorted[key] };
+                    });
+                    const result_assault_15 = repItems_assault15.reduce((a, b) => Object.assign({}, a, b));
+                   
+
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_15=burglary_15.map(t=>t.HOUR)
@@ -489,25 +621,81 @@ d3.json(crime_2014).then(function(c14){
                     ///////////////////////////////////////////////////    2   0   1   6   ///////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
                     var time_arson_16=arson_16.map(t=>t.HOUR)
-                    var result_arson_16 = {};
+                    var result_arson_16_unsorted = {};
                     for(var i = 0; i < time_arson_16.length; ++i) {
-                        if(!result_arson_16[time_arson_16[i]])
-                        result_arson_16[time_arson_16[i]] = 0;
-                        ++result_arson_16[time_arson_16[i]];
+                        if(!result_arson_16_unsorted[time_arson_16[i]])
+                        result_arson_16_unsorted[time_arson_16[i]] = 0;
+                        ++result_arson_16_unsorted[time_arson_16[i]];
                     }
-                    result_arson_16["00"] = 0; result_arson_16["01"] = 0; result_arson_16["03"] = 0; result_arson_16["04"] = 0;
-                    result_arson_16["05"] = 0; result_arson_16["06"] = 0; result_arson_16["07"] = 0; result_arson_16["08"] = 0;
-                    result_arson_16["09"] = 0; result_arson_16["20"] = 0; result_arson_16["21"] = 0; result_arson_16["22"] = 0;
-                    result_arson_16["23"] = 0;
+                    result_arson_16_unsorted["00"] = 0; result_arson_16_unsorted["01"] = 0; result_arson_16_unsorted["02"] = 0; 
+                    result_arson_16_unsorted["03"] = 0; result_arson_16_unsorted["04"] = 0; result_arson_16_unsorted["05"] = 0; 
+                    result_arson_16_unsorted["06"] = 0; result_arson_16_unsorted["07"] = 0; result_arson_16_unsorted["08"] = 0;
+                    result_arson_16_unsorted["09"] = 0; result_arson_16_unsorted["11"] = 0; result_arson_16_unsorted["12"] = 0;
+                    result_arson_16_unsorted["13"] = 0; result_arson_16_unsorted["15"] = 0; result_arson_16_unsorted["16"] = 0;
+                    result_arson_16_unsorted["17"] = 0; result_arson_16_unsorted["20"] = 0; result_arson_16_unsorted["21"] = 0;
+                    result_arson_16_unsorted["22"] = 0; result_arson_16_unsorted["23"] = 0;
+
+                    const replace_time1_arson_16 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_arson16t = Object.keys(result_arson_16_unsorted).map((key) => {
+                    const newKey = replace_time1_arson_16[key] || key;
+                    return { [newKey] : result_arson_16_unsorted[key] };
+                    });
+                    const result_arson_16_t = repItems_arson16t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_arson_16_sorted = sortObj(result_arson_16_t);
+
+
+                    const reptime_arson16 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_arson16 = Object.keys(result_arson_16_sorted).map((key) => {
+                    const newKey = reptime_arson16[key] || key;
+                    return { [newKey] : result_arson_16_sorted[key] };
+                    });
+                    const result_arson_16 = repItems_arson16.reduce((a, b) => Object.assign({}, a, b));
+
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_16=assault_weapon_16.map(t=>t.HOUR)
-                    var result_assault_16 = {};
+                    var result_assault_16_unsorted = {};
                     for(var i = 0; i < time_assault_16.length; ++i) {
-                        if(!result_assault_16[time_assault_16[i]])
-                        result_assault_16[time_assault_16[i]] = 0;
-                        ++result_assault_16[time_assault_16[i]];
+                        if(!result_assault_16_unsorted[time_assault_16[i]])
+                        result_assault_16_unsorted[time_assault_16[i]] = 0;
+                        ++result_assault_16_unsorted[time_assault_16[i]];
                     }
+
+                    const replace_time1_assault_16 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_assault16t = Object.keys(result_assault_16_unsorted).map((key) => {
+                    const newKey = replace_time1_assault_16[key] || key;
+                    return { [newKey] : result_assault_16_unsorted[key] };
+                    });
+                    const result_assault_16_t = repItems_assault16t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_assault_16_sorted = sortObj(result_assault_16_t);
+
+
+                    const reptime_assault16 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+                    let repItems_assault16 = Object.keys(result_assault_16_sorted).map((key) => {
+                    const newKey = reptime_assault16[key] || key;
+                    return { [newKey] : result_assault_16_sorted[key] };
+                    });
+                    const result_assault_16 = repItems_assault16.reduce((a, b) => Object.assign({}, a, b));
+
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_16=burglary_16.map(t=>t.HOUR)
@@ -588,27 +776,81 @@ d3.json(crime_2014).then(function(c14){
                     //////////////////////////////////////////   2   0   1   7   ///////////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
                     var time_arson_17=arson_17.map(t=>t.HOUR)
-                    var result_arson_17 = {};
+                    var result_arson_17_unsorted = {};
                     for(var i = 0; i < time_arson_17.length; ++i) {
-                        if(!result_arson_17[time_arson_17[i]])
-                        result_arson_17[time_arson_17[i]] = 0;
-                        ++result_arson_17[time_arson_17[i]];
+                        if(!result_arson_17_unsorted[time_arson_17[i]])
+                        result_arson_17_unsorted[time_arson_17[i]] = 0;
+                        ++result_arson_17_unsorted[time_arson_17[i]];
                     }
 
-                    result_arson_17["00"] = 0; result_arson_17["01"] = 0; result_arson_17["17"] = 0; result_arson_17["18"] = 0;
-                    result_arson_17["19"] = 0; result_arson_17["20"] = 0; result_arson_17["21"] = 0; result_arson_17["22"] = 0;
-                    result_arson_17["23"] = 0;
+                    result_arson_17_unsorted["00"] = 0; result_arson_17_unsorted["01"] = 0; result_arson_17_unsorted["03"] = 0; 
+                    result_arson_17_unsorted["04"] = 0; result_arson_17_unsorted["05"] = 0; result_arson_17_unsorted["06"] = 0;
+                    result_arson_17_unsorted["08"] = 0; result_arson_17_unsorted["09"] = 0; result_arson_17_unsorted["10"] = 0; 
+                    result_arson_17_unsorted["12"] = 0; result_arson_17_unsorted["13"] = 0; result_arson_17_unsorted["14"] = 0;
+                    result_arson_17_unsorted["17"] = 0; result_arson_17_unsorted["18"] = 0; result_arson_17_unsorted["19"] = 0;
+                    result_arson_17_unsorted["20"] = 0; result_arson_17_unsorted["21"] = 0; result_arson_17_unsorted["22"] = 0;
+                    result_arson_17_unsorted["23"] = 0;
 
-                    
+                    const replace_time1_arson_17 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_arson17t = Object.keys(result_arson_17_unsorted).map((key) => {
+                    const newKey = replace_time1_arson_17[key] || key;
+                    return { [newKey] : result_arson_17_unsorted[key] };
+                    });
+                    const result_arson_17_t = repItems_arson17t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_arson_17_sorted = sortObj(result_arson_17_t);
+
+
+                    const reptime_arson17 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_arson17 = Object.keys(result_arson_17_sorted).map((key) => {
+                    const newKey = reptime_arson17[key] || key;
+                    return { [newKey] : result_arson_17_sorted[key] };
+                    });
+                    const result_arson_17 = repItems_arson17.reduce((a, b) => Object.assign({}, a, b));
+
       
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_17=assault_weapon_17.map(t=>t.HOUR)
-                    var result_assault_17 = {};
+                    var result_assault_17_unsorted = {};
                     for(var i = 0; i < time_assault_17.length; ++i) {
-                        if(!result_assault_17[time_assault_17[i]])
-                        result_assault_17[time_assault_17[i]] = 0;
-                        ++result_assault_17[time_assault_17[i]];
+                        if(!result_assault_17_unsorted[time_assault_17[i]])
+                        result_assault_17_unsorted[time_assault_17[i]] = 0;
+                        ++result_assault_17_unsorted[time_assault_17[i]];
                     }
+
+                    const replace_time1_assault_17 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_assault17t = Object.keys(result_assault_17_unsorted).map((key) => {
+                    const newKey = replace_time1_assault_17[key] || key;
+                    return { [newKey] : result_assault_17_unsorted[key] };
+                    });
+                    const result_assault_17_t = repItems_assault17t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_assault_17_sorted = sortObj(result_assault_17_t);
+
+
+                    const reptime_assault17 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+                    let repItems_assault17 = Object.keys(result_assault_17_sorted).map((key) => {
+                    const newKey = reptime_assault17[key] || key;
+                    return { [newKey] : result_assault_17_sorted[key] };
+                    });
+                    const result_assault_17 = repItems_assault17.reduce((a, b) => Object.assign({}, a, b));
       
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_17=burglary_17.map(t=>t.HOUR)
@@ -686,22 +928,82 @@ d3.json(crime_2014).then(function(c14){
                     /////////////////////////////////////    2   0  1   8    //////////////////////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
                     var time_arson_18=arson_18.map(t=>t.HOUR)
-                    var result_arson_18 = {};
+                    var result_arson_18_unsorted = {};
                     for(var i = 0; i < time_arson_18.length; ++i) {
-                        if(!result_arson_18[time_arson_18[i]])
-                        result_arson_18[time_arson_18[i]] = 0;
-                        ++result_arson_18[time_arson_18[i]];
+                        if(!result_arson_18_unsorted[time_arson_18[i]])
+                        result_arson_18_unsorted[time_arson_18[i]] = 0;
+                        ++result_arson_18_unsorted[time_arson_18[i]];
                     }
+
+                    result_arson_18_unsorted["00"] = 0; result_arson_18_unsorted["02"] = 0; result_arson_18_unsorted["04"] = 0;
+                    result_arson_18_unsorted["05"] = 0; result_arson_18_unsorted["06"] = 0; result_arson_18_unsorted["08"] = 0;
+                    result_arson_18_unsorted["09"] = 0; result_arson_18_unsorted["10"] = 0; result_arson_18_unsorted["11"] = 0;
+                    result_arson_18_unsorted["12"] = 0; result_arson_18_unsorted["13"] = 0; result_arson_18_unsorted["14"] = 0;
+                    result_arson_18_unsorted["15"] = 0; result_arson_18_unsorted["16"] = 0; result_arson_18_unsorted["17"] = 0;
+                    result_arson_18_unsorted["18"] = 0; result_arson_18_unsorted["19"] = 0; result_arson_18_unsorted["21"] = 0;
+                    result_arson_18_unsorted["23"] = 0; 
+
+                    const replace_time1_arson_18 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_arson18t = Object.keys(result_arson_18_unsorted).map((key) => {
+                    const newKey = replace_time1_arson_18[key] || key;
+                    return { [newKey] : result_arson_18_unsorted[key] };
+                    });
+                    const result_arson_18_t = repItems_arson18t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_arson_18_sorted = sortObj(result_arson_18_t);
+
+
+                    const reptime_arson18 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_arson18 = Object.keys(result_arson_18_sorted).map((key) => {
+                    const newKey = reptime_arson18[key] || key;
+                    return { [newKey] : result_arson_18_sorted[key] };
+                    });
+                    const result_arson_18 = repItems_arson18.reduce((a, b) => Object.assign({}, a, b));
+
        
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
                     var time_assault_18=assault_weapon_18.map(t=>t.HOUR)
-                    var result_assault_18 = {};
+                    var result_assault_18_unsorted = {};
                     for(var i = 0; i < time_assault_18.length; ++i) {
-                         if(!result_assault_18[time_assault_18[i]])
-                         result_assault_18[time_assault_18[i]] = 0;
-                         ++result_assault_18[time_assault_18[i]];
+                         if(!result_assault_18_unsorted[time_assault_18[i]])
+                         result_assault_18_unsorted[time_assault_18[i]] = 0;
+                         ++result_assault_18_unsorted[time_assault_18[i]];
                     }
        
+                    const replace_time1_assault_18 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_assault18t = Object.keys(result_assault_18_unsorted).map((key) => {
+                    const newKey = replace_time1_assault_18[key] || key;
+                    return { [newKey] : result_assault_18_unsorted[key] };
+                    });
+                    const result_assault_18_t = repItems_assault18t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_assault_18_sorted = sortObj(result_assault_18_t);
+
+
+                    const reptime_assault18 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+                    let repItems_assault18 = Object.keys(result_assault_18_sorted).map((key) => {
+                    const newKey = reptime_assault18[key] || key;
+                    return { [newKey] : result_assault_18_sorted[key] };
+                    });
+                    const result_assault_18 = repItems_assault18.reduce((a, b) => Object.assign({}, a, b));
+
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_18=burglary_18.map(t=>t.HOUR)
                     var result_burglary_18 = {};
@@ -930,10 +1232,10 @@ d3.json(crime_2014).then(function(c14){
                     ////////////////////////////////////    P l o t t i n g   G r a p h s  ////////////////////////////////////
                     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                    var time=["12AM","1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM"]
+                   
                     ///////////////////////////////////////  2   0   1   4   /////////////////////////////////////////////////
                     var arson14 = {
-                        type: 'bar',
+                        type: 'line',
                         x: arson_hour_14,
                         y: count_arson_14,
                         xaxis: 'x1',
@@ -946,7 +1248,7 @@ d3.json(crime_2014).then(function(c14){
                     
                     var assault14 = {
                         type: 'bar',
-                        x:time,
+                        x:assault_hour_14,
                         y: count_assault_14,
                         xaxis: 'x2',
                         yaxis: 'y2',
