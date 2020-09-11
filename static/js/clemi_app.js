@@ -2198,7 +2198,7 @@ d3.json(crime_2014).then(function(c14){
                    
                     ///////////////////////////////////////  2   0   1   4   /////////////////////////////////////////////////
                     var arson14 = {
-                        type: 'line',
+                        type: 'bar',
                         x: arson_hour_14,
                         y: count_arson_14,
                         xaxis: 'x1',
@@ -2206,7 +2206,7 @@ d3.json(crime_2014).then(function(c14){
                         marker:{color:'#ff00d2'},
                         showlegend: false,
                         visible:true
-                     
+                                          
                     };
                     
                     var assault14 = {
