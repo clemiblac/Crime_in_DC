@@ -328,11 +328,11 @@ d3.json(crime_2014).then(function(c14){
                         });
                     const result_assault_14_t = repItems_assault14t.reduce((a, b) => Object.assign({}, a, b));
                     
-                    console.log(result_assault_14_t)
+                    //console.log(result_assault_14_t)
                   
                     let result_assault_14_sorted = sortObj(result_assault_14_t);
-                    console.log("sorted")
-                    console.log(result_assault_14_sorted);
+                    //console.log("sorted")
+                    //console.log(result_assault_14_sorted);
 
 
                     const reptime_assault14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
@@ -371,7 +371,7 @@ d3.json(crime_2014).then(function(c14){
                         });
                     const result_burglary_14_t = repItems_burglary14t.reduce((a, b) => Object.assign({}, a, b));
                     
-                    console.log(result_burglary_14_t)
+                    //console.log(result_burglary_14_t)
                   
                     let result_burglary_14_sorted = sortObj(result_burglary_14_t);
                    ;
@@ -394,31 +394,91 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ HOMICIDE by hour///\\\
                     var time_homicide_14=homicide_14.map(t=>t.HOUR)
-                    var result_homicide_14 = {};
+                    var result_homicide_14_unsorted = {};
                     for(var i = 0; i < time_homicide_14.length; ++i) {
-                        if(!result_homicide_14[time_homicide_14[i]])
-                        result_homicide_14[time_homicide_14[i]] = 0;
-                        ++result_homicide_14[time_homicide_14[i]];
+                        if(!result_homicide_14_unsorted[time_homicide_14[i]])
+                        result_homicide_14_unsorted[time_homicide_14[i]] = 0;
+                        ++result_homicide_14_unsorted[time_homicide_14[i]];
                     }
-                    result_homicide_14["01"] = 0; result_homicide_14["02"] = 0; result_homicide_14["03"] = 0;
-                    result_homicide_14["04"] = 0; result_homicide_14["05"] = 0; result_homicide_14["06"] = 0;
-                    result_homicide_14["07"] = 0; result_homicide_14["08"] = 0; result_homicide_14["09"] = 0;
-                    result_homicide_14["10"] = 0; result_homicide_14["11"] = 0; result_homicide_14["12"] = 0;
-                    result_homicide_14["13"] = 0; result_homicide_14["14"] = 0; result_homicide_14["15"] = 0;
-                    result_homicide_14["16"] = 0; result_homicide_14["17"] = 0; result_homicide_14["18"] = 0;
-                    result_homicide_14["19"] = 0; result_homicide_14["20"] = 0; result_homicide_14["21"] = 0;
-                    result_homicide_14["22"] = 0; result_homicide_14["23"] = 0;
+                    result_homicide_14_unsorted["01"] = 0; result_homicide_14_unsorted["02"] = 0; result_homicide_14_unsorted["03"] = 0;
+                    result_homicide_14_unsorted["04"] = 0; result_homicide_14_unsorted["05"] = 0; result_homicide_14_unsorted["06"] = 0;
+                    result_homicide_14_unsorted["07"] = 0; result_homicide_14_unsorted["08"] = 0; result_homicide_14_unsorted["09"] = 0;
+                    result_homicide_14_unsorted["10"] = 0; result_homicide_14_unsorted["11"] = 0; result_homicide_14_unsorted["12"] = 0;
+                    result_homicide_14_unsorted["13"] = 0; result_homicide_14_unsorted["14"] = 0; result_homicide_14_unsorted["15"] = 0;
+                    result_homicide_14_unsorted["16"] = 0; result_homicide_14_unsorted["17"] = 0; result_homicide_14_unsorted["18"] = 0;
+                    result_homicide_14_unsorted["19"] = 0; result_homicide_14_unsorted["20"] = 0; result_homicide_14_unsorted["21"] = 0;
+                    result_homicide_14_unsorted["22"] = 0; result_homicide_14_unsorted["23"] = 0;
+
+
+                    const replace_time1_homicide_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_homicide14t = Object.keys(result_homicide_14_unsorted).map((key) => {
+                        const newKey = replace_time1_homicide_14[key] || key;
+                        return { [newKey] : result_homicide_14_unsorted[key] };
+                        });
+                    const result_homicide_14_t = repItems_homicide14t.reduce((a, b) => Object.assign({}, a, b));
+                    
+                    console.log(result_homicide_14_t)
+                  
+                    let result_homicide_14_sorted = sortObj(result_homicide_14_t);
+                   ;
+
+
+                    const reptime_homicide14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_homicide14 = Object.keys(result_homicide_14_sorted).map((key) => {
+                    const newKey = reptime_homicide14[key] || key;
+                    return { [newKey] : result_homicide_14_sorted[key] };
+                    });
+                    const result_homicide_14 = repItems_homicide14.reduce((a, b) => Object.assign({}, a, b));
+                
 
                     //console.log(result_homicide_14)
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_14=vehicle_theft_14.map(t=>t.HOUR)
-                    var result_vehicle_theft_14 = {};
+                    var result_vehicle_theft_14_unsorted = {};
                     for(var i = 0; i < time_vehicle_theft_14.length; ++i) {
-                        if(!result_vehicle_theft_14[time_vehicle_theft_14[i]])
-                        result_vehicle_theft_14[time_vehicle_theft_14[i]] = 0;
-                        ++result_vehicle_theft_14[time_vehicle_theft_14[i]];
+                        if(!result_vehicle_theft_14_unsorted[time_vehicle_theft_14[i]])
+                        result_vehicle_theft_14_unsorted[time_vehicle_theft_14[i]] = 0;
+                        ++result_vehicle_theft_14_unsorted[time_vehicle_theft_14[i]];
                     }
+
+                    const replace_time1_vehicle_theft_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_vehicle_theft14t = Object.keys(result_vehicle_theft_14_unsorted).map((key) => {
+                    const newKey = replace_time1_vehicle_theft_14[key] || key;
+                    return { [newKey] : result_vehicle_theft_14_unsorted[key] };
+                    });
+                    const result_vehicle_theft_14_t = repItems_vehicle_theft14t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_vehicle_theft_14_sorted = sortObj(result_vehicle_theft_14_t);
+                    ;
+
+
+                    const reptime_vehicle_theft14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_vehicle_theft14 = Object.keys(result_vehicle_theft_14_sorted).map((key) => {
+                    const newKey = reptime_vehicle_theft14[key] || key;
+                    return { [newKey] : result_vehicle_theft_14_sorted[key] };
+                    });
+                    const result_vehicle_theft_14 = repItems_vehicle_theft14.reduce((a, b) => Object.assign({}, a, b));
+
+
 
                     ///\\\ ROBBERY by hour///\\
                     var time_robbery_14=robbery_14.map(t=>t.HOUR)
@@ -547,40 +607,128 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_15=burglary_15.map(t=>t.HOUR)
-                    var result_burglary_15 = {};
+                    var result_burglary_15_unsorted = {};
                     for(var i = 0; i < time_burglary_15.length; ++i) {
-                        if(!result_burglary_15[time_burglary_15[i]])
-                        result_burglary_15[time_burglary_15[i]] = 0;
-                        ++result_burglary_15[time_burglary_15[i]];
+                        if(!result_burglary_15_unsorted[time_burglary_15[i]])
+                        result_burglary_15_unsorted[time_burglary_15[i]] = 0;
+                        ++result_burglary_15_unsorted[time_burglary_15[i]];
                     }
+
+                    const replace_time1_burglary_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_burglary15t = Object.keys(result_burglary_15_unsorted).map((key) => {
+                    const newKey = replace_time1_burglary_15[key] || key;
+                    return { [newKey] : result_burglary_15_unsorted[key] };
+                    });
+                    const result_burglary_15_t = repItems_burglary15t.reduce((a, b) => Object.assign({}, a, b));
+
+
+                    let result_burglary_15_sorted = sortObj(result_burglary_15_t);
+                    ;
+
+
+                    const reptime_burglary15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_burglary15 = Object.keys(result_burglary_15_sorted).map((key) => {
+                    const newKey = reptime_burglary15[key] || key;
+                    return { [newKey] : result_burglary_15_sorted[key] };
+                    });
+                    const result_burglary_15 = repItems_burglary15.reduce((a, b) => Object.assign({}, a, b));
+
 
                     ///\\\ HOMICIDE by hour///\\\
                     var time_homicide_15=homicide_15.map(t=>t.HOUR)
-                    var result_homicide_15 = {};
+                    var result_homicide_15_unsorted = {};
                     for(var i = 0; i < time_homicide_15.length; ++i) {
-                        if(!result_homicide_15[time_homicide_15[i]])
-                        result_homicide_15[time_homicide_15[i]] = 0;
-                        ++result_homicide_15[time_homicide_15[i]];
+                        if(!result_homicide_15_unsorted[time_homicide_15[i]])
+                        result_homicide_15_unsorted[time_homicide_15[i]] = 0;
+                        ++result_homicide_15_unsorted[time_homicide_15[i]];
                     }
 
-                    result_homicide_15["01"] = 0; result_homicide_15["02"] = 0; result_homicide_15["03"] = 0;
-                    result_homicide_15["04"] = 0; result_homicide_15["05"] = 0; result_homicide_15["06"] = 0;
-                    result_homicide_15["07"] = 0; result_homicide_15["08"] = 0; result_homicide_15["09"] = 0;
-                    result_homicide_15["10"] = 0; result_homicide_15["11"] = 0; result_homicide_15["12"] = 0;
-                    result_homicide_15["13"] = 0; result_homicide_15["14"] = 0; result_homicide_15["15"] = 0;
-                    result_homicide_15["16"] = 0; result_homicide_15["17"] = 0; result_homicide_15["18"] = 0;
-                    result_homicide_15["19"] = 0; result_homicide_15["20"] = 0; result_homicide_15["21"] = 0;
-                    result_homicide_15["22"] = 0; result_homicide_15["23"] = 0;
+                    result_homicide_15_unsorted["01"] = 0; result_homicide_15_unsorted["02"] = 0; result_homicide_15_unsorted["03"] = 0;
+                    result_homicide_15_unsorted["04"] = 0; result_homicide_15_unsorted["05"] = 0; result_homicide_15_unsorted["06"] = 0;
+                    result_homicide_15_unsorted["07"] = 0; result_homicide_15_unsorted["08"] = 0; result_homicide_15_unsorted["09"] = 0;
+                    result_homicide_15_unsorted["10"] = 0; result_homicide_15_unsorted["11"] = 0; result_homicide_15_unsorted["12"] = 0;
+                    result_homicide_15_unsorted["13"] = 0; result_homicide_15_unsorted["14"] = 0; result_homicide_15_unsorted["15"] = 0;
+                    result_homicide_15_unsorted["16"] = 0; result_homicide_15_unsorted["17"] = 0; result_homicide_15_unsorted["18"] = 0;
+                    result_homicide_15_unsorted["19"] = 0; result_homicide_15_unsorted["20"] = 0; result_homicide_15_unsorted["21"] = 0;
+                    result_homicide_15_unsorted["22"] = 0; result_homicide_15_unsorted["23"] = 0;
+
+                    const replace_time1_homicide_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_homicide15t = Object.keys(result_homicide_15_unsorted).map((key) => {
+                        const newKey = replace_time1_homicide_15[key] || key;
+                        return { [newKey] : result_homicide_15_unsorted[key] };
+                        });
+                    const result_homicide_15_t = repItems_homicide15t.reduce((a, b) => Object.assign({}, a, b));
+                  
+                    let result_homicide_15_sorted = sortObj(result_homicide_15_t);
+                
+
+
+                    const reptime_homicide15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_homicide15 = Object.keys(result_homicide_15_sorted).map((key) => {
+                    const newKey = reptime_homicide15[key] || key;
+                    return { [newKey] : result_homicide_15_sorted[key] };
+                    });
+                    const result_homicide_15 = repItems_homicide15.reduce((a, b) => Object.assign({}, a, b));
+                
+
+
 
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_15=vehicle_theft_15.map(t=>t.HOUR)
-                    var result_vehicle_theft_15 = {};
+                    var result_vehicle_theft_15_unsorted = {};
                     for(var i = 0; i < time_vehicle_theft_15.length; ++i) {
-                        if(!result_vehicle_theft_15[time_vehicle_theft_15[i]])
-                        result_vehicle_theft_15[time_vehicle_theft_15[i]] = 0;
-                        ++result_vehicle_theft_15[time_vehicle_theft_15[i]];
+                        if(!result_vehicle_theft_15_unsorted[time_vehicle_theft_15[i]])
+                        result_vehicle_theft_15_unsorted[time_vehicle_theft_15[i]] = 0;
+                        ++result_vehicle_theft_15_unsorted[time_vehicle_theft_15[i]];
                     }
+
+                    const replace_time1_vehicle_theft_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_vehicle_theft15t = Object.keys(result_vehicle_theft_15_unsorted).map((key) => {
+                    const newKey = replace_time1_vehicle_theft_15[key] || key;
+                    return { [newKey] : result_vehicle_theft_15_unsorted[key] };
+                    });
+                    const result_vehicle_theft_15_t = repItems_vehicle_theft15t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_vehicle_theft_15_sorted = sortObj(result_vehicle_theft_15_t);
+                    ;
+
+
+                    const reptime_vehicle_theft15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_vehicle_theft15 = Object.keys(result_vehicle_theft_15_sorted).map((key) => {
+                    const newKey = reptime_vehicle_theft15[key] || key;
+                    return { [newKey] : result_vehicle_theft_15_sorted[key] };
+                    });
+                    const result_vehicle_theft_15 = repItems_vehicle_theft15.reduce((a, b) => Object.assign({}, a, b));
+
+
 
                     ///\\\ ROBBERY by hour///\\
                     var time_robbery_15=robbery_15.map(t=>t.HOUR)
@@ -699,31 +847,91 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_16=burglary_16.map(t=>t.HOUR)
-                    var result_burglary_16 = {};
+                    var result_burglary_16_unsorted = {};
                     for(var i = 0; i < time_burglary_16.length; ++i) {
-                        if(!result_burglary_16[time_burglary_16[i]])
-                        result_burglary_16[time_burglary_16[i]] = 0;
-                        ++result_burglary_16[time_burglary_16[i]];
+                        if(!result_burglary_16_unsorted[time_burglary_16[i]])
+                        result_burglary_16_unsorted[time_burglary_16[i]] = 0;
+                        ++result_burglary_16_unsorted[time_burglary_16[i]];
                     }
+
+                    const replace_time1_burglary_16 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_burglary16t = Object.keys(result_burglary_16_unsorted).map((key) => {
+                    const newKey = replace_time1_burglary_16[key] || key;
+                    return { [newKey] : result_burglary_16_unsorted[key] };
+                    });
+                    const result_burglary_16_t = repItems_burglary16t.reduce((a, b) => Object.assign({}, a, b));
+
+
+                    let result_burglary_16_sorted = sortObj(result_burglary_16_t);
+                    ;
+
+
+                    const reptime_burglary16 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_burglary16 = Object.keys(result_burglary_16_sorted).map((key) => {
+                    const newKey = reptime_burglary16[key] || key;
+                    return { [newKey] : result_burglary_16_sorted[key] };
+                    });
+                    const result_burglary_16 = repItems_burglary16.reduce((a, b) => Object.assign({}, a, b));
+
 
                     ///\\\ HOMICIDE by hour///\\\
                     var time_homicide_16=homicide_16.map(t=>t.HOUR)
-                    var result_homicide_16 = {};
+                    var result_homicide_16_unsorted = {};
                     for(var i = 0; i < time_homicide_16.length; ++i) {
-                        if(!result_homicide_16[time_homicide_16[i]])
-                        result_homicide_16[time_homicide_16[i]] = 0;
-                        ++result_homicide_16[time_homicide_16[i]];
+                        if(!result_homicide_16_unsorted[time_homicide_16[i]])
+                        result_homicide_16_unsorted[time_homicide_16[i]] = 0;
+                        ++result_homicide_16_unsorted[time_homicide_16[i]];
                     }
                     
-                    result_homicide_16["01"] = 0; result_homicide_16["02"] = 0; result_homicide_16["03"] = 0;
-                    result_homicide_16["04"] = 0; result_homicide_16["05"] = 0; result_homicide_16["06"] = 0;
-                    result_homicide_16["07"] = 0; result_homicide_16["08"] = 0; result_homicide_16["09"] = 0;
-                    result_homicide_16["10"] = 0; result_homicide_16["11"] = 0; result_homicide_16["12"] = 0;
-                    result_homicide_16["13"] = 0; result_homicide_16["14"] = 0; result_homicide_16["15"] = 0;
-                    result_homicide_16["16"] = 0; result_homicide_16["17"] = 0; result_homicide_16["18"] = 0;
-                    result_homicide_16["19"] = 0; result_homicide_16["20"] = 0; result_homicide_16["21"] = 0;
-                    result_homicide_16["22"] = 0; result_homicide_16["23"] = 0;
+                    result_homicide_16_unsorted["01"] = 0; result_homicide_16_unsorted["02"] = 0; result_homicide_16_unsorted["03"] = 0;
+                    result_homicide_16_unsorted["04"] = 0; result_homicide_16_unsorted["05"] = 0; result_homicide_16_unsorted["06"] = 0;
+                    result_homicide_16_unsorted["07"] = 0; result_homicide_16_unsorted["08"] = 0; result_homicide_16_unsorted["09"] = 0;
+                    result_homicide_16_unsorted["10"] = 0; result_homicide_16_unsorted["11"] = 0; result_homicide_16_unsorted["12"] = 0;
+                    result_homicide_16_unsorted["13"] = 0; result_homicide_16_unsorted["14"] = 0; result_homicide_16_unsorted["15"] = 0;
+                    result_homicide_16_unsorted["16"] = 0; result_homicide_16_unsorted["17"] = 0; result_homicide_16_unsorted["18"] = 0;
+                    result_homicide_16_unsorted["19"] = 0; result_homicide_16_unsorted["20"] = 0; result_homicide_16_unsorted["21"] = 0;
+                    result_homicide_16_unsorted["22"] = 0; result_homicide_16_unsorted["23"] = 0;
                   
+
+
+                    const replace_time1_homicide_16 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_homicide16t = Object.keys(result_homicide_16_unsorted).map((key) => {
+                        const newKey = replace_time1_homicide_16[key] || key;
+                        return { [newKey] : result_homicide_16_unsorted[key] };
+                        });
+                    const result_homicide_16_t = repItems_homicide16t.reduce((a, b) => Object.assign({}, a, b));
+                    
+                  
+                    let result_homicide_16_sorted = sortObj(result_homicide_16_t);
+                   ;
+
+
+                    const reptime_homicide16 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_homicide16 = Object.keys(result_homicide_16_sorted).map((key) => {
+                    const newKey = reptime_homicide16[key] || key;
+                    return { [newKey] : result_homicide_16_sorted[key] };
+                    });
+                    const result_homicide_16 = repItems_homicide16.reduce((a, b) => Object.assign({}, a, b));
+                
+
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_16=vehicle_theft_16.map(t=>t.HOUR)
@@ -854,31 +1062,92 @@ d3.json(crime_2014).then(function(c14){
       
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_17=burglary_17.map(t=>t.HOUR)
-                    var result_burglary_17 = {};
+                    var result_burglary_17_unsorted = {};
                     for(var i = 0; i < time_burglary_17.length; ++i) {
-                        if(!result_burglary_17[time_burglary_17[i]])
-                        result_burglary_17[time_burglary_17[i]] = 0;
-                        ++result_burglary_17[time_burglary_17[i]];
+                        if(!result_burglary_17_unsorted[time_burglary_17[i]])
+                        result_burglary_17_unsorted[time_burglary_17[i]] = 0;
+                        ++result_burglary_17_unsorted[time_burglary_17[i]];
                     }
-      
+                    
+                    const replace_time1_burglary_17 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_burglary17t = Object.keys(result_burglary_17_unsorted).map((key) => {
+                    const newKey = replace_time1_burglary_17[key] || key;
+                    return { [newKey] : result_burglary_17_unsorted[key] };
+                    });
+                    const result_burglary_17_t = repItems_burglary17t.reduce((a, b) => Object.assign({}, a, b));
+
+
+                    let result_burglary_17_sorted = sortObj(result_burglary_17_t);
+                    ;
+
+
+                    const reptime_burglary17 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_burglary17 = Object.keys(result_burglary_17_sorted).map((key) => {
+                    const newKey = reptime_burglary17[key] || key;
+                    return { [newKey] : result_burglary_17_sorted[key] };
+                    });
+                    const result_burglary_17 = repItems_burglary17.reduce((a, b) => Object.assign({}, a, b));
+
+
+
+
                     ///\\\ HOMICIDE by hour///\\\
                     var time_homicide_17=homicide_17.map(t=>t.HOUR)
-                    var result_homicide_17 = {};
+                    var result_homicide_17_unsorted = {};
                     for(var i = 0; i < time_homicide_17.length; ++i) {
-                        if(!result_homicide_17[time_homicide_17[i]])
-                        result_homicide_17[time_homicide_17[i]] = 0;
-                        ++result_homicide_17[time_homicide_17[i]];
+                        if(!result_homicide_17_unsorted[time_homicide_17[i]])
+                        result_homicide_17_unsorted[time_homicide_17[i]] = 0;
+                        ++result_homicide_17_unsorted[time_homicide_17[i]];
                     }
                     
 
-                    result_homicide_17["01"] = 0; result_homicide_17["02"] = 0; result_homicide_17["03"] = 0;
-                    result_homicide_17["04"] = 0; result_homicide_17["05"] = 0; result_homicide_17["06"] = 0;
-                    result_homicide_17["07"] = 0; result_homicide_17["08"] = 0; result_homicide_17["09"] = 0;
-                    result_homicide_17["10"] = 0; result_homicide_17["11"] = 0; result_homicide_17["12"] = 0;
-                    result_homicide_17["13"] = 0; result_homicide_17["14"] = 0; result_homicide_17["15"] = 0;
-                    result_homicide_17["16"] = 0; result_homicide_17["17"] = 0; result_homicide_17["18"] = 0;
-                    result_homicide_17["19"] = 0; result_homicide_17["20"] = 0; result_homicide_17["21"] = 0;
-                    result_homicide_17["22"] = 0; result_homicide_17["23"] = 0;
+                    result_homicide_17_unsorted["01"] = 0; result_homicide_17_unsorted["02"] = 0; result_homicide_17_unsorted["03"] = 0;
+                    result_homicide_17_unsorted["04"] = 0; result_homicide_17_unsorted["05"] = 0; result_homicide_17_unsorted["06"] = 0;
+                    result_homicide_17_unsorted["07"] = 0; result_homicide_17_unsorted["08"] = 0; result_homicide_17_unsorted["09"] = 0;
+                    result_homicide_17_unsorted["10"] = 0; result_homicide_17_unsorted["11"] = 0; result_homicide_17_unsorted["12"] = 0;
+                    result_homicide_17_unsorted["13"] = 0; result_homicide_17_unsorted["14"] = 0; result_homicide_17_unsorted["15"] = 0;
+                    result_homicide_17_unsorted["16"] = 0; result_homicide_17_unsorted["17"] = 0; result_homicide_17_unsorted["18"] = 0;
+                    result_homicide_17_unsorted["19"] = 0; result_homicide_17_unsorted["20"] = 0; result_homicide_17_unsorted["21"] = 0;
+                    result_homicide_17_unsorted["22"] = 0; result_homicide_17_unsorted["23"] = 0;
+
+
+                    const replace_time1_homicide_17 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_homicide17t = Object.keys(result_homicide_17_unsorted).map((key) => {
+                        const newKey = replace_time1_homicide_17[key] || key;
+                        return { [newKey] : result_homicide_17_unsorted[key] };
+                        });
+                    const result_homicide_17_t = repItems_homicide17t.reduce((a, b) => Object.assign({}, a, b));
+                  
+                    let result_homicide_17_sorted = sortObj(result_homicide_17_t);
+                   ;
+
+
+                    const reptime_homicide17 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_homicide17 = Object.keys(result_homicide_17_sorted).map((key) => {
+                    const newKey = reptime_homicide17[key] || key;
+                    return { [newKey] : result_homicide_17_sorted[key] };
+                    });
+                    const result_homicide_17 = repItems_homicide17.reduce((a, b) => Object.assign({}, a, b));
+                
+
       
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_17=vehicle_theft_17.map(t=>t.HOUR)
@@ -1006,31 +1275,89 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ BURGLARY by hour///\\\
                     var time_burglary_18=burglary_18.map(t=>t.HOUR)
-                    var result_burglary_18 = {};
+                    var result_burglary_18_unsorted = {};
                     for(var i = 0; i < time_burglary_18.length; ++i) {
-                        if(!result_burglary_18[time_burglary_18[i]])
-                        result_burglary_18[time_burglary_18[i]] = 0;
-                        ++result_burglary_18[time_burglary_18[i]];
-                    }
-       
-                    ///\\\ HOMICIDE by hour///\\\
-                    var time_homicide_18=homicide_18.map(t=>t.HOUR)
-                    var result_homicide_18 = {};
-                    for(var i = 0; i < time_homicide_18.length; ++i) {
-                        if(!result_homicide_18[time_homicide_18[i]])
-                        result_homicide_18[time_homicide_18[i]] = 0;
-                        ++result_homicide_18[time_homicide_18[i]];
+                        if(!result_burglary_18_unsorted[time_burglary_18[i]])
+                        result_burglary_18_unsorted[time_burglary_18[i]] = 0;
+                        ++result_burglary_18_unsorted[time_burglary_18[i]];
                     }
 
-                    result_homicide_18["01"] = 0; result_homicide_18["02"] = 0; result_homicide_18["03"] = 0;
-                    result_homicide_18["04"] = 0; result_homicide_18["05"] = 0; result_homicide_18["06"] = 0;
-                    result_homicide_18["07"] = 0; result_homicide_18["08"] = 0; result_homicide_18["09"] = 0;
-                    result_homicide_18["10"] = 0; result_homicide_18["11"] = 0; result_homicide_18["12"] = 0;
-                    result_homicide_18["13"] = 0; result_homicide_18["14"] = 0; result_homicide_18["15"] = 0;
-                    result_homicide_18["16"] = 0; result_homicide_18["17"] = 0; result_homicide_18["18"] = 0;
-                    result_homicide_18["19"] = 0; result_homicide_18["20"] = 0; result_homicide_18["21"] = 0;
-                    result_homicide_18["22"] = 0; result_homicide_18["23"] = 0;
-                         
+                    const replace_time1_burglary_18 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_burglary18t = Object.keys(result_burglary_18_unsorted).map((key) => {
+                    const newKey = replace_time1_burglary_18[key] || key;
+                    return { [newKey] : result_burglary_18_unsorted[key] };
+                    });
+                    const result_burglary_18_t = repItems_burglary18t.reduce((a, b) => Object.assign({}, a, b));
+
+
+                    let result_burglary_18_sorted = sortObj(result_burglary_18_t);
+                    ;
+
+
+                    const reptime_burglary18 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_burglary18 = Object.keys(result_burglary_18_sorted).map((key) => {
+                    const newKey = reptime_burglary18[key] || key;
+                    return { [newKey] : result_burglary_18_sorted[key] };
+                    });
+                    const result_burglary_18 = repItems_burglary18.reduce((a, b) => Object.assign({}, a, b));
+       
+
+                    ///\\\ HOMICIDE by hour///\\\
+                    var time_homicide_18=homicide_18.map(t=>t.HOUR)
+                    var result_homicide_18_unsorted = {};
+                    for(var i = 0; i < time_homicide_18.length; ++i) {
+                        if(!result_homicide_18_unsorted[time_homicide_18[i]])
+                        result_homicide_18_unsorted[time_homicide_18[i]] = 0;
+                        ++result_homicide_18_unsorted[time_homicide_18[i]];
+                    }
+
+                    result_homicide_18_unsorted["01"] = 0; result_homicide_18_unsorted["02"] = 0; result_homicide_18_unsorted["03"] = 0;
+                    result_homicide_18_unsorted["04"] = 0; result_homicide_18_unsorted["05"] = 0; result_homicide_18_unsorted["06"] = 0;
+                    result_homicide_18_unsorted["07"] = 0; result_homicide_18_unsorted["08"] = 0; result_homicide_18_unsorted["09"] = 0;
+                    result_homicide_18_unsorted["10"] = 0; result_homicide_18_unsorted["11"] = 0; result_homicide_18_unsorted["12"] = 0;
+                    result_homicide_18_unsorted["13"] = 0; result_homicide_18_unsorted["14"] = 0; result_homicide_18_unsorted["15"] = 0;
+                    result_homicide_18_unsorted["16"] = 0; result_homicide_18_unsorted["17"] = 0; result_homicide_18_unsorted["18"] = 0;
+                    result_homicide_18_unsorted["19"] = 0; result_homicide_18_unsorted["20"] = 0; result_homicide_18_unsorted["21"] = 0;
+                    result_homicide_18_unsorted["22"] = 0; result_homicide_18_unsorted["23"] = 0;
+                    
+                    const replace_time1_homicide_18 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let repItems_homicide18t = Object.keys(result_homicide_18_unsorted).map((key) => {
+                        const newKey = replace_time1_homicide_18[key] || key;
+                        return { [newKey] : result_homicide_18_unsorted[key] };
+                        });
+                    const result_homicide_18_t = repItems_homicide18t.reduce((a, b) => Object.assign({}, a, b));
+                  
+                    let result_homicide_18_sorted = sortObj(result_homicide_18_t);
+                   ;
+
+
+                    const reptime_homicide18 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_homicide18 = Object.keys(result_homicide_18_sorted).map((key) => {
+                    const newKey = reptime_homicide18[key] || key;
+                    return { [newKey] : result_homicide_18_sorted[key] };
+                    });
+                    const result_homicide_18 = repItems_homicide18.reduce((a, b) => Object.assign({}, a, b));
+                
+
+
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_18=vehicle_theft_18.map(t=>t.HOUR)
                     var result_vehicle_theft_18 = {};
