@@ -69,7 +69,6 @@
 
             <!-- Second Row-->
             <div class="row">
-
                 <div class="col-8">
                     <div class="row" >
                         <div class="col-9">
@@ -82,10 +81,26 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-3">
-                           <p id="usertip1"> <strong>User Tip: </strong> Use the dropdowns and checkboxes to select time and crime of 
-                                interest and click the submit button to see the resulting map and news articles.
+                        <div class="col-3" id="filter-box">
+                           <p id="usertip1"> <strong>User Tip: </strong> Use the dropdowns to select year, month and crime type 
+                                and click the "Submit Selections" button to see the resulting heat map, incident markers, and news articles.  
+                                Infrastructure markers can be toggled on and off at will. Click a map marker for more information.
                             </p>
+                            <hr>
+                            <h4>D.C. Ward Boundaries</h4>
+                            <input type="checkbox" id="wards" name="wards" value="Bike">
+                            <label for="wards"> Draw Boundaries</label><br>
+                            <hr>
+                            <h4>Select Infrastructure</h4>
+                            <input type="checkbox" id="police" name="police" value="Bike">
+                            <label for="police"> Police Stations</label><br>
+                            <input type="checkbox" id="grocery" name="grocery" value="Car">
+                            <label for="grocery"> Grocery Stores</label><br>
+                            <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
+                            <label for="pubschool"> Public Schools</label><br>
+                            <input type="checkbox" id="pri-school" name="prischool" value="Boat">
+                            <label for="prischool"> Private Schools</label><br>
+                            <hr>
                             <h4>Select Year</h4>
                             <select name="year" id="selectYear">
                                 <option value="2010">2010</option>
@@ -116,44 +131,49 @@
                                 <option value="/12/">December</option>
                             </select>
                             <hr>
-                            <h4>Select Crime Type</h4>
-                            <select name="crimetype" id="selectCrime">
+                            <h4>Crime Type Heatmap</h4>
+                            <select name="crimetype" id="selectCrimeHeat">
+                                <option value="">All Incidents</option>
+                                <option value="VIOLENT">All Violent Crimes</option>
+                                <option value="NONVIOLENT">All Nonviolent Crimes</option>
+                            </select>
+                            <hr>
+                            <h4>Crime Type Markers</h4>
+                            <select name="crimetype" id="selectCrimeMarker">
+                                <option value="">No Incident Markers</option>
+                                <option value="VIOLENT">All Violent Crimes</option>
+                                <option value="NONVIOLENT">All Nonviolent Crimes</option>
                                 <option value="ARSON">Arson</option>
                                 <option value="ASSAULT W/DANGEROUS WEAPON">Assault</option>
                                 <option value="BURGLARY">Burglary</option>
                                 <option value="HOMICIDE">Homicide</option>
                                 <option value="ROBBERY">Robbery</option>
                                 <option value="SEX ABUSE">Sex Abuse</option>
-                                <option value="THEFT F/AUTO">Theft, Auto</option>
-                                <option value="MOTOR VEHICLE THEFT">Theft, Vehicle</option>
+                                <option value="THEFT F/AUTO">Theft from Vehicle</option>
+                                <option value="MOTOR VEHICLE THEFT">Theft of Vehicle</option>
                                 <option value="THEFT/OTHER">Theft, Other</option>
                             </select>
                             <hr>
-                            <h4>Select Infrastructure</h4>
-                            <input type="checkbox" id="police" name="police" value="Bike">
-                            <label for="police"> Police Stations</label><br>
-                            <input type="checkbox" id="grocery" name="grocery" value="Car">
-                            <label for="grocery"> Grocery Stores</label><br>
-                            <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
-                            <label for="pubschool"> Public Schools</label><br>
-                            <input type="checkbox" id="pri-school" name="prischool" value="Boat">
-                            <label for="prischool"> Private Schools</label><br>
                             <button class ="button text-center" id ="submit">Submit Selections</button>
-
-                            
+                            <hr>
                         </div>
-                    </div>
-                    
+                    </div> 
                 </div>
-                <div class="col-4">
+                <div class="col-4" id="news1-box">
                     <h4>Latest Washington D.C. Crime News</h4>
-                    <div id="news1"></div>
+                    <div id='news1-table'>
+                        <table class='table table-striped'>
+                            <thead>
+                                <th>Article/Report Title</th>
+                            </thead>
+                            <tbody id="news1"></tbody>
+                        </table>
+                    </div>
                     <p id="newsdescription1"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                </div>
-                
+                </div> 
             </div>
 
             <!--End of Second Row-->
