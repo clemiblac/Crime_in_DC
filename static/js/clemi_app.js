@@ -2980,6 +2980,7 @@ d3.json(crime_2014).then(function(c14){
                     Plotly.newPlot('hour1', data, layout,{responsive: true});
                     Plotly.newPlot('hour2', data, layout,{responsive: true});
                     Plotly.newPlot('hour3', data, layout,{responsive: true});
+
                    
                 });
 
