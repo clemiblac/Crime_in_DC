@@ -29,6 +29,7 @@ database
 engine = create_engine(f"mysql://{username}:{password}@{host}/{database}",echo = True)
 
 from flask_caching import Cache
+
 cache_config = {
     "DEBUG": True,          # some Flask specific configs
     "CACHE_TYPE": "simple", # Flask-Caching related configs
@@ -42,20 +43,24 @@ app.config.from_mapping(cache_config)
 cache = Cache(app)
 
 @app.route("/")
+@cache.cached(timeout=18000)
 def home():
     return render_template("index.html")
 
 @app.route("/machine-learning")
+@cache.cached(timeout=18000)
 def machine():
     return render_template("machine_learning.html")
     
 
 @app.route("/about")
+@cache.cached(timeout=18000)
 def about():
     return render_template("about.html")
 
 ##############   Data Routes  ######################
 @app.route("/news")
+@cache.cached(timeout=18000)
 def news_scrape():
     results=pd.read_sql('SELECT * FROM news_scrape',engine)
     results_json=results.to_json(orient='records')
@@ -139,24 +144,28 @@ def crime2019():
     return results_json
 
 @app.route("/police")
+@cache.cached(timeout=18000)
 def police():
     results=pd.read_sql('SELECT * FROM dc_police',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
 @app.route("/grocery")
+@cache.cached(timeout=18000)
 def grocery():
     results=pd.read_sql('SELECT * FROM dc_grocery',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
 @app.route("/pubschool")
+@cache.cached(timeout=18000)
 def pubschool():
     results=pd.read_sql('SELECT * FROM dc_pub_schools',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
 @app.route("/prischool")
+@cache.cached(timeout=18000)
 def prischool():
     results=pd.read_sql('SELECT * FROM dc_pri_schools',engine)
     results_json=results.to_json(orient='records')
