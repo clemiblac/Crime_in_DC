@@ -594,12 +594,44 @@ d3.json(crime_2014).then(function(c14){
                     
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_14=theft_other_14.map(t=>t.HOUR)
-                    var result_theft_other_14 = {};
+                    var result_theft_other_14_unsorted = {};
                     for(var i = 0; i < time_theft_other_14.length; ++i) {
-                        if(!result_theft_other_14[time_theft_other_14[i]])
-                        result_theft_other_14[time_theft_other_14[i]] = 0;
-                        ++result_theft_other_14[time_theft_other_14[i]];
+                        if(!result_theft_other_14_unsorted[time_theft_other_14[i]])
+                        result_theft_other_14_unsorted[time_theft_other_14[i]] = 0;
+                        ++result_theft_other_14_unsorted[time_theft_other_14[i]];
                     }
+
+                    const replace_time1_theft_other_14 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_theft_other14t = Object.keys(result_theft_other_14_unsorted).map((key) => {
+                    const newKey = replace_time1_theft_other_14[key] || key;
+                    return { [newKey] : result_theft_other_14_unsorted[key] };
+                    });
+                    const result_theft_other_14_t = repItems_theft_other14t.reduce((a, b) => Object.assign({}, a, b));
+
+                    //console.log(result_assault_14_t)
+
+                    let result_theft_other_14_sorted = sortObj(result_theft_other_14_t);
+                    //console.log("sorted")
+                    //console.log(result_assault_14_sorted);
+
+
+                    const reptime_theft_other14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_theft_other14 = Object.keys(result_theft_other_14_sorted).map((key) => {
+                    const newKey = reptime_theft_other14[key] || key;
+                    return { [newKey] : result_theft_other_14_sorted[key] };
+                    });
+                    const result_theft_other_14 = repItems_theft_other14.reduce((a, b) => Object.assign({}, a, b));
+                   
+
 
 
                     
