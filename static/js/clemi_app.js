@@ -247,19 +247,66 @@ d3.json(crime_2014).then(function(c14){
                     ////////////////////////////////////////////  Counting offenses by hour ///////////////////////////////////////////////////
 
                     ////////////////////////////////////////////   2   0   1   4    ///////////////////////////////////////////////////////////
+                    function sortObj(obj) {
+                        return Object.keys(obj).sort().reduce(function (result, key) {
+                          result[key] = obj[key];
+                          return result;
+                        }, {});
+                    }
+                     
+                    
+                    
                     ///\\\ ARSON by hour///\\\
                     var time_arson_14=arson_14.map(t=>t.HOUR)
-                    var result_arson_14 = {};
+                    var result_arson_14_o = {};
                     for(var i = 0; i < time_arson_14.length; ++i) {
-                        if(!result_arson_14[time_arson_14[i]])
-                        result_arson_14[time_arson_14[i]] = 0;
-                        ++result_arson_14[time_arson_14[i]];
+                        if(!result_arson_14_o[time_arson_14[i]])
+                        result_arson_14_o[time_arson_14[i]] = 0;
+                        ++result_arson_14_o[time_arson_14[i]];
                     }
-                    result_arson_14["00"] = 0;
-                    result_arson_14["21"] = 0;
-                    result_arson_14["22"] = 0;
-                    result_arson_14["23"] = 0;
-                    //console.log(result_arson_14)
+                    result_arson_14_o["00"] = 0;
+                    result_arson_14_o["02"] = 0;
+                    result_arson_14_o["10"] = 0;
+                    result_arson_14_o["13"] = 0;
+                    result_arson_14_o["15"] = 0;
+                    result_arson_14_o["21"] = 0;
+                    result_arson_14_o["22"] = 0;
+                    result_arson_14_o["23"] = 0;
+                    console.log("Arson baby")
+                    console.log(result_arson_14_o)
+
+                    const rep_ = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                                            '07':'7', '08':'8', '09':'9'
+                                            };
+
+                    let replacedItems0 = Object.keys(result_arson_14_o).map((key) => {
+                        const newKey = replacements0[key] || key;
+                        return { [newKey] : result_arson_14_o[key] };
+                        });
+                    const result_arson_14_t = replacedItems0.reduce((a, b) => Object.assign({}, a, b));
+                    
+                    console.log(result_arson_14_t)
+                  
+                     let result_arson_14_sorted = sortObj(result_arson_14_t);
+                     console.log("sorted")
+                    console.log(result_arson_14_sorted);
+
+
+                    const replacements1 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                            '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                            '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                            '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let replacedItems1 = Object.keys(result_arson_14_sorted).map((key) => {
+                    const newKey = replacements1[key] || key;
+                    return { [newKey] : result_arson_14_sorted[key] };
+                    });
+                    const result_arson_14 = replacedItems1.reduce((a, b) => Object.assign({}, a, b));
+                    console.log("new");
+                    console.log(result_arson_14);
+
 
 
                     ///\\\ ASSAULT W/DANGEROUS WEAPON by hour///\\\
@@ -735,6 +782,7 @@ d3.json(crime_2014).then(function(c14){
                     /////////////////////////////////////           2   0   1   4   ////////////////////////////////////////////////
                     var arson_hour_14=Object.keys(result_arson_14);
                     var count_arson_14=Object.values(result_arson_14);
+                    console.log(count_arson_14)
 
                     var assault_hour_14=Object.keys(result_assault_14);
                     var count_assault_14=Object.values(result_assault_14);
@@ -882,6 +930,7 @@ d3.json(crime_2014).then(function(c14){
                     ////////////////////////////////////    P l o t t i n g   G r a p h s  ////////////////////////////////////
                     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                    var time=["12AM","1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM"]
                     ///////////////////////////////////////  2   0   1   4   /////////////////////////////////////////////////
                     var arson14 = {
                         type: 'bar',
@@ -891,22 +940,20 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y1',
                         marker:{color:'#ff00d2'},
                         showlegend: false,
-                        visible:true,
-                        //text: count_arson_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
+                     
                     };
                     
                     var assault14 = {
                         type: 'bar',
-                        x: assault_hour_14,
+                        x:time,
                         y: count_assault_14,
                         xaxis: 'x2',
                         yaxis: 'y2',
                         marker:{color:'#c41130'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_assault_14.map(String),
-                        //textposition: 'outside'
+                        visible:true
+                      
                         
                     };
 
@@ -918,9 +965,7 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y3',
                         marker:{color:'#ffc107'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_burglary_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
                         
                     };
 
@@ -932,9 +977,7 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y4',
                         marker:{color:'#999966'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_homicide_14.map(String),
-                        //textposition: 'auto'
+                        visible:true  
                         
                     };
 
@@ -946,9 +989,8 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y5',
                         marker:{color:'#339933'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_vehicle_theft_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
+                       
                     };
 
                     var robbery14 = {
@@ -959,9 +1001,8 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y6',
                         marker:{color:'#dc3545'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_robbery_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
+                       
                         
                     };
 
@@ -973,9 +1014,8 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y7',
                         marker:{color:'#600600'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_sex_abuse_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
+                        
                     
                     };
 
@@ -987,9 +1027,7 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y8',
                         marker:{color:'#212529'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_auto_theft_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
                     
                     };
 
@@ -1001,9 +1039,7 @@ d3.json(crime_2014).then(function(c14){
                         yaxis: 'y9',
                         marker:{color:'#cc9966'},
                         showlegend: false,
-                        visible:true,
-                        //text:count_theft_other_14.map(String),
-                        //textposition: 'auto'
+                        visible:true
                     
                     };
 

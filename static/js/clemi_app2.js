@@ -39,7 +39,7 @@ d3.json(c_2014).then(function(c14){
                         offense_by_time_14.push(offense_time_14)
                     }
                     //console.log("OFFENSE AND DATE KEY VALUE PAIRS")
-                    console.log(offense_by_time_14)
+                    //console.log(offense_by_time_14)
                     var total_2014=offense_by_time_14.length
                     //console.log(total_2014)
 
