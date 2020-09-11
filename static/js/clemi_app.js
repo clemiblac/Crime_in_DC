@@ -347,8 +347,6 @@ d3.json(crime_2014).then(function(c14){
                     return { [newKey] : result_assault_14_sorted[key] };
                     });
                     const result_assault_14 = repItems_assault14.reduce((a, b) => Object.assign({}, a, b));
-                    console.log("new");
-                    console.log(result_assault_14);
                    
 
 
@@ -420,10 +418,7 @@ d3.json(crime_2014).then(function(c14){
                         });
                     const result_homicide_14_t = repItems_homicide14t.reduce((a, b) => Object.assign({}, a, b));
                     
-                    console.log(result_homicide_14_t)
-                  
                     let result_homicide_14_sorted = sortObj(result_homicide_14_t);
-                   ;
 
 
                     const reptime_homicide14 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
@@ -439,8 +434,6 @@ d3.json(crime_2014).then(function(c14){
                     });
                     const result_homicide_14 = repItems_homicide14.reduce((a, b) => Object.assign({}, a, b));
                 
-
-                    //console.log(result_homicide_14)
 
                     ///\\\ MOTOR VEHICLE THEFT by hour///\\
                     var time_vehicle_theft_14=vehicle_theft_14.map(t=>t.HOUR)
@@ -963,12 +956,38 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_15=theft_other_15.map(t=>t.HOUR)
-                    var result_theft_other_15 = {};
+                    var result_theft_other_15_unsorted = {};
                     for(var i = 0; i < time_theft_other_15.length; ++i) {
-                        if(!result_theft_other_15[time_theft_other_15[i]])
-                        result_theft_other_15[time_theft_other_15[i]] = 0;
-                        ++result_theft_other_15[time_theft_other_15[i]];
+                        if(!result_theft_other_15_unsorted[time_theft_other_15[i]])
+                        result_theft_other_15_unsorted[time_theft_other_15[i]] = 0;
+                        ++result_theft_other_15_unsorted[time_theft_other_15[i]];
                     }
+
+                    const replace_time1_theft_other_15 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_theft_other15t = Object.keys(result_theft_other_15_unsorted).map((key) => {
+                    const newKey = replace_time1_theft_other_15[key] || key;
+                    return { [newKey] : result_theft_other_15_unsorted[key] };
+                    });
+                    const result_theft_other_15_t = repItems_theft_other15t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_theft_other_15_sorted = sortObj(result_theft_other_15_t);
+
+
+                    const reptime_theft_other15 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_theft_other15 = Object.keys(result_theft_other_15_sorted).map((key) => {
+                    const newKey = reptime_theft_other15[key] || key;
+                    return { [newKey] : result_theft_other_15_sorted[key] };
+                    });
+                    const result_theft_other_15 = repItems_theft_other15.reduce((a, b) => Object.assign({}, a, b));
 
                     ///////////////////////////////////////////////////    2   0   1   6   ///////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
@@ -1288,14 +1307,38 @@ d3.json(crime_2014).then(function(c14){
                     
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_16=theft_other_16.map(t=>t.HOUR)
-                    var result_theft_other_16 = {};
+                    var result_theft_other_16_unsorted = {};
                     for(var i = 0; i < time_theft_other_16.length; ++i) {
-                        if(!result_theft_other_16[time_theft_other_16[i]])
-                        result_theft_other_16[time_theft_other_16[i]] = 0;
-                        ++result_theft_other_16[time_theft_other_16[i]];
+                        if(!result_theft_other_16_unsorted[time_theft_other_16[i]])
+                        result_theft_other_16_unsorted[time_theft_other_16[i]] = 0;
+                        ++result_theft_other_16_unsorted[time_theft_other_16[i]];
                     }
 
+                    const replace_time1_theft_other_16 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
 
+                    let repItems_theft_other16t = Object.keys(result_theft_other_16_unsorted).map((key) => {
+                    const newKey = replace_time1_theft_other_16[key] || key;
+                    return { [newKey] : result_theft_other_16_unsorted[key] };
+                    });
+                    const result_theft_other_16_t = repItems_theft_other16t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_theft_other_16_sorted = sortObj(result_theft_other_16_t);
+
+
+                    const reptime_theft_other16 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_theft_other16 = Object.keys(result_theft_other_16_sorted).map((key) => {
+                    const newKey = reptime_theft_other16[key] || key;
+                    return { [newKey] : result_theft_other_16_sorted[key] };
+                    });
+                    const result_theft_other_16 = repItems_theft_other16.reduce((a, b) => Object.assign({}, a, b));
 
 
                     //////////////////////////////////////////   2   0   1   7   ///////////////////////////////////////////////
@@ -1618,12 +1661,38 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_17=theft_other_17.map(t=>t.HOUR)
-                    var result_theft_other_17 = {};
+                    var result_theft_other_17_unsorted = {};
                     for(var i = 0; i < time_theft_other_17.length; ++i) {
-                        if(!result_theft_other_17[time_theft_other_17[i]])
-                        result_theft_other_17[time_theft_other_17[i]] = 0;
-                        ++result_theft_other_17[time_theft_other_17[i]];
+                        if(!result_theft_other_17_unsorted[time_theft_other_17[i]])
+                        result_theft_other_17_unsorted[time_theft_other_17[i]] = 0;
+                        ++result_theft_other_17_unsorted[time_theft_other_17[i]];
                     }
+
+                    const replace_time1_theft_other_17 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_theft_other17t = Object.keys(result_theft_other_17_unsorted).map((key) => {
+                    const newKey = replace_time1_theft_other_17[key] || key;
+                    return { [newKey] : result_theft_other_17_unsorted[key] };
+                    });
+                    const result_theft_other_17_t = repItems_theft_other17t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_theft_other_17_sorted = sortObj(result_theft_other_17_t);
+
+
+                    const reptime_theft_other17 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_theft_other17 = Object.keys(result_theft_other_17_sorted).map((key) => {
+                    const newKey = reptime_theft_other17[key] || key;
+                    return { [newKey] : result_theft_other_17_sorted[key] };
+                    });
+                    const result_theft_other_17 = repItems_theft_other17.reduce((a, b) => Object.assign({}, a, b));
 
                     /////////////////////////////////////    2   0  1   8    //////////////////////////////////////////////////////////
                     ///\\\ ARSON by hour///\\\
@@ -1938,13 +2007,38 @@ d3.json(crime_2014).then(function(c14){
 
                     ///\\\ THEFT OTHER by hour///\\
                     var time_theft_other_18=theft_other_18.map(t=>t.HOUR)
-                    var result_theft_other_18 = {};
+                    var result_theft_other_18_unsorted = {};
                     for(var i = 0; i < time_theft_other_18.length; ++i) {
-                        if(!result_theft_other_18[time_theft_other_18[i]])
-                        result_theft_other_18[time_theft_other_18[i]] = 0;
-                        ++result_theft_other_18[time_theft_other_18[i]];
+                        if(!result_theft_other_18_unsorted[time_theft_other_18[i]])
+                        result_theft_other_18_unsorted[time_theft_other_18[i]] = 0;
+                        ++result_theft_other_18_unsorted[time_theft_other_18[i]];
                     }
 
+                    const replace_time1_theft_other_18 = {'00':'0', '01':'1', '02':'2', '03':'3', '04':'4', '05':'5', '06':'6',
+                    '07':'7', '08':'8', '09':'9'
+                    };
+
+                    let repItems_theft_other18t = Object.keys(result_theft_other_18_unsorted).map((key) => {
+                    const newKey = replace_time1_theft_other_18[key] || key;
+                    return { [newKey] : result_theft_other_18_unsorted[key] };
+                    });
+                    const result_theft_other_18_t = repItems_theft_other18t.reduce((a, b) => Object.assign({}, a, b));
+
+                    let result_theft_other_18_sorted = sortObj(result_theft_other_18_t);
+
+
+                    const reptime_theft_other18 = {'0':'12AM', '1':'1AM', '2':'2AM', '3':'3AM', '4':'4AM', '5':'5AM', '6':'6AM',
+                                        '7':'7AM', '8':'8AM', '9':'9AM', '10':'10AM', '11':'11AM', '12':'12PM',
+                                        '13':'1PM', '14':'2PM', '15':'3PM', '16':'4PM', '17':'5PM','18':'6PM','19':'7PM',
+                                        '20':'8PM','21':'9PM','22':'10PM','23':'11PM'};
+
+
+
+                    let repItems_theft_other18 = Object.keys(result_theft_other_18_sorted).map((key) => {
+                    const newKey = reptime_theft_other18[key] || key;
+                    return { [newKey] : result_theft_other_18_sorted[key] };
+                    });
+                    const result_theft_other_18 = repItems_theft_other18.reduce((a, b) => Object.assign({}, a, b));
 
                     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     /////////////////////////////////////      Declaring plot variables         ////////////////////////////////////
@@ -2779,15 +2873,13 @@ d3.json(crime_2014).then(function(c14){
                             autotick: false,
                             tickangle: 45,
                             tickfont: {size: 10}
-                            },
-                        //yaxis: {title:"count of incidents",automargin: true,},
-                        //yaxis2:{title:"Total", automargin:true},
-                    
+                        },
+                        
                     
                         annotations: [
                             {
-                                text: "Arson",
-                                font: {size: 16, color: 'black'},
+                                text: "ARSON",
+                                font: {size: 14, color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.9,
@@ -2796,8 +2888,8 @@ d3.json(crime_2014).then(function(c14){
                                 yref: 'paper'
                             },
                             {
-                                text: "Assault",
-                                font: {size: 16,color: 'black'},
+                                text: "ASSAULT W/DANGEROUS WEAPON",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.3,
@@ -2806,8 +2898,8 @@ d3.json(crime_2014).then(function(c14){
                                 yref: 'paper'
                             },
                             {
-                                text: "Burglary",
-                                font: {size: 16,color: 'black'},
+                                text: "BURGLARY",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.13,
@@ -2816,8 +2908,8 @@ d3.json(crime_2014).then(function(c14){
                                 yref: 'paper'
                             },
                             {
-                                text: "Homicide",
-                                font: {size: 16,color: 'black'},
+                                text: "HOMICIDE",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.13,
@@ -2826,8 +2918,8 @@ d3.json(crime_2014).then(function(c14){
                                 yref: 'paper'
                             },
                             {
-                                text: "Vehicle Theft",
-                                font: {size: 16,color: 'black'},
+                                text: "MOTOR VEHICLE THEFT",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 1.0,
@@ -2835,8 +2927,8 @@ d3.json(crime_2014).then(function(c14){
                                 xref: 'paper',
                                 yref: 'paper'
                             }, {
-                                text: "Robbery",
-                                font: {size: 16,color: 'black'},
+                                text: "ROBBERY",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.13,
@@ -2844,8 +2936,8 @@ d3.json(crime_2014).then(function(c14){
                                 xref: 'paper',
                                 yref: 'paper'
                             }, {
-                                text: "Sex Abuse",
-                                font: {size: 16,color: 'black'},
+                                text: "SEX ABUSE",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.2,
@@ -2853,8 +2945,8 @@ d3.json(crime_2014).then(function(c14){
                                 xref: 'paper',
                                 yref: 'paper'
                             }, {
-                                text: "Auto Theft",
-                                font: {size: 16,color: 'black'},
+                                text: "THEFT F/AUTO",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.01,
@@ -2862,8 +2954,8 @@ d3.json(crime_2014).then(function(c14){
                                 xref: 'paper',
                                 yref: 'paper'
                             }, {
-                                text: "Theft Other",
-                                font: {size: 16,color: 'black'},
+                                text: "THEFT/OTHER",
+                                font: {size: 14,color: 'black'},
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.07,
