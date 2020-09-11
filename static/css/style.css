@@ -111,12 +111,16 @@ p{
 }
 
 #filter-box{
+    height: 700px;
+    overflow-y: auto;
+}
+#news1-table{
     height: 600px;
     overflow-y: auto;
 }
-#news1-box{
-    height: 600px;
-    overflow-y: auto;
+#submit{
+    color:black;
+    background-color: #887f06;
 }
 
 
