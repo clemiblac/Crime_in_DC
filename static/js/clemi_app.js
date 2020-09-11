@@ -2047,7 +2047,7 @@ d3.json(crime_2014).then(function(c14){
                     /////////////////////////////////////           2   0   1   4   ////////////////////////////////////////////////
                     var arson_hour_14=Object.keys(result_arson_14);
                     var count_arson_14=Object.values(result_arson_14);
-                    console.log(count_arson_14)
+                    //console.log(count_arson_14)
 
                     var assault_hour_14=Object.keys(result_assault_14);
                     var count_assault_14=Object.values(result_assault_14);
@@ -2913,7 +2913,7 @@ d3.json(crime_2014).then(function(c14){
                                 showarrow: false,
                                 align: 'center',
                                 x: 0.13,
-                                y: 0.66,
+                                y: 0.64,
                                 xref: 'paper',
                                 yref: 'paper'
                             },
