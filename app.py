@@ -13,7 +13,8 @@ from datetime import datetime
 #Importing sqlalchemy requirements
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-
+import pymysql 
+pymysql.install_as_MySQLdb()
 
 
 
@@ -168,6 +169,11 @@ def pubschool():
 @cache.cached(timeout=18000)
 def prischool():
     results=pd.read_sql('SELECT * FROM dc_pri_schools',engine)
+    results_json=results.to_json(orient='records')
+    return results_json
+@app.route("/unemployment")
+def unemployment():
+    results=pd.read_sql('SELECT * FROM unemployment',engine)
     results_json=results.to_json(orient='records')
     return results_json
 
