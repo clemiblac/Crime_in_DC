@@ -35,22 +35,22 @@
         </div>
       </nav>
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <h3 id="mtitle">Machine Learning</h3>
         
         </div>
         <!-- Selector row-->
 
-        <div class="row">
-          <div class="col-4">
+        <div class="row" id="all-selectors">
+          <div class="col-2">
             <div class="panel panel-default">
               <div class="panel-body">
                 <form>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a ward (1-8)</label>
+                        <label for="date" id="ward">Enter a ward (1-8)</label>
                         <input class="form-control" id="ward-input" type="text" placeholder="1">
                       </li>
                     </ul>
@@ -58,10 +58,9 @@
                 </form>
               </div>
             </div>
-             
           </div>
-          <div class="col-4">
-                
+
+          <div class="col-2">
             <div class="panel panel-default">
               <div class="panel-body">
                 <form>
@@ -76,26 +75,57 @@
                 </form>
               </div>
             </div>
-             
-              
           </div>
 
-          <div class="col-4">
+          <div class="col-2">
             <div class="panel panel-default">
               <div class="panel-body">
                 <form>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a date</label>
-                        <input class="form-control" id="date-input" type="text" placeholder="2014/01/31">
+                        <label for="date">Enter a year</label>
+                        <input class="form-control" id="year-input" type="text" placeholder="2014">
                       </li>
                     </ul>
                   </div>
                 </form>
               </div>
             </div>
+          </div>
 
+          <div class="col-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a month</label>
+                        <input class="form-control" id="month-input" type="text" placeholder="01">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a day</label>
+                        <input class="form-control" id="day-input" type="text" placeholder="31">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -116,13 +146,29 @@
 
         <!--Result-->
         <div class="row">
-          <h4>Prediction</h4>
-          <div class="col-12" id="result">
-
-          </div>
+          <div class="col-12"><h4>Result</h4></div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="result1"></div>
+          <div class="col-1"></div>
         </div>
 
         <!--End result div-->
+
+        <!--Explanation div-->
+        <div class="row">
+          <div class="col-12"> <h4>Explanation</h4></div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="machine-explanation1"></div>
+          <div class="col-1"></div>
+        </div>
+        <!--End of Explanation div-->
+        <div class="row">
+         
+         
+        </div>
+
 
         
 
