@@ -17,15 +17,26 @@ from sqlalchemy import create_engine
 import pymysql 
 pymysql.install_as_MySQLdb()
 
+import os
+is_heroku = False
+if 'IS_HEROKU' in os.environ:
+    is_heroku = True
 
 
-#Database setup
-from config import (
-username,
-password,
-host,
-database
-)
+API_KEY=os.environ['API_KEY']
+census_api=os.environ['census_api']
+database=os.environ['database']
+geocode_key=os.environ['geocode_key']
+host=os.environ['host']
+port=os.environ['port']
+username=os.environ['username']
+# #Database setup
+# from config import (
+# username,
+# password,
+# host,
+# database
+# )
 
 
 #Deep Learning requirements
