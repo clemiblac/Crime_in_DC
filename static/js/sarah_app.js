@@ -624,10 +624,16 @@ var Arson = {
   var data = [Arson, Weapon, Burgulary, Homicide, 
         VehicleTheft, Robbery, Sex_Abuse, Auto_Theft,
         Gen_Theft];
-  
+
+
 var layout = {
     title: 'Annual Change in Crime by Offense',
-    showlegend: false
+    showlegend: false,
+    xaxis: { 
+        title: {
+            text: "Years"
+        }
+    }
         };
   Plotly.newPlot('timeseries1', data, layout);
   Plotly.newPlot('timeseries2', data, layout);
@@ -666,6 +672,8 @@ var layout2 = {
 Plotly.newPlot('unemployment-crime1', data2, layout2);
 // Plotly.newPlot('CORRECTDIV2', data2, layout2);
 // Plotly.newPlot('CORRECTDIV3', data2, layout2);
+
+
 
                                         }); 
                                     });                           

@@ -77,8 +77,15 @@ p{
     font-style: italic;
 }
 
-
-
+#explanation1 {
+    overflow-y: auto;
+}
+#explanation2 {
+    overflow-y: auto;
+}
+#explanation3 {
+    overflow-y: auto;
+}
 #sunburst1 {
     margin-bottom:20px;
     height: 500px;
