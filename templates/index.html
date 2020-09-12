@@ -32,11 +32,11 @@
         <script src="static/js/leaflet.awesome-markers.js"></script>
 
         <!-- CSS FILE--> 
-        <link rel="stylesheet" href="{{url for ('static',filename='/css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for ('static',filename='/css/style.css')}}">
         
 
         <title>Crime in DC Home</title>
-        <link rel="shortcut icon" type="image/x-icon" href="{{url for ('static',filename='steal.png')}}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url_for ('static',filename='steal.png')}}">
       
 
        
@@ -46,7 +46,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <a class="navbar-brand" href="#">
-                <img src="{{url for ('static',filename='steal.png')}}" alt="logo icon" id=logo><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3>
+                <img src="{{url_for ('static',filename='steal.png')}}" alt="logo icon" id=logo><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -593,12 +593,12 @@
 
         
        
-        <script src="{{url for('static', filename='js/chris_app.js')}}"></script>
-        <script src="{{url for('static', filename='js/chris_app2.js')}}"></script>
-        <script src="{{url for('static', filename='js/chris_app3.js')}}"></script>
-        <script src="{{url for('static', filename='js/clemi_app.js')}}"></script>
-        <script src="{{url for('static', filename='js/clemi_app2.js')}}"></script>
-        <script src="{{url for('static', filename='js/sarah_app.js')}}"></script>
+        <script src="{{url_for('static', filename='js/chris_app.js')}}"></script>
+        <script src="{{url_for('static', filename='js/chris_app2.js')}}"></script>
+        <script src="{{url_for('static', filename='js/chris_app3.js')}}"></script>
+        <script src="{{url_for('static', filename='js/clemi_app.js')}}"></script>
+        <script src="{{url_for('static', filename='js/clemi_app2.js')}}"></script>
+        <script src="{{url_for('static', filename='js/sarah_app.js')}}"></script>
      
         
         
