@@ -35,7 +35,8 @@
         </div>
       </nav>
 
-      <div class="container-fluid">
+      <!-- Desktop -->
+      <div class="container-fluid dsktop">
         <div class="row">
           <h3 id="mtitle">Machine Learning</h3>
         
@@ -48,10 +49,10 @@
               <div class="panel-body">
                 <form>
                   <div class="form-group">
-                    <ul class="list-group" id="filters">
+                    <ul class="list-group" id="ward-filters1">
                       <li class="filter list-group-item">
-                        <label for="date" id="ward">Enter a ward (1-8)</label>
-                        <input class="form-control" id="ward-input" type="text" placeholder="1">
+                        <label for="date" id="ward1">Enter a ward (1-8)</label>
+                        <input class="form-control" id="ward-input1" type="text" placeholder="1">
                       </li>
                     </ul>
                   </div>
@@ -65,10 +66,10 @@
               <div class="panel-body">
                 <form>
                   <div class="form-group">
-                    <ul class="list-group" id="filters">
+                    <ul class="list-group" id="time-filters1">
                       <li class="filter list-group-item">
                         <label for="date">Enter a time</label>
-                        <input class="form-control" id="time-input" type="text" placeholder="21:00">
+                        <input class="form-control" id="time-input1" type="text" placeholder="21:00">
                       </li>
                     </ul>
                   </div>
@@ -82,10 +83,10 @@
               <div class="panel-body">
                 <form>
                   <div class="form-group">
-                    <ul class="list-group" id="filters">
+                    <ul class="list-group" id="year-filters1">
                       <li class="filter list-group-item">
                         <label for="date">Enter a year</label>
-                        <input class="form-control" id="year-input" type="text" placeholder="2014">
+                        <input class="form-control" id="year-input1" type="text" placeholder="2014">
                       </li>
                     </ul>
                   </div>
@@ -99,10 +100,10 @@
               <div class="panel-body">
                 <form>
                   <div class="form-group">
-                    <ul class="list-group" id="filters">
+                    <ul class="list-group" id="month-filters1">
                       <li class="filter list-group-item">
                         <label for="date">Enter a month</label>
-                        <input class="form-control" id="month-input" type="text" placeholder="01">
+                        <input class="form-control" id="month-input1" type="text" placeholder="01">
                       </li>
                     </ul>
                   </div>
@@ -116,10 +117,10 @@
               <div class="panel-body">
                 <form>
                   <div class="form-group">
-                    <ul class="list-group" id="filters">
+                    <ul class="list-group" id="day-filters1">
                       <li class="filter list-group-item">
                         <label for="date">Enter a day</label>
-                        <input class="form-control" id="day-input" type="text" placeholder="31">
+                        <input class="form-control" id="day-input1" type="text" placeholder="31">
                       </li>
                     </ul>
                   </div>
@@ -136,7 +137,7 @@
           <div class="col-4"></div>
 
           <div class="col-4">
-            <button type="button" id="filter-btn" class="btn btn-primary">Submit</button>
+            <button type="button" id="filter-btn1" class="btn btn-primary">Submit</button>
           </div>
 
           <div class="col-4"></div>
@@ -164,15 +165,146 @@
           <div class="col-1"></div>
         </div>
         <!--End of Explanation div-->
+      
+      </div>
+
+
+
+
+       <!--Tablet view -->
+      <div class="container-fluid tablet">
         <div class="row">
-         
-         
+          <h3 id="mtitle">Machine Learning</h3>
+        
+        </div>
+        <!-- Selector row1-->
+
+        <div class="row">
+          <div class="col-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="ward-filters1">
+                      <li class="filter list-group-item">
+                        <label for="date" id="ward1">Enter a ward (1-8)</label>
+                        <input class="form-control" id="ward-input1" type="text" placeholder="1">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="time-filters1">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a time</label>
+                        <input class="form-control" id="time-input1" type="text" placeholder="21:00">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
 
+         
+        <div class="row">
+          <div class="col-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="year-filters1">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a year</label>
+                        <input class="form-control" id="year-input1" type="text" placeholder="2014">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
-        
+          <div class="col-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="month-filters1">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a month</label>
+                        <input class="form-control" id="month-input1" type="text" placeholder="01">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
-      </div>
+          <div class="col-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="day-filters1">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a day</label>
+                        <input class="form-control" id="day-input1" type="text" placeholder="31">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--End Selector Row-->
+
+        <!--Start button Row-->
+        <div class="row">
+          <div class="col-4"></div>
+
+          <div class="col-4">
+            <button type="button" id="filter-btn1" class="btn btn-primary">Submit</button>
+          </div>
+
+          <div class="col-4"></div>
+          
+        </div>
+        <!--End button Row-->
+
+        <!--Result-->
+        <div class="row">
+          <div class="col-12"><h4>Result</h4></div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="result1"></div>
+          <div class="col-1"></div>
+        </div>
+
+        <!--End result div-->
+
+        <!--Explanation div-->
+        <div class="row">
+          <div class="col-12"> <h4>Explanation</h4></div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="machine-explanation1"></div>
+          <div class="col-1"></div>
+        </div>
+        <!--End of Explanation div-->
  
         
         <!-- Optional JavaScript -->
