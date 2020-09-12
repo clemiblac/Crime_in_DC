@@ -3,7 +3,8 @@ from flask import (
     Flask,
     render_template,
     jsonify,
-    redirect)
+    redirect,
+    request)
 
 # importing necessary libraries
 import pandas as pd
@@ -56,7 +57,6 @@ def home():
     return render_template("index.html")
 
 @app.route("/machine-learning")
-@cache.cached(timeout=18000)
 def machine():
     return render_template("machine_learning.html")
     

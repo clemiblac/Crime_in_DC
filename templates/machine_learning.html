@@ -38,7 +38,14 @@
       <!-- this is an example -->
 
 
-        <div class = 'container'>
+        <div class = 'container-fluid'>
+          <div class="row">
+            <div class="col-12">
+              <h4>Machine Learning</h4>
+            </div>
+
+          </div>
+
           <div class='row'>
             <div class='col-md-2'>
               <div class="form-group">
@@ -92,17 +99,59 @@
             </div>
           </div>
         </div>
+
         <!--Start button Row-->
         <div class="row">
-        <div class="col-4"></div>
+          <div class="col-4"></div>
 
-        <div class="col-4">
-        <button type="button" id="prediction-btn" class="btn btn-primary">Submit</button>
+          <div class="col-4">
+            <button type="button" id="prediction-btn" class="btn btn-primary">Submit</button>
+          </div>
+
+          <div class="col-4"></div>
+        </div>
+
+       
+
+       <!--Result-->
+       <div class="row">
+          <div class="col-12 text-center"><h4>Result</h4></div>
        </div>
 
-       <div class="col-4"></div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4" id="result1"></div>
+        <div class="col-4"></div>
+      </div>
+
+      <!--End result div-->
+
+      <!--Explanation div-->
+      <div class="row">
+        <div class="col-12 text-center"> <h4>Explanation</h4></div>
+      </div>
+      <div class="row">
+        <div class="col-11" id="machine-explanation1"><p>Amongst all of the machine learning algorithms that the dataset was tested with, k-nearest neighbors (KNN)
+           provided the highest prediction accuracy. It is crucial to note that a skew in the training data had a large impact on the testing accuracy. This is due 
+           to the fact that the count of certain offense types were exponentially higher than others, making it difficult to have representation across classes. 
+           While it is possible to reduce the skews in the data by reclassifying, this can only happen if doing so doesn't change the goal of the prediction. 
+          While machine learning has become a vital part of crime detection as well as crime prevention, a question arises about the fairness of its use.
+           Historical crime data reveals higher offense rates in minority dominant neighborhoods. Many crime prediction algorithms utilize three main factors;
+            type of crime, location, and the time of the event. As a result, police patrol routes are focused in the neighborhoods with historically high crime rates.
+             So, we must ask ourselves, should we continue to use this method for predicting crime? </p>
+        </div>
+        
+        <div class="col-1"></div>
+      </div>
+      <!--End of Explanation div-->
+      <div class="row">
+       
+       
+      </div>
+
+
   
-</div>
+      </div>
       <!-- end of example -->
 
 
@@ -112,34 +161,7 @@
        
         <!--End button Row-->
 
-        <!--Result-->
-        <div class="row">
-          <div class="col-12"><h4>Result</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="result1"></div>
-          <div class="col-1"></div>
-        </div>
-
-        <!--End result div-->
-
-        <!--Explanation div-->
-        <div class="row">
-          <div class="col-12"> <h4>Explanation</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="machine-explanation1"><p>Amongst all of the machine learning algorithms that the dataset was tested with, k-nearest neighbors (KNN) provided the highest prediction accuracy. It is crucial to note that a skew in the training data had a large impact on the testing accuracy. This is due to the fact that the count of certain offense types were exponentially higher than others, making it difficult to have representation across classes. While it is possible to reduce the skews in the data by reclassifying, this can only happen if doing so doesn't change the goal of the prediction. 
-            While machine learning has become a vital part of crime detection as well as crime prevention, a question arises about the fairness of its use. Historical crime data reveals higher offense rates in minority dominant neighborhoods. Many crime prediction algorithms utilize three main factors; type of crime, location, and the time of the event. As a result, police patrol routes are focused in the neighborhoods with historically high crime rates. So, we must ask ourselves, should we continue to use this method for predicting crime? </p></div>
-          
-          <div class="col-1"></div>
-        </div>
-        <!--End of Explanation div-->
-        <div class="row">
-         
-         
-        </div>
-
-
+        
         
 
       </div>
