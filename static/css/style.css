@@ -125,6 +125,7 @@ p{
 
 
 
+
 /******************************************   Home page Tablet view **************************************************/
 #myMap2{
     height: 600px;
@@ -209,6 +210,14 @@ p{
     font-size: smaller;
     font-style: italic;
 }
+#news2-table{
+    height: 600px;
+    overflow-y: auto;
+}
+#submit2{
+    color:black;
+    background-color: #887f06;
+}
 /************************************************  Home page phone view *************************************************************/
 #phone-selector{
     padding-top:20px;
@@ -289,6 +298,14 @@ p{
 }
 #phone-checkbox{
     margin-left:20px;
+}
+#news3-table{
+    height: 600px;
+    overflow-y: auto;
+}
+#submit3{
+    color:black;
+    background-color: #887f06;
 }
 /* End of Home page Views*/
 

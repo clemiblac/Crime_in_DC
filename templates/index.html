@@ -227,9 +227,9 @@
             <!--First Row-->
             <div class="row" id="tablet-selector">
                 
-                <div class="col-4">
+                <div class="col-2">
                     <h4>Select Year</h4>
-                    <select name="year" id="selectYear">
+                    <select name="year" id="selectYear2">
                         <option value="2010">2010</option>
                         <option value="2011">2011</option>
                         <option value="2012">2012</option>
@@ -243,9 +243,9 @@
                     </select>
                 </div>
 
-                <div class="col-4">
+                <div class="col-2">
                     <h4>Select Month</h4>
-                    <select name="month" id="selectMonth">
+                    <select name="month" id="selectMonth2">
                         <option value="/01/">January</option>
                         <option value="/02/">February</option>
                         <option value="/03/">March</option>
@@ -261,21 +261,32 @@
                     </select>
                 </div>
                 
-                <div class="col-4" >
-                    <h4>Select Crime Type</h4>
-                    <select name="crimetype" id="selectCrime">
+                <div class="col-4">
+                    <h4>Crime Type Heatmap</h4>
+                    <select name="crimetype" id="selectCrimeHeat2">
+                        <option value="">All Incidents</option>
+                        <option value="VIOLENT">All Violent Crimes</option>
+                        <option value="NONVIOLENT">All Nonviolent Crimes</option>
+                    </select>
+                </div>
+
+                <div class="col-4">
+                    <h4>Crime Type Markers</h4>
+                    <select name="crimetype" id="selectCrimeMarker2">
+                        <option value="">No Incident Markers</option>
+                        <option value="VIOLENT">All Violent Crimes</option>
+                        <option value="NONVIOLENT">All Nonviolent Crimes</option>
                         <option value="ARSON">Arson</option>
                         <option value="ASSAULT W/DANGEROUS WEAPON">Assault</option>
                         <option value="BURGLARY">Burglary</option>
                         <option value="HOMICIDE">Homicide</option>
                         <option value="ROBBERY">Robbery</option>
                         <option value="SEX ABUSE">Sex Abuse</option>
-                        <option value="THEFT F/AUTO">Theft, Auto</option>
-                        <option value="MOTOR VEHICLE THEFT">Theft, Vehicle</option>
+                        <option value="THEFT F/AUTO">Theft from Vehicle</option>
+                        <option value="MOTOR VEHICLE THEFT">Theft of Vehicle</option>
                         <option value="THEFT/OTHER">Theft, Other</option>
                     </select>
                 </div>
-
             </div>
             <!--End of First Row-->
 
@@ -285,22 +296,24 @@
                 <div class="col-9">
                     <h4>Map of Crime in Washington DC</h4>
                         <div id="myMap2"></div>
-                        
                 </div>
-
                 <div class="col-3">
                     <div class="row">
                         <div class="col-12">
+                            <h4>D.C. Ward Boundaries</h4>
+                            <input type="checkbox" id="wards2" name="wards" value="Bike">
+                            <label for="wards"> Draw Boundaries</label><br>
+                            <hr>
                             <h4>Select Infrastructure</h4>
-                            <input type="checkbox" id="police" name="police" value="Bike">
+                            <input type="checkbox" id="police2" name="police" value="Bike">
                             <label for="police"> Police Stations</label><br>
-                            <input type="checkbox" id="grocery" name="grocery" value="Car">
+                            <input type="checkbox" id="grocery2" name="grocery" value="Car">
                             <label for="grocery"> Grocery Stores</label><br>
-                            <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
+                            <input type="checkbox" id="pub-school2" name="pubschool" value="Boat">
                             <label for="pubschool"> Public Schools</label><br>
-                            <input type="checkbox" id="pri-school" name="prischool" value="Boat">
+                            <input type="checkbox" id="pri-school2" name="prischool" value="Boat">
                             <label for="prischool"> Private Schools</label><br>
-                            <button class ="button text-center" id ="submit">Submit Selections</button>
+                            <button class ="button text-center" id ="submit2">Submit Selections</button>
                         </div>
                     </div>
                     <div class="row">
@@ -318,7 +331,6 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
             
@@ -328,8 +340,14 @@
             <div class="row">
                 <div class="col-12">
                     <h4>Latest Washington D.C. Crime News</h4>
-
-                    <div id="news2"></div>
+                    <div id='news2-table'>
+                        <table class='table table-striped'>
+                            <thead>
+                                <th>Article/Report Title</th>
+                            </thead>
+                            <tbody id="news2"></tbody>
+                        </table>
+                    </div>
                     <p id="newsdescription2"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -398,9 +416,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-6">
                     <h4>Select Year</h4>
-                    <select name="year" id="selectYear">
+                    <select name="year" id="selectYear3">
                         <option value="2010">2010</option>
                         <option value="2011">2011</option>
                         <option value="2012">2012</option>
@@ -412,12 +430,11 @@
                         <option value="2018">2018</option>
                         <option value="2019">2019</option>
                     </select>
+                    <hr>
                 </div>
-            </div>
-            <div class="row"> 
-                <div class="col-12">
+                <div class="col-6">
                     <h4>Select Month</h4>
-                    <select name="month" id="selectMonth">
+                    <select name="month" id="selectMonth3">
                         <option value="/01/">January</option>
                         <option value="/02/">February</option>
                         <option value="/03/">March</option>
@@ -431,39 +448,62 @@
                         <option value="/11/">November</option>
                         <option value="/12/">December</option>
                     </select>
+                    <hr>
                 </div>
             </div>
-            <div class="row">   
-                <div class="col-12" >
-                    <h4>Select Crime Type</h4>
-                    <select name="crimetype" id="selectCrime">
+            <div class="row"> 
+                <div class="col-12">
+                    <h4>Crime Type Heatmap</h4>
+                    <select name="crimetype" id="selectCrimeHeat3">
+                        <option value="">All Incidents</option>
+                        <option value="VIOLENT">All Violent Crimes</option>
+                        <option value="NONVIOLENT">All Nonviolent Crimes</option>
+                    </select>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h4>Crime Type Markers</h4>
+                    <select name="crimetype" id="selectCrimeMarker3">
+                        <option value="">No Incident Markers</option>
+                        <option value="VIOLENT">All Violent Crimes</option>
+                        <option value="NONVIOLENT">All Nonviolent Crimes</option>
                         <option value="ARSON">Arson</option>
                         <option value="ASSAULT W/DANGEROUS WEAPON">Assault</option>
                         <option value="BURGLARY">Burglary</option>
                         <option value="HOMICIDE">Homicide</option>
                         <option value="ROBBERY">Robbery</option>
                         <option value="SEX ABUSE">Sex Abuse</option>
-                        <option value="THEFT F/AUTO">Theft, Auto</option>
-                        <option value="MOTOR VEHICLE THEFT">Theft, Vehicle</option>
+                        <option value="THEFT F/AUTO">Theft from Vehicle</option>
+                        <option value="MOTOR VEHICLE THEFT">Theft of Vehicle</option>
                         <option value="THEFT/OTHER">Theft, Other</option>
                     </select>
+                    <hr>
+                </div> 
+            </div>
+            <div class='row'>
+                <div class="col-12">
+                    <h4>D.C. Ward Boundaries</h4>
+                    <input type="checkbox" id="wards3" name="wards" value="Bike">
+                    <label for="wards"> Draw Boundaries</label><br>
+                    <hr>
+                    <h4>Select Infrastructure</h4>
+                    <input type="checkbox" id="police3" name="police3" value="Bike">
+                    <label for="police"> Police Stations</label><br>
+                    <input type="checkbox" id="grocery3" name="grocery3" value="Car">
+                    <label for="grocery"> Grocery Stores</label><br>
+                    <input type="checkbox" id="pub-school3" name="pubschool3" value="Boat">
+                    <label for="pubschool"> Public Schools</label><br>
+                    <input type="checkbox" id="pri-school3" name="prischool3" value="Boat">
+                    <label for="prischool"> Private Schools</label>
+                    <hr>
                 </div>
-            </div> 
-            <div class="row">
-               
-                    <div class="col-12" id="phone-checkbox">
-                        <h4>Select Infrastructure</h4>
-                        <input type="checkbox" id="police" name="police" value="Bike">
-                        <label for="police"> Police Stations</label><br>
-                        <input type="checkbox" id="grocery" name="grocery" value="Car">
-                        <label for="grocery"> Grocery Stores</label><br>
-                        <input type="checkbox" id="pub-school" name="pubschool" value="Boat">
-                        <label for="pubschool"> Public Schools</label><br>
-                        <input type="checkbox" id="pri-school" name="prischool" value="Boat">
-                        <label for="prischool"> Private Schools</label><br>
-                        <button class ="button text-center" id ="submit">Submit Selections</button>
-                    </div>
-                
+            </div>
+            <div class='row'>
+                <div class="col-12">
+                    <button class ="button text-center" id ="submit3">Submit Selections</button>
+                </div>
             </div>
             <!--End of Selector Rows-->
 
@@ -484,7 +524,14 @@
             <div class="row">
                 <div class="col-12">
                     <h4>Latest Washington D.C. Crime News</h4>
-                    <div id="news3"></div>
+                    <div id='news3-table'>
+                        <table class='table table-striped'>
+                            <thead>
+                                <th>Article/Report Title</th>
+                            </thead>
+                            <tbody id="news3"></tbody>
+                        </table>
+                    </div>
                     <p id="newsdescription3"><strong>News Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -546,6 +593,8 @@
         
         <script src="../static/js/config.js"></script>
         <script src="../static/js/chris_app.js"></script>
+        <script src="../static/js/chris_app2.js"></script>
+        <script src="../static/js/chris_app3.js"></script>
         <script src="../static/js/clemi_app.js"></script>
         <script src="../static/js/clemi_app2.js"></script>
         
