@@ -27,6 +27,13 @@ database
 )
 
 
+#Deep Learning requirements
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
 engine = create_engine(f"mysql://{username}:{password}@{host}/{database}",echo = True)
 
 from flask_caching import Cache
@@ -176,6 +183,54 @@ def unemployment():
     results=pd.read_sql('SELECT * FROM unemployment',engine)
     results_json=results.to_json(orient='records')
     return results_json
+@app.route("/ml", methods=["GET", "POST"])
+def ml():
+
+    ward = request.args.get("ward")
+    time = request.args.get("time")
+    year = request.args.get("year")
+    month = request.args.get("month")
+    day = request.args.get("day")
+    print(f"ward: {ward} | time {time} | year {year} | month {month} | day {day}")
+    print(ward)
+
+
+    results=pd.read_sql('SELECT * FROM crime_ML',engine)
+
+    from sklearn.model_selection import train_test_split
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.preprocessing import StandardScaler
+
+    X_train, X_test, y_train, y_test = train_test_split(results[['WARD','Y','M','D','t']], results['OFFENSE'], random_state=42)
+    #X_scaler = StandardScaler().fit(X_train)
+    #X_train_scaled = X_scaler.transform(X_train)
+    #X_test_scaled = X_scaler.transform(X_test)
+    
+    #for k in range(1, 20, 2):
+        
+    #    knn = KNeighborsClassifier(n_neighbors=k)
+        
+    #    knn.fit(X_train_scaled, y_train)
+
+    knn = KNeighborsClassifier(n_neighbors=19)
+    knn.fit(X_train, y_train)
+    
+ #####################################################################
+
+
+    time = pd.to_datetime(time)
+    timeTransf=time.timestamp()
+ #####################################################################  
+    prediction=knn.predict([[ward,year,month,day,timeTransf]])
+
+    print("--- printing prediction here ---")
+    print(prediction)
+
+    prediction_dict = {
+        'CrimeType': prediction[0]
+    }
+
+    return jsonify(prediction_dict)
 
 
 

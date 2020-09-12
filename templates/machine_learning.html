@@ -35,254 +35,81 @@
         </div>
       </nav>
 
-      <!-- Desktop -->
-      <div class="container-fluid dsktop">
-        <div class="row">
-          <h3 id="mtitle">Machine Learning</h3>
-        
+      <!-- this is an example -->
+
+
+        <div class = 'container'>
+          <div class='row'>
+            <div class='col-md-2'>
+              <div class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="date" id="ward">Enter a ward (1-8)</label>
+                    <input class="form-control" id="ward-input" type="text" placeholder="1" name="ward">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <div class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="date">Enter a time</label>
+                    <input class="form-control" id="time-input" type="text" placeholder="21:00" name="timeInp">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <div class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="date">Enter a year</label>
+                    <input class="form-control" id="year-input" type="text" placeholder="2014" name="year">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <div class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="date">Enter a month</label>
+                    <input class="form-control" id="month-input" type="text" placeholder="01" name="month">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <div class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="date">Enter a day</label>
+                    <input class="form-control" id="day-input" type="text" placeholder="31" name="day">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Selector row-->
-
-        <div class="row" id="all-selectors">
-          <div class="col-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="ward-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date" id="ward1">Enter a ward (1-8)</label>
-                        <input class="form-control" id="ward-input1" type="text" placeholder="1">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="time-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a time</label>
-                        <input class="form-control" id="time-input1" type="text" placeholder="21:00">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="year-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a year</label>
-                        <input class="form-control" id="year-input1" type="text" placeholder="2014">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="month-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a month</label>
-                        <input class="form-control" id="month-input1" type="text" placeholder="01">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="day-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a day</label>
-                        <input class="form-control" id="day-input1" type="text" placeholder="31">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!--End Selector Row-->
-
         <!--Start button Row-->
         <div class="row">
-          <div class="col-4"></div>
+        <div class="col-4"></div>
 
-          <div class="col-4">
-            <button type="button" id="filter-btn1" class="btn btn-primary">Submit</button>
-          </div>
+        <div class="col-4">
+        <button type="button" id="prediction-btn" class="btn btn-primary">Submit</button>
+       </div>
 
-          <div class="col-4"></div>
-          
-        </div>
-        <!--End button Row-->
+       <div class="col-4"></div>
+  
+</div>
+      <!-- end of example -->
 
-        <!--Result-->
-        <div class="row">
-          <div class="col-12"><h4>Result</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="result1"></div>
-          <div class="col-1"></div>
-        </div>
 
-        <!--End result div-->
-
-        <!--Explanation div-->
-        <div class="row">
-          <div class="col-12"> <h4>Explanation</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="machine-explanation1"></div>
-          <div class="col-1"></div>
-        </div>
-        <!--End of Explanation div-->
       
-      </div>
-
-
-
-
-       <!--Tablet view -->
-      <div class="container-fluid tablet">
-        <div class="row">
-          <h3 id="mtitle">Machine Learning</h3>
-        
-        </div>
-        <!-- Selector row1-->
-
-        <div class="row">
-          <div class="col-6">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="ward-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date" id="ward1">Enter a ward (1-8)</label>
-                        <input class="form-control" id="ward-input1" type="text" placeholder="1">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="time-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a time</label>
-                        <input class="form-control" id="time-input1" type="text" placeholder="21:00">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-         
-        <div class="row">
-          <div class="col-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="year-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a year</label>
-                        <input class="form-control" id="year-input1" type="text" placeholder="2014">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="month-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a month</label>
-                        <input class="form-control" id="month-input1" type="text" placeholder="01">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="day-filters1">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a day</label>
-                        <input class="form-control" id="day-input1" type="text" placeholder="31">
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-        </div>
         <!--End Selector Row-->
 
-        <!--Start button Row-->
-        <div class="row">
-          <div class="col-4"></div>
-
-          <div class="col-4">
-            <button type="button" id="filter-btn1" class="btn btn-primary">Submit</button>
-          </div>
-
-          <div class="col-4"></div>
-          
-        </div>
+       
         <!--End button Row-->
 
         <!--Result-->
@@ -301,10 +128,21 @@
           <div class="col-12"> <h4>Explanation</h4></div>
         </div>
         <div class="row">
-          <div class="col-11" id="machine-explanation1"></div>
+          <div class="col-11" id="machine-explanation1"><p>Amongst all of the machine learning algorithms that the dataset was tested with, k-nearest neighbors (KNN) provided the highest prediction accuracy. It is crucial to note that a skew in the training data had a large impact on the testing accuracy. This is due to the fact that the count of certain offense types were exponentially higher than others, making it difficult to have representation across classes. While it is possible to reduce the skews in the data by reclassifying, this can only happen if doing so doesn't change the goal of the prediction. 
+            While machine learning has become a vital part of crime detection as well as crime prevention, a question arises about the fairness of its use. Historical crime data reveals higher offense rates in minority dominant neighborhoods. Many crime prediction algorithms utilize three main factors; type of crime, location, and the time of the event. As a result, police patrol routes are focused in the neighborhoods with historically high crime rates. So, we must ask ourselves, should we continue to use this method for predicting crime? </p></div>
+          
           <div class="col-1"></div>
         </div>
         <!--End of Explanation div-->
+        <div class="row">
+         
+         
+        </div>
+
+
+        
+
+      </div>
  
         
         <!-- Optional JavaScript -->
@@ -313,6 +151,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+
+        <!-- D3 -->
+        
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.1.1/d3.min.js"></script>
+
+
+
         <!-- JQuery -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Bootstrap tooltips -->
@@ -333,5 +179,29 @@
   </footer>
   <!-- End of footer -->  
         
+  <script>
+
+    prediction_btn = d3.select('#prediction-btn');
+    prediction_btn.on("click", function(b){
+      ward = d3.select("#ward-input").node().value;
+      time = d3.select("#time-input").node().value;
+      year = d3.select("#year-input").node().value;
+      month = d3.select("#month-input").node().value;
+      day = d3.select("#day-input").node().value;
+
+      var url = `/ml?ward=${ward}&time=${time}&year=${year}&month=${month}&day=${day}`;
+      console.log(url);
+
+      d3.json(url).then(function(response){
+
+        crimeType = response['CrimeType'];
+        console.log(`you got back: ${crimeType}`);
+        d3.select('#result1').html(crimeType);
+
+      });
+
+    });
+
+  </script>
     
 </html>
