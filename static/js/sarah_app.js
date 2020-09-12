@@ -626,7 +626,7 @@ var Arson = {
         Gen_Theft];
   
 var layout = {
-    title: 'Type of Crime over Time',
+    title: 'Annual Change in Crime by Offense',
     showlegend: false
         };
   Plotly.newPlot('timeseries1', data, layout);
@@ -656,7 +656,7 @@ var LineGraph = {
 var data2 = [BarPlots, LineGraph];
 
 var layout2 = {
-    title: "Crime Trends to Unemployment Trends", 
+    title: "Unemployment Rate to Annual Crime Totals", 
     showlegend: true, 
     yaxis: {title: "Crime Rates"},
     yaxis2: {title: "Unemployment Rate",
