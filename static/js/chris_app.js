@@ -12,35 +12,7 @@ var myMap = L.map("myMap1", {
     id: "mapbox/streets-v11",
     accessToken: API_KEY
   }).addTo(myMap);
-  
-  // Use this link to get the geojson data.
-  
-  // Grabbing our GeoJSON data..
-//   d3.json(link).then(function(data) {
-//       console.log(data);
-//       L.geoJson(data, {
-//               onEachFeature: function(feature, layer) {
-//                 layer.on({
-//                   mouseover: function(event) {
-//                     layer = event.target;
-//                     layer.setStyle({
-//                       fillOpacity: 0.9
-//                     });
-//                   },
-//                   mouseout: function(event) {
-//                     layer = event.target;
-//                     layer.setStyle({
-//                       fillOpacity: 0.5
-//                     });
-//                   },
-//                   click: function(event) {
-//                     myMap.fitBounds(event.target.getBounds());
-//                   }
-//                 });
-//                 layer.bindPopup("<h1>" + feature.properties.NAME + "</h1>");
-//               }
-//         }).addTo(myMap);
-//     });
+
 var redMarker = L.AwesomeMarkers.icon({
     icon: 'exclamation-circle',
     prefix: 'fa',
@@ -74,7 +46,6 @@ var markers = [];
 
 d3.select('#submit').on('click', function(filters){
     if(crimeLayer){
-        console.log("crimeLayer detected");
         myMap.removeLayer(crimeLayer);
         crimeLayer.clearLayers();
         markers = [];
@@ -83,19 +54,22 @@ d3.select('#submit').on('click', function(filters){
         myMap.removeLayer(heatArray);
         heat = [];
     }
-    // Use this link to get the geojson data.
-    console.log('heat length ' + heat.length);
+
     var yearSelection = d3.select("#selectYear").node().value;
     var month = d3.select("#selectMonth").node().value;
-    var offense = d3.select("#selectCrime").node().value;
+    var offenseh = d3.select("#selectCrimeHeat").node().value;
+    var offensem = d3.select("#selectCrimeMarker").node().value;
     var link = `/crime${yearSelection}`;
-    console.log(yearSelection);
-    console.log(month);
-    console.log(offense);
-    console.log(link);
-    d3.json(link).then(function(data) {
-        console.log(data);
-        console.log(data[0].REPORT_DAT.substring(4,8));
+    d3.json(link).then(function(datas) {
+        if(offenseh == "VIOLENT"){
+            var data = datas.filter(element => element.OFFENSE == "ASSAULT W/DANGEROUS WEAPON" || element.OFFENSE == "ROBBERY" || element.OFFENSE == "HOMICIDE" || element.OFFENSE == "SEX ABUSE");
+        }
+        else if(offenseh == "NONVIOLENT"){
+            var data = datas.filter(element => element.OFFENSE == "ARSON" || element.OFFENSE == "BURGLARY" || element.OFFENSE == "THEFT F/AUTO" || element.OFFENSE == "MOTOR VEHICLE THEFT" || element.OFFENSE == "THEFT/OTHER");
+        }
+        else{
+            var data = datas;
+        }
         for (var i = 0; i < data.length; i++) {
             var loc = [data[i].Y, data[i].X];
             if (loc) {
@@ -103,24 +77,28 @@ d3.select('#submit').on('click', function(filters){
             }
         }
         heatArray = L.heatLayer(heat, {
-            radius: 12,
+            radius: 11,
             blur: 20
         }).addTo(myMap);
-        console.log('heat length ' + heat.length);
-        var data_month = data.filter(data => data.REPORT_DAT.substring(4,8) == month);
-        var filtered = data_month.filter(element => element.OFFENSE == offense);
-        console.log(filtered);
+        var data_month = datas.filter(datas => datas.REPORT_DAT.substring(4,8) == month);
+        if(offensem == "VIOLENT"){
+            var filtered = data_month.filter(element => element.OFFENSE == "ASSAULT W/DANGEROUS WEAPON" || element.OFFENSE == "ROBBERY" || element.OFFENSE == "HOMICIDE" || element.OFFENSE == "SEX ABUSE");
+        }
+        else if(offensem == "NONVIOLENT"){
+            var filtered = data_month.filter(element => element.OFFENSE == "ARSON" || element.OFFENSE == "BURGLARY" || element.OFFENSE == "THEFT F/AUTO" || element.OFFENSE == "MOTOR VEHICLE THEFT" || element.OFFENSE == "THEFT/OTHER");
+        }
+        else{
+            var filtered = data_month.filter(element => element.OFFENSE == offensem);
+        }
         for (var i = 0; i < filtered.length; i++) {
             var location = [filtered[i].Y, filtered[i].X];
-            console.log(location);
             if (location) {
               markers.push(location)
             }
         }
-        console.log(markers);
         for (var i=0; i < markers.length; i++){
             var marker = L.marker(markers[i], {icon: redMarker}).addTo(crimeLayer);
-            marker.bindPopup("<h1>" + filtered[i].REPORT_DAT + "</h1> <hr> <h4>" + filtered[i].BLOCK + "</h4>");
+            marker.bindPopup("<h4><strong>" + filtered[i].OFFENSE + "</strong></h4><hr><h5><strong>Report Time: </strong>" + filtered[i].REPORT_DAT + "</h5> <hr> <h5><strong>Report Location: </strong>" + filtered[i].BLOCK + "</h5>");
         }  
         crimeLayer.addTo(myMap);
     });
@@ -146,7 +124,7 @@ policecheck.addEventListener('change', (event) =>{
                 if (loc) {
                     marker = L.marker(loc, {icon: blueMarker}).addTo(policeLayer);
                 }
-                marker.bindPopup("<h1>" + data_po[i].NAME + "</h1> <hr> <h4>" + data_po[i].CONTACT + "</h4>");
+                marker.bindPopup("<h6><strong>" + data_po[i].NAME + "</strong></h6><hr><h6><strong>Station Contact: </strong>" + data_po[i].CONTACT + "</h6>");
             };
             policeLayer.addTo(myMap);
         });
@@ -166,7 +144,7 @@ grocerycheck.addEventListener('change', (event) =>{
                 if (loc) {
                     marker = L.marker(loc, {icon: greenMarker}).addTo(groceryLayer);
                 }
-                marker.bindPopup("<h1>" + data_g[i].STORENAME + "</h1> <hr> <h4>" + data_g[i].ADDRESS + "</h4>");
+                marker.bindPopup("<h6><strong>" + data_g[i].STORENAME + "</strong></h6><hr><h6><strong>Store Address: </strong>" + data_g[i].ADDRESS + "</h6>");
             };
             groceryLayer.addTo(myMap);
         });
@@ -186,7 +164,7 @@ pubschoolcheck.addEventListener('change', (event) =>{
                 if (loc) {
                     marker = L.marker(loc, {icon: purpleMarker}).addTo(publicLayer);
                 }
-                marker.bindPopup("<h1>" + data_pu[i].NAME + "</h1> <hr> <h4>" + data_pu[i].ADDRESS + "</h4>");
+                marker.bindPopup("<h6><strong>" + data_pu[i].NAME + "</strong></h6><hr><h6><strong>School Address: </strong>" + data_pu[i].ADDRESS + "</h6>");
             };
             publicLayer.addTo(myMap);
         });
@@ -206,7 +184,7 @@ prischoolcheck.addEventListener('change', (event) =>{
                 if (loc) {
                     marker = L.marker(loc, {icon: dapurpleMarker}).addTo(privateLayer);
                 }
-                marker.bindPopup("<h1>" + data_pr[i].NAME + "</h1> <hr> <h4>" + data_pr[i].ADDRESS + "</h4>");
+                marker.bindPopup("<h6><strong>" + data_pr[i].NAME + "</strong></h6><hr><h6><strong>School Address: </strong>" + data_pr[i].ADDRESS + "</h6>");
             };
             privateLayer.addTo(myMap);
         });
@@ -216,3 +194,59 @@ prischoolcheck.addEventListener('change', (event) =>{
     }
 });
 
+var link = "static/data/dc.geojson";
+var wardLayer = new L.LayerGroup();
+
+const wardcheck = document.getElementById('wards');
+wardcheck.addEventListener('change', (event) =>{
+    if (event.target.checked){
+        console.log("clicked");
+        d3.json(link).then(function(data) {
+            console.log(data);
+            wardLayer = L.geoJson(data, {
+                            onEachFeature: function(feature, layer) {
+                            layer.on({
+                                mouseover: function(event) {
+                                layer = event.target;
+                                layer.setStyle({
+                                    fillOpacity: 0.4
+                                });
+                                },
+                                mouseout: function(event) {
+                                layer = event.target;
+                                layer.setStyle({
+                                    fillOpacity: 0.2
+                                });
+                                },
+                                click: function(event) {
+                                myMap.fitBounds(event.target.getBounds());
+                                }
+                            });
+                            layer.bindPopup("<h6>" + feature.properties.NAME + "</h6>");
+                            }   
+                        }).addTo(myMap);
+        });
+    }
+    else{
+        myMap.removeLayer(wardLayer);
+    }
+});
+
+var tbody = document.getElementById("news1");
+var newslist = "/news";
+d3.json(newslist).then(function(articles) {
+    for (i=0; i < 15; i++){
+        var row = document.createElement("tr");
+        console.log(row.id);
+        var anchor = document.createElement('a');
+        anchor.setAttribute('href', articles[i].link);
+        anchor.innerText = articles[i].title;
+        var linkcell = document.createElement("td").appendChild(anchor);
+        row.appendChild(linkcell);
+        var d = document.createElement('p');
+        d.innerText = "Published Date: " + articles[i].date;
+        var datecell = document.createElement("td").appendChild(d);
+        row.appendChild(datecell);
+        tbody.appendChild(row);
+    }
+});

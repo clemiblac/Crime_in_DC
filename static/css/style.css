@@ -42,7 +42,7 @@ p{
     height: 600px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
+    overflow-y: auto;
 }
 #usertip1{
     font-size: small;
@@ -109,6 +109,21 @@ p{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
+
+#filter-box{
+    height: 700px;
+    overflow-y: auto;
+}
+#news1-table{
+    height: 600px;
+    overflow-y: auto;
+}
+#submit{
+    color:black;
+    background-color: #887f06;
+}
+
+
 
 /******************************************   Home page Tablet view **************************************************/
 #myMap2{
