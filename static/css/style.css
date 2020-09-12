@@ -368,7 +368,15 @@ p{
 #all-selectors{
     margin-left: 50px;
 }
-
+#explanation1 {
+    overflow-y: auto;
+}
+#explanation2 {
+    overflow-y: auto;
+}
+#explanation3 {
+    overflow-y: auto;
+}
   
 #result1{
     height: 200px;
