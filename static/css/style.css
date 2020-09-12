@@ -322,7 +322,7 @@ p{
 /* End of cards on about page */
 
 
-/* Page 2 */
+/* Page 2     Machine learning */
   
 #filter-btn {
     height: 50px;
@@ -333,17 +333,32 @@ p{
     margin-bottom: 50px;
 }
 
+#all-selectors{
+    margin-left: 50px;
+}
+
   
-  
-#result{
+#result1{
     height: 200px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
+    margin-left: 50px;
+
+}
+
+#machine-explanation1{
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    margin-left: 50px;
+  
 }
 
 #mtitle{
     margin-top: 10px;
+    margin-left:30px
 }
 
 
