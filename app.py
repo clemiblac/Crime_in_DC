@@ -30,6 +30,7 @@ geocode_key=os.environ['geocode_key']
 host=os.environ['host']
 port=os.environ['port']
 username=os.environ['username']
+password=os.environ['password']
 # #Database setup
 # from config import (
 # username,
