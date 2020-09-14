@@ -626,6 +626,11 @@ var Arson = {
         Gen_Theft];
   
 var layout = {
+    xaxis: {  autotick: false,
+        tickangle: 45,
+        automargin: true,
+        tickfont: {size: 10}
+    },
     title: 'Type of Crime over Time',
     showlegend: false
         };
@@ -656,6 +661,11 @@ var LineGraph = {
 var data2 = [BarPlots, LineGraph];
 
 var layout2 = {
+    xaxis1: {  autotick: false,
+        tickangle: 45,
+        automargin: true,
+        tickfont: {size: 10}
+    },
     title: "Crime Trends to Unemployment Trends", 
     showlegend: true, 
     yaxis: {title: "Crime Rates"},
@@ -664,6 +674,8 @@ var layout2 = {
     side: "right"}
 }; 
 Plotly.newPlot('unemployment-crime1', data2, layout2);
+Plotly.newPlot('unemployment-crime2', data2, layout2);
+Plotly.newPlot('unemployment-crime3', data2, layout2);
 // Plotly.newPlot('CORRECTDIV2', data2, layout2);
 // Plotly.newPlot('CORRECTDIV3', data2, layout2);
 
