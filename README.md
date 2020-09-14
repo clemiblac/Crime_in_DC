@@ -1,7 +1,7 @@
 # Crime in Washington, D.C.
 
 ##### This project was a group effort. To view our app, please visit https://gwu-dc-crime.herokuapp.com/
-##### The purpose of this project was to explore Washington, D.C. crime data from the open D.C. database, visualize the data and apply machine learning to then data.
+##### The purpose of this project was to explore Washington, D.C. crime data from the open D.C. database, visualize the data and apply machine learning to the data.
 
 ### About the Authors
 ### Clementine Sraha
