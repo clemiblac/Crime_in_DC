@@ -6,8 +6,17 @@ from flask import (
     redirect,
     request)
 
+from flask_caching import Cache
+
+cache_config = {
+    "DEBUG": True,          # some Flask specific configs
+    "CACHE_TYPE": "simple", # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 18000
+}
+
 # importing necessary libraries
 import pandas as pd
+import time
 import json
 from datetime import datetime
 
@@ -49,13 +58,10 @@ pymysql.install_as_MySQLdb()
 
 engine = create_engine(f"mysql://{username}:{password}@{host}/{database}",echo = True)
 
-from flask_caching import Cache
 
-cache_config = {
-    "DEBUG": True,          # some Flask specific configs
-    "CACHE_TYPE": "simple", # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 18000
-}
+
+
+
 # tell Flask to use the above defined config
 
 app=Flask(__name__)
@@ -69,6 +75,7 @@ def home():
     return render_template("index.html")
 
 @app.route("/machine-learning")
+@cache.cached(timeout=18000)
 def machine():
     return render_template("machine_learning.html")
     
@@ -88,6 +95,7 @@ def news_scrape():
 
 
 @app.route("/census")
+@cache.cached(timeout=18000)
 def census():
     results=pd.read_sql('SELECT * FROM census',engine)
     results_json=results.to_json(orient='records')
@@ -190,11 +198,14 @@ def prischool():
     results=pd.read_sql('SELECT * FROM dc_pri_schools',engine)
     results_json=results.to_json(orient='records')
     return results_json
+
 @app.route("/unemployment")
+@cache.cached(timeout=18000)
 def unemployment():
     results=pd.read_sql('SELECT * FROM unemployment',engine)
     results_json=results.to_json(orient='records')
     return results_json
+    
 @app.route("/ml", methods=["GET", "POST"])
 def ml():
 
