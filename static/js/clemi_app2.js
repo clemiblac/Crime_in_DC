@@ -12,7 +12,7 @@ d3.json(crime_2014).then(function(c14){
             d3.json(crime_2017).then(function(c17){
                 d3.json(crime_2018).then(function(c18){
 
-                    console.log(c14)
+                    //console.log(c14)
                     total_2014=c14.length
                     var arson_14=c14.filter(c=>c.OFFENSE=='ARSON').length
                     var assault_weapon_14=c14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
@@ -127,14 +127,14 @@ d3.json(crime_2014).then(function(c14){
 
 
 
-                })
+                });
 
-            })
-        })
+            });
+        });
 
-    })
+    });
 
-})
+});
 
 
 

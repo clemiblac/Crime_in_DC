@@ -14,7 +14,7 @@ d3.json(crime_2014).then(function(c14){
                 d3.json(crime_2018).then(function(c18){
 
 
-                    console.log(c14);
+                    //console.log(c14);
                     var arson_14=c14.filter(c=>c.OFFENSE=='ARSON');
                     var assault_weapon_14=c14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_14=c14.filter(c=>c.OFFENSE=='BURGLARY');
@@ -46,7 +46,7 @@ d3.json(crime_2014).then(function(c14){
 
 
 
-                    console.log(c15);
+                    //console.log(c15);
                     var arson_15=c15.filter(c=>c.OFFENSE=='ARSON');
                     var assault_weapon_15=c15.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_15=c15.filter(c=>c.OFFENSE=='BURGLARY');
@@ -77,7 +77,7 @@ d3.json(crime_2014).then(function(c14){
                     var count_theft_other_15=theft_other_15.map(t=>t.count);
 
 
-                    console.log(c16);
+                    //console.log(c16);
                     var arson_16=c16.filter(c=>c.OFFENSE=='ARSON');
                     var assault_weapon_16=c16.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_16=c16.filter(c=>c.OFFENSE=='BURGLARY');
@@ -110,7 +110,7 @@ d3.json(crime_2014).then(function(c14){
 
 
 
-                    console.log(c17);
+                    //console.log(c17);
                     var arson_17=c17.filter(c=>c.OFFENSE=='ARSON');
                     var assault_weapon_17=c17.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_17=c17.filter(c=>c.OFFENSE=='BURGLARY');
@@ -141,7 +141,7 @@ d3.json(crime_2014).then(function(c14){
                     var count_theft_other_17=theft_other_17.map(t=>t.count);
 
 
-                    console.log(c18);
+                    //console.log(c18);
                     var arson_18=c18.filter(c=>c.OFFENSE=='ARSON');
                     var assault_weapon_18=c18.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_18=c18.filter(c=>c.OFFENSE=='BURGLARY');
