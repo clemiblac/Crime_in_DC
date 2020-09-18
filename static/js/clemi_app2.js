@@ -1,4 +1,5 @@
-var crime_2014="/crime_csvs/Crime_Incidents_in_2010.csv";
+var crime_2014="../crime_csvs/Crime_Incidents_in_2010.csv";
+
 var crime_2015="/crime2015";
 var crime_2016="/crime2016";
 var crime_2017="/crime2017";
