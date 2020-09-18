@@ -6,7 +6,7 @@ var crime_2018="/crime2018";
 
 /* Sunburst Chart*/
 
-d3.json(crime_2014).then(function(c14){
+d3.csv(crime_2014).then(function(c14){
     d3.json(crime_2015).then(function(c15){
         d3.json(crime_2016).then(function(c16){
             d3.json(crime_2017).then(function(c17){
