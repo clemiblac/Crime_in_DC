@@ -16,7 +16,6 @@ cache_config = {
 
 # importing necessary libraries
 import pandas as pd
-import time
 import json
 from datetime import datetime
 
@@ -205,7 +204,7 @@ def unemployment():
     results=pd.read_sql('SELECT * FROM unemployment',engine)
     results_json=results.to_json(orient='records')
     return results_json
-    
+
 @app.route("/ml", methods=["GET", "POST"])
 def ml():
 

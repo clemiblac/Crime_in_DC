@@ -1,0 +1,1298 @@
+[
+    {
+        "OFFENSE": "ARSON",
+        "hour": "00",
+        "count": 2,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "03",
+        "count": 2,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "05",
+        "count": 3,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "06",
+        "count": 2,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "07",
+        "count": 1,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "10",
+        "count": 1,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "12",
+        "count": 1,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "14",
+        "count": 2,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "19",
+        "count": 1,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "20",
+        "count": 1,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "21",
+        "count": 1,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "22",
+        "count": 1,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "01",
+        "count": 0,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "02",
+        "count": 0,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "04",
+        "count": 0,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "08",
+        "count": 0,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "09",
+        "count": 0,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "11",
+        "count": 0,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "13",
+        "count": 0,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "15",
+        "count": 0,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "16",
+        "count": 0,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "17",
+        "count": 0,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "18",
+        "count": 0,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "ARSON",
+        "hour": "23",
+        "count": 0,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "00",
+        "count": 127,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "01",
+        "count": 122,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "02",
+        "count": 128,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "03",
+        "count": 103,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "04",
+        "count": 103,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "05",
+        "count": 74,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "06",
+        "count": 51,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "07",
+        "count": 42,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "08",
+        "count": 30,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "09",
+        "count": 52,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "10",
+        "count": 63,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "11",
+        "count": 73,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "12",
+        "count": 91,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "13",
+        "count": 92,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "14",
+        "count": 82,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "15",
+        "count": 70,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "16",
+        "count": 108,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "17",
+        "count": 115,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "18",
+        "count": 119,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "19",
+        "count": 138,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "20",
+        "count": 128,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "21",
+        "count": 175,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "22",
+        "count": 135,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "ASSAULT W/DANGEROUS WEAPON",
+        "hour": "23",
+        "count": 155,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "00",
+        "count": 68,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "01",
+        "count": 58,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "02",
+        "count": 57,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "03",
+        "count": 50,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "04",
+        "count": 51,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "05",
+        "count": 53,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "06",
+        "count": 46,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "07",
+        "count": 85,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "08",
+        "count": 65,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "09",
+        "count": 99,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "10",
+        "count": 129,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "11",
+        "count": 118,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "12",
+        "count": 134,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "13",
+        "count": 149,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "14",
+        "count": 134,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "15",
+        "count": 122,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "16",
+        "count": 139,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "17",
+        "count": 160,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "18",
+        "count": 170,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "19",
+        "count": 164,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "20",
+        "count": 149,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "21",
+        "count": 140,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "22",
+        "count": 110,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "BURGLARY",
+        "hour": "23",
+        "count": 85,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "00",
+        "count": 160,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "01",
+        "count": 0,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "02",
+        "count": 0,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "03",
+        "count": 0,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "04",
+        "count": 0,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "05",
+        "count": 0,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "06",
+        "count": 0,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "07",
+        "count": 0,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "08",
+        "count": 0,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "09",
+        "count": 0,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "10",
+        "count": 0,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "11",
+        "count": 0,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "12",
+        "count": 0,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "13",
+        "count": 0,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "14",
+        "count": 0,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "15",
+        "count": 0,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "16",
+        "count": 0,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "17",
+        "count": 0,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "18",
+        "count": 0,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "19",
+        "count": 0,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "20",
+        "count": 0,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "21",
+        "count": 0,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "22",
+        "count": 0,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "HOMICIDE",
+        "hour": "23",
+        "count": 0,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "00",
+        "count": 80,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "01",
+        "count": 49,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "02",
+        "count": 64,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "03",
+        "count": 50,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "04",
+        "count": 61,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "05",
+        "count": 68,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "06",
+        "count": 76,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "07",
+        "count": 111,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "08",
+        "count": 151,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "09",
+        "count": 190,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "10",
+        "count": 206,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "11",
+        "count": 176,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "12",
+        "count": 177,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "13",
+        "count": 198,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "14",
+        "count": 164,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "15",
+        "count": 119,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "16",
+        "count": 149,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "17",
+        "count": 144,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "18",
+        "count": 120,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "19",
+        "count": 120,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "20",
+        "count": 111,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "21",
+        "count": 104,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "22",
+        "count": 111,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "MOTOR VEHICLE THEFT",
+        "hour": "23",
+        "count": 95,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "00",
+        "count": 184,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "01",
+        "count": 203,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "02",
+        "count": 148,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "03",
+        "count": 154,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "04",
+        "count": 150,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "05",
+        "count": 84,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "06",
+        "count": 75,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "07",
+        "count": 46,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "08",
+        "count": 42,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "09",
+        "count": 43,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "10",
+        "count": 64,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "11",
+        "count": 95,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "12",
+        "count": 90,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "13",
+        "count": 127,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "14",
+        "count": 119,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "15",
+        "count": 113,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "16",
+        "count": 139,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "17",
+        "count": 128,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "18",
+        "count": 154,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "19",
+        "count": 170,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "20",
+        "count": 217,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "21",
+        "count": 239,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "22",
+        "count": 282,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "ROBBERY",
+        "hour": "23",
+        "count": 245,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "00",
+        "count": 17,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "01",
+        "count": 12,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "02",
+        "count": 7,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "03",
+        "count": 12,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "04",
+        "count": 18,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "05",
+        "count": 11,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "06",
+        "count": 13,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "07",
+        "count": 13,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "08",
+        "count": 15,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "09",
+        "count": 4,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "10",
+        "count": 5,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "11",
+        "count": 15,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "12",
+        "count": 16,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "13",
+        "count": 17,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "14",
+        "count": 15,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "15",
+        "count": 16,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "16",
+        "count": 6,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "17",
+        "count": 11,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "18",
+        "count": 20,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "19",
+        "count": 17,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "20",
+        "count": 21,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "21",
+        "count": 21,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "22",
+        "count": 16,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "SEX ABUSE",
+        "hour": "23",
+        "count": 14,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "00",
+        "count": 192,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "01",
+        "count": 171,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "02",
+        "count": 236,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "03",
+        "count": 293,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "04",
+        "count": 238,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "05",
+        "count": 214,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "06",
+        "count": 223,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "07",
+        "count": 421,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "08",
+        "count": 643,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "09",
+        "count": 678,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "10",
+        "count": 617,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "11",
+        "count": 676,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "12",
+        "count": 711,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "13",
+        "count": 779,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "14",
+        "count": 674,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "15",
+        "count": 595,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "16",
+        "count": 615,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "17",
+        "count": 605,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "18",
+        "count": 552,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "19",
+        "count": 535,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "20",
+        "count": 468,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "21",
+        "count": 478,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "22",
+        "count": 362,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "THEFT F/AUTO",
+        "hour": "23",
+        "count": 286,
+        "TIME": "11PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "00",
+        "count": 258,
+        "TIME": "12AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "01",
+        "count": 252,
+        "TIME": "1AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "02",
+        "count": 219,
+        "TIME": "2AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "03",
+        "count": 203,
+        "TIME": "3AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "04",
+        "count": 173,
+        "TIME": "4AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "05",
+        "count": 147,
+        "TIME": "5AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "06",
+        "count": 142,
+        "TIME": "6AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "07",
+        "count": 191,
+        "TIME": "7AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "08",
+        "count": 391,
+        "TIME": "8AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "09",
+        "count": 578,
+        "TIME": "9AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "10",
+        "count": 680,
+        "TIME": "10AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "11",
+        "count": 779,
+        "TIME": "11AM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "12",
+        "count": 807,
+        "TIME": "12PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "13",
+        "count": 867,
+        "TIME": "1PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "14",
+        "count": 882,
+        "TIME": "2PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "15",
+        "count": 888,
+        "TIME": "3PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "16",
+        "count": 1012,
+        "TIME": "4PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "17",
+        "count": 1019,
+        "TIME": "5PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "18",
+        "count": 1011,
+        "TIME": "6PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "19",
+        "count": 997,
+        "TIME": "7PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "20",
+        "count": 920,
+        "TIME": "8PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "21",
+        "count": 844,
+        "TIME": "9PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "22",
+        "count": 603,
+        "TIME": "10PM"
+    },
+    {
+        "OFFENSE": "THEFT/OTHER",
+        "hour": "23",
+        "count": 374,
+        "TIME": "11PM"
+    }
+]
