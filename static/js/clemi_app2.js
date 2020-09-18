@@ -154,21 +154,4 @@ d3.json(crime_2014).then(function(c14){
 
 
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
