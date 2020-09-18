@@ -1,4 +1,4 @@
-var crime_2014="/crime2014";
+var crime_2014="/crime_csvs/Crime_Incidents_in_2010.csv";
 var crime_2015="/crime2015";
 var crime_2016="/crime2016";
 var crime_2017="/crime2017";
@@ -12,7 +12,7 @@ d3.json(crime_2014).then(function(c14){
             d3.json(crime_2017).then(function(c17){
                 d3.json(crime_2018).then(function(c18){
 
-                    //console.log(c14)
+                    console.log(c14)
                     total_2014=c14.length
                     var arson_14=c14.filter(c=>c.OFFENSE=='ARSON').length
                     var assault_weapon_14=c14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
