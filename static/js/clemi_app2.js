@@ -1,16 +1,16 @@
-var crime_2014="/crime2014";
-var crime_2015="/crime2015";
-var crime_2016="/crime2016";
-var crime_2017="/crime2017";
-var crime_2018="/crime2018";
+var sun_2014="/static/crime_json/sun_2014.json";
+var sun_2015="/static/crime_json/sun_2015.json";
+var sun_2016="/static/crime_json/sun_2016.json";
+var sun_2017="/static/crime_json/sun_2017.json";
+var sun_2018="/static/crime_json/sun_2018.json";
 
 /* Sunburst Chart*/
 
-d3.json(crime_2014).then(function(c14){
-    d3.json(crime_2015).then(function(c15){
-        d3.json(crime_2016).then(function(c16){
-            d3.json(crime_2017).then(function(c17){
-                d3.json(crime_2018).then(function(c18){
+d3.json(sun_2014).then(function(c14){
+    d3.json(sun_2015).then(function(c15){
+        d3.json(sun_2016).then(function(c16){
+            d3.json(sun_2017).then(function(c17){
+                d3.json(sun_2018).then(function(c18){
 
                     //console.log(c14)
                     total_2014=c14.length
