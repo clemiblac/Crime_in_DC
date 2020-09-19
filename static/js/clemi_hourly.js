@@ -13,9 +13,23 @@ d3.json(crime_2014).then(function(c14){
             d3.json(crime_2017).then(function(c17){
                 d3.json(crime_2018).then(function(c18){
 
+                  
+                    function compare(a, b) {
+                        const caseA = a.hour;
+                        const caseB = b.hour;
+                        
+                        let comparison = 0;
+                        if (caseA > caseB) {
+                            comparison = 1;
+                        } else if (caseA < caseB) {
+                            comparison = -1;
+                        }
+                        return comparison * 1;
+                    }
+                     
 
-                    //console.log(c14);
                     var arson_14=c14.filter(c=>c.OFFENSE=='ARSON');
+                    var sorted_arson14=arson_14.sort(compare)
                     var assault_weapon_14=c14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_14=c14.filter(c=>c.OFFENSE=='BURGLARY');
                     var homicide_14=c14.filter(c=>c.OFFENSE=='HOMICIDE');
@@ -25,8 +39,8 @@ d3.json(crime_2014).then(function(c14){
                     var auto_theft_14=c14.filter(c=>c.OFFENSE=='THEFT F/AUTO');
                     var theft_other_14=c14.filter(c=>c.OFFENSE=='THEFT/OTHER');
               
-                    var arson_hour_14=arson_14.map(t=>t.TIME);
-                    var count_arson_14=arson_14.map(t=>t.count);
+                    var arson_hour_14=sorted_arson14.map(t=>t.TIME);
+                    var count_arson_14=sorted_arson14.map(t=>t.count);
                     var assault_hour_14=assault_weapon_14.map(t=>t.TIME);
                     var count_assault_14=assault_weapon_14.map(t=>t.count);
                     var burglary_hour_14=burglary_14.map(t=>t.TIME);
@@ -48,6 +62,7 @@ d3.json(crime_2014).then(function(c14){
 
                     //console.log(c15);
                     var arson_15=c15.filter(c=>c.OFFENSE=='ARSON');
+                    var sorted_arson15=arson_15.sort(compare)
                     var assault_weapon_15=c15.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_15=c15.filter(c=>c.OFFENSE=='BURGLARY');
                     var homicide_15=c15.filter(c=>c.OFFENSE=='HOMICIDE');
@@ -57,8 +72,8 @@ d3.json(crime_2014).then(function(c14){
                     var auto_theft_15=c15.filter(c=>c.OFFENSE=='THEFT F/AUTO');
                     var theft_other_15=c15.filter(c=>c.OFFENSE=='THEFT/OTHER');
 
-                    var arson_hour_15=arson_15.map(t=>t.TIME);
-                    var count_arson_15=arson_15.map(t=>t.count);
+                    var arson_hour_15=sorted_arson15.map(t=>t.TIME);
+                    var count_arson_15=sorted_arson15.map(t=>t.count);
                     var assault_hour_15=assault_weapon_15.map(t=>t.TIME);
                     var count_assault_15=assault_weapon_15.map(t=>t.count);
                     var burglary_hour_15=burglary_15.map(t=>t.TIME);
@@ -79,6 +94,7 @@ d3.json(crime_2014).then(function(c14){
 
                     //console.log(c16);
                     var arson_16=c16.filter(c=>c.OFFENSE=='ARSON');
+                    var sorted_arson16=arson_16.sort(compare)
                     var assault_weapon_16=c16.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_16=c16.filter(c=>c.OFFENSE=='BURGLARY');
                     var homicide_16=c16.filter(c=>c.OFFENSE=='HOMICIDE');
@@ -88,8 +104,8 @@ d3.json(crime_2014).then(function(c14){
                     var auto_theft_16=c16.filter(c=>c.OFFENSE=='THEFT F/AUTO');
                     var theft_other_16=c16.filter(c=>c.OFFENSE=='THEFT/OTHER');
 
-                    var arson_hour_16=arson_16.map(t=>t.TIME);
-                    var count_arson_16=arson_16.map(t=>t.count);
+                    var arson_hour_16=sorted_arson16.map(t=>t.TIME);
+                    var count_arson_16=sorted_arson16.map(t=>t.count);
                     var assault_hour_16=assault_weapon_16.map(t=>t.TIME);
                     var count_assault_16=assault_weapon_16.map(t=>t.count);
                     var burglary_hour_16=burglary_16.map(t=>t.TIME);
@@ -112,6 +128,7 @@ d3.json(crime_2014).then(function(c14){
 
                     //console.log(c17);
                     var arson_17=c17.filter(c=>c.OFFENSE=='ARSON');
+                    var sorted_arson17=arson_17.sort(compare)
                     var assault_weapon_17=c17.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_17=c17.filter(c=>c.OFFENSE=='BURGLARY');
                     var homicide_17=c17.filter(c=>c.OFFENSE=='HOMICIDE');
@@ -121,8 +138,8 @@ d3.json(crime_2014).then(function(c14){
                     var auto_theft_17=c17.filter(c=>c.OFFENSE=='THEFT F/AUTO');
                     var theft_other_17=c17.filter(c=>c.OFFENSE=='THEFT/OTHER');
 
-                    var arson_hour_17=arson_17.map(t=>t.TIME);
-                    var count_arson_17=arson_17.map(t=>t.count);
+                    var arson_hour_17=sorted_arson17.map(t=>t.TIME);
+                    var count_arson_17=sorted_arson17.map(t=>t.count);
                     var assault_hour_17=assault_weapon_17.map(t=>t.TIME);
                     var count_assault_17=assault_weapon_17.map(t=>t.count);
                     var burglary_hour_17=burglary_17.map(t=>t.TIME);
@@ -143,6 +160,7 @@ d3.json(crime_2014).then(function(c14){
 
                     //console.log(c18);
                     var arson_18=c18.filter(c=>c.OFFENSE=='ARSON');
+                    var sorted_arson18=arson_18.sort(compare)
                     var assault_weapon_18=c18.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON');
                     var burglary_18=c18.filter(c=>c.OFFENSE=='BURGLARY');
                     var homicide_18=c18.filter(c=>c.OFFENSE=='HOMICIDE');
@@ -152,8 +170,8 @@ d3.json(crime_2014).then(function(c14){
                     var auto_theft_18=c18.filter(c=>c.OFFENSE=='THEFT F/AUTO');
                     var theft_other_18=c18.filter(c=>c.OFFENSE=='THEFT/OTHER');
 
-                    var arson_hour_18=arson_18.map(t=>t.TIME);
-                    var count_arson_18=arson_18.map(t=>t.count);
+                    var arson_hour_18=sorted_arson18.map(t=>t.TIME);
+                    var count_arson_18=sorted_arson18.map(t=>t.count);
                     var assault_hour_18=assault_weapon_18.map(t=>t.TIME);
                     var count_assault_18=assault_weapon_18.map(t=>t.count);
                     var burglary_hour_18=burglary_18.map(t=>t.TIME);
