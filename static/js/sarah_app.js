@@ -627,6 +627,7 @@ var Arson = {
 
 
 var layout = {
+<<<<<<< HEAD
     title: 'Annual Change in Crime by Offense',
     showlegend: false,
     xaxis: { 
@@ -634,6 +635,15 @@ var layout = {
             text: "Years"
         }
     }
+=======
+    xaxis: {  autotick: false,
+        tickangle: 45,
+        automargin: true,
+        tickfont: {size: 10}
+    },
+    title: 'Type of Crime over Time',
+    showlegend: false
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
         };
   Plotly.newPlot('timeseries1', data, layout);
   Plotly.newPlot('timeseries2', data, layout);
@@ -662,7 +672,16 @@ var LineGraph = {
 var data2 = [BarPlots, LineGraph];
 
 var layout2 = {
+<<<<<<< HEAD
     title: "Unemployment Rate to Annual Crime Totals", 
+=======
+    xaxis1: {  autotick: false,
+        tickangle: 45,
+        automargin: true,
+        tickfont: {size: 10}
+    },
+    title: "Crime Trends to Unemployment Trends", 
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
     showlegend: true, 
     yaxis: {title: "Crime Rates"},
     yaxis2: {title: "Unemployment Rate",
@@ -670,6 +689,8 @@ var layout2 = {
     side: "right"}
 }; 
 Plotly.newPlot('unemployment-crime1', data2, layout2);
+Plotly.newPlot('unemployment-crime2', data2, layout2);
+Plotly.newPlot('unemployment-crime3', data2, layout2);
 // Plotly.newPlot('CORRECTDIV2', data2, layout2);
 // Plotly.newPlot('CORRECTDIV3', data2, layout2);
 

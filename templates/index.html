@@ -27,17 +27,18 @@
         </script>
         <!-- Icons-->
         <script src="https://kit.fontawesome.com/ec86bdd85f.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
         <link rel="stylesheet" href="static/css/leaflet.awesome-markers.css">
         <script src="static/js/leaflet.awesome-markers.js"></script>
 
         <!-- CSS FILE--> 
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="{{url_for ('static',filename='css/style.css')}}">
         
 
         <title>Crime in DC Home</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../static/steal.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url_for ('static',filename='steal.png')}}">
       
+
        
        
     </head>
@@ -45,7 +46,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
             <a class="navbar-brand" href="#">
-                <img src="../static/steal.png" alt="logo icon" id=logo><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3>
+                <img src="{{url_for ('static',filename='steal.png')}}" alt="logo icon" id=logo><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -193,14 +194,42 @@
                     <div class="row">
                         <div class="col-6">
                             <h4> The Fine Print</h4>
+<<<<<<< HEAD
                             <div>
                                 <p id="explanation1">Dataset Description: This dynamic dashboard incorporates over sixteen different unique sets of data, the majority of which is from Open Data DC. All data was cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order to build visualizations. The data aims to create a picture of Washington D.C. through the focus being crime but expand the user’s lens to explore the factors that have been long studied to correlate with crime prevalence. 
                                     Story: The point of the visualizations presented in collaboration with one another is to identify the reported crime from the Open Data DC and to figure out where crime is taking place within the District. This dashboard dissects the crime taking place by type, the year, and the hour of day. Then the team added in extrapolating factors that are correlated with crime in a sociological sense. There is a body of research that attributes criminal behavior to the availability of resources in communities and that is illustrated by the plots on our map. There is also evidence that more crime is suspected to happen at night and the team has visualized the reported reality of this assumption. Data has suggested that crime and unemployment are related and there is a graph that explores the validity in the context of the District of Columbia. Lastly, crime was broken down by composition. From first glance at the bar graph that is cumulative of crime, DC crime rates appear to be high but it is important to note the composition of crime is not equal to or directly indicative of a bad city. The majority composition of crime appears to be non-violent in nature and that is a key for those studying criminal justice to assist reducing crime in an informed fashion. 
                                 </p>
+=======
+                            <div >
+                                
+                                    <p id="explanation1"><strong>Dataset Description:</strong> This dynamic dashboard incorporates over
+                                         sixteen different unique sets of data, the majority of which is from Open Data DC. All data was
+                                          cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order
+                                           to build visualizations. The data aims to create a picture of Washington D.C. through the
+                                            focus being crime but expand the user's lens to explore the factors that have been long 
+                                            studied to correlate with crime prevalence. 
+                                        Story: The point of the visualizations presented in collaboration with one another
+                                         is to identify the reported crime from the Open Data DC and to figure out where crime
+                                          is taking place within the District.<br><br> This dashboard dissects the crime taking 
+                                          place by type, the year, and the hour of day. Then the team added in extrapolating
+                                           factors that are correlated with crime in a sociological sense. There is a body of 
+                                           research that attributes criminal behavior to the availability of resources in communities
+                                            and that is illustrated by the plots on our map. There is also evidence that more crime 
+                                            is suspected to happen at night and the team has visualized the reported reality of this
+                                             assumption. Data has suggested that crime and unemployment are related and there is a
+                                              graph that explores the validity in the context of the District of Columbia.<br><br>
+                                               Lastly, crime was broken down by composition. From first glance at the bar
+                                               graph that is cumulative of crime, DC crime rates appear to be high but it is important
+                                                to note the composition of crime is not equal to or directly indicative of a bad city.
+                                                 The majority composition of crime appears to be non-violent in nature and that is a 
+                                                 key for those studying criminal justice to assist reducing crime in an informed fashion. 
+                                    </p>
+                                
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
                             </div>
                         </div>
                         <div class="col-6">
-                            <h4> Unemployment to Total Crime per Year</h4>
+                            <h4> Unemployment Rate to Annual Crime Totals</h4>
                             <div  id="unemployment-crime1"></div>
                         </div>
                     </div>
@@ -373,16 +402,29 @@
                         <div class="col-12">
                             <h4>The Fine Print</h4>
                             <div>
+<<<<<<< HEAD
                                 <p id="explanation2">Dataset Description: This dynamic dashboard incorporates over sixteen different unique sets of data, the majority of which is from Open Data DC. All data was cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order to build visualizations. The data aims to create a picture of Washington D.C. through the focus being crime but expand the user’s lens to explore the factors that have been long studied to correlate with crime prevalence. 
                                     Story: The point of the visualizations presented in collaboration with one another is to identify the reported crime from the Open Data DC and to figure out where crime is taking place within the District. This dashboard dissects the crime taking place by type, the year, and the hour of day. Then the team added in extrapolating factors that are correlated with crime in a sociological sense. There is a body of research that attributes criminal behavior to the availability of resources in communities and that is illustrated by the plots on our map. There is also evidence that more crime is suspected to happen at night and the team has visualized the reported reality of this assumption. Data has suggested that crime and unemployment are related and there is a graph that explores the validity in the context of the District of Columbia. Lastly, crime was broken down by composition. From first glance at the bar graph that is cumulative of crime, DC crime rates appear to be high but it is important to note the composition of crime is not equal to or directly indicative of a bad city. The majority composition of crime appears to be non-violent in nature and that is a key for those studying criminal justice to assist reducing crime in an informed fashion. 
                                 </p>
+=======
+                             
+                                    <p id="explanation2"><strong> Description:</strong> This dynamic dashboard incorporates over sixteen different unique sets of data, the majority of which is from Open Data DC. All data was cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order to build visualizations. The data aims to create a picture of Washington D.C. through the focus being crime but expand the user's lens to explore the factors that have been long studied to correlate with crime prevalence. 
+                                        Story: The point of the visualizations presented in collaboration with one another is to identify the reported crime
+                                         from the Open Data DC and to figure out where crime is taking place within the District.<br><br> This dashboard dissects the crime taking place by type, the year, and the hour of day. Then the team added in extrapolating factors that are correlated with crime in a sociological sense. There is a body of research that attributes criminal behavior to the availability of resources in communities and that is illustrated by the plots on our map. There is also evidence that more crime is suspected to happen at night and the team has visualized the reported reality of this assumption. Data has suggested that crime and unemployment are related and there is a graph that explores the validity in the context of the District of Columbia.<br><br> Lastly, crime was broken down by composition. From first glance at the bar graph that is cumulative of crime, DC crime rates appear to be high but it is important to note the composition of crime is not equal to or directly indicative of a bad city. The majority composition of crime appears to be non-violent in nature and that is a key for those studying criminal justice to assist reducing crime in an informed fashion. 
+                                    </p>
+                           
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <h4> Unemployment Rate to Annual Crime Totals</h4>
+<<<<<<< HEAD
                             <div  id="unemployment-crime1"></div>
+=======
+                            <div  id="unemployment-crime2"></div>
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
                         </div>
                     </div>
 
@@ -401,7 +443,11 @@
                     <div id="sunburst2"></div>
                 </div>
                 <div class="col-6">
+<<<<<<< HEAD
                     <h4> Annual Change in Crime By Offense </h4>
+=======
+                    <h4> Annual Change in Crime over Time</h4>
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
                     <div  id="timeseries2"></div>
                 </div>
 
@@ -562,10 +608,19 @@
             <div class="row">
                 <div class="col-12">
                     <h4>The Fine Print</h4>
+<<<<<<< HEAD
                     <div>
                         <p id="explanation3">Dataset Description: This dynamic dashboard incorporates over sixteen different unique sets of data, the majority of which is from Open Data DC. All data was cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order to build visualizations. The data aims to create a picture of Washington D.C. through the focus being crime but expand the user’s lens to explore the factors that have been long studied to correlate with crime prevalence. 
                             Story: The point of the visualizations presented in collaboration with one another is to identify the reported crime from the Open Data DC and to figure out where crime is taking place within the District. This dashboard dissects the crime taking place by type, the year, and the hour of day. Then the team added in extrapolating factors that are correlated with crime in a sociological sense. There is a body of research that attributes criminal behavior to the availability of resources in communities and that is illustrated by the plots on our map. There is also evidence that more crime is suspected to happen at night and the team has visualized the reported reality of this assumption. Data has suggested that crime and unemployment are related and there is a graph that explores the validity in the context of the District of Columbia. Lastly, crime was broken down by composition. From first glance at the bar graph that is cumulative of crime, DC crime rates appear to be high but it is important to note the composition of crime is not equal to or directly indicative of a bad city. The majority composition of crime appears to be non-violent in nature and that is a key for those studying criminal justice to assist reducing crime in an informed fashion. 
                         </p>
+=======
+                    <div >
+                        
+                            <p id="explanation3"><strong>Dataset Description:</strong> This dynamic dashboard incorporates over sixteen different unique sets of data, the majority of which is from Open Data DC. All data was cleaned and migrated over to a MySQL database where it was retrieved via JavaScript in order to build visualizations. The data aims to create a picture of Washington D.C. through the focus being crime but expand the user's lens to explore the factors that have been long studied to correlate with crime prevalence. 
+                                Story: The point of the visualizations presented in collaboration with one another is to identify the reported crime from the Open Data DC and to figure out where crime is taking place within the District.<br><br> This dashboard dissects the crime taking place by type, the year, and the hour of day. Then the team added in extrapolating factors that are correlated with crime in a sociological sense. There is a body of research that attributes criminal behavior to the availability of resources in communities and that is illustrated by the plots on our map. There is also evidence that more crime is suspected to happen at night and the team has visualized the reported reality of this assumption. Data has suggested that crime and unemployment are related and there is a graph that explores the validity in the context of the District of Columbia.<br><br> Lastly, crime was broken down by composition. From first glance at the bar graph that is cumulative of crime, DC crime rates appear to be high but it is important to note the composition of crime is not equal to or directly indicative of a bad city. The majority composition of crime appears to be non-violent in nature and that is a key for those studying criminal justice to assist reducing crime in an informed fashion. 
+                            </p>
+                        
+>>>>>>> 93b4e158d8ea436360f6e80e2092f322a1b00522
                     </div>
                 </div>
             </div>
@@ -573,8 +628,8 @@
             <!-- Annual crime row-->
             <div class="row">
                 <div class="col-12">
-                    <h4>Change in Crime by Year Washington, D.C.</h4>
-                    <div  id="yearlyCrime3"></div>
+                    <h4> Unemployment Rate to Annual Crime Totals</h4>
+                    <div  id="unemployment-crime3"></div>
                 </div>
             </div>
             
@@ -583,7 +638,7 @@
             <!--Heat map Row-->
             <div class="row">
                 <div class="col-12">
-                    <h4> Sunburst for Offenses by Year</h4>
+                    <h4> Sunburst for Crime by Year</h4>
                     <p id ="sunbursttext3">(Click one of the years to see the expanded view)</p>
                     <div id="sunburst3"></div>
                 </div>
@@ -592,7 +647,7 @@
             <!--timeseries Row-->
             <div>
                 <div class="col-12">
-                    <h4> Change in Crime over Time</h4>
+                    <h4>Annual Change in Crime over Time</h4>
                     <div  id="timeseries3"></div>
                 </div>
             </div>
@@ -600,16 +655,20 @@
 
         </div>
         
+        <script>
+            var API_KEY = 'pk.eyJ1IjoiZGFydGFuaW9udyIsImEiOiJjam01OWhzOHQwbXl3M3BwOGxndWhvNzl2In0.EY46JTKac1w-i-OmHrVzcA';
+        </script>
 
 
         
-        <script src="../static/js/config.js"></script>
-        <script src="../static/js/chris_app.js"></script>
-        <script src="../static/js/chris_app2.js"></script>
-        <script src="../static/js/chris_app3.js"></script>
-        <script src="../static/js/clemi_app.js"></script>
-        <script src="../static/js/clemi_app2.js"></script>
-        <script src="../static/js/sarah_app.js"></script>
+       
+        <script src="{{url_for('static', filename='js/chris_app.js')}}"></script>
+        <script src="{{url_for('static', filename='js/chris_app2.js')}}"></script>
+        <script src="{{url_for('static', filename='js/chris_app3.js')}}"></script>
+        <script src="{{url_for('static', filename='js/clemi_hourly.js')}}"></script>
+        <script src="{{url_for('static', filename='js/clemi_app2.js')}}"></script>-->
+        <script src="{{url_for('static', filename='js/sarah_app.js')}}"></script>
+     
         
         
 

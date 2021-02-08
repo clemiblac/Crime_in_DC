@@ -9,10 +9,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- CSS FILE-->
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="{{url_for ('static',filename='css/style.css')}}">
 
         <title>Machine Learning</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../static/steal.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url_for ('static',filename='steal.png')}}">
        
     </head>
 
@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         
         <a class="navbar-brand" href="#">
-          <img src="../static/steal.png" width='50' height='50'><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3></a>
+          <img src="{{url_for ('static',filename='steal.png')}}" width='50' height='50'><h3 class ="navbar-text" id="name"><strong>Crime in Washington, D.C.</strong></h3></a>
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,14 @@
       <!-- this is an example -->
 
 
-        <div class = 'container'>
+        <div class = 'container-fluid'>
+          <div class="row">
+            <div class="col-12">
+              <h4>Machine Learning</h4>
+            </div>
+
+          </div>
+
           <div class='row'>
             <div class='col-md-2'>
               <div class="form-group">
@@ -92,17 +99,59 @@
             </div>
           </div>
         </div>
+
         <!--Start button Row-->
         <div class="row">
-        <div class="col-4"></div>
+          <div class="col-4"></div>
 
-        <div class="col-4">
-        <button type="button" id="prediction-btn" class="btn btn-primary">Submit</button>
+          <div class="col-4">
+            <button type="button" id="prediction-btn" class="btn btn-primary">Submit</button>
+          </div>
+
+          <div class="col-4"></div>
+        </div>
+
+       
+
+       <!--Result-->
+       <div class="row">
+          <div class="col-12 text-center"><h4>Result</h4><p>(Result may take up to 30 seconds to display)</p></div>
        </div>
 
-       <div class="col-4"></div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center" id="result1"></div>
+        <div class="col-4"></div>
+      </div>
+
+      <!--End result div-->
+
+      <!--Explanation div-->
+      <div class="row">
+        <div class="col-12 text-center"> <h4>Explanation</h4></div>
+      </div>
+      <div class="row">
+        <div class="col-11" id="machine-explanation1"><p>Amongst all of the machine learning algorithms that the dataset was tested with, k-nearest neighbors (KNN)
+           provided the highest prediction accuracy. It is crucial to note that a skew in the training data had a large impact on the testing accuracy. This is due 
+           to the fact that the count of certain offense types were exponentially higher than others, making it difficult to have representation across classes. 
+           While it is possible to reduce the skews in the data by reclassifying, this can only happen if doing so doesn't change the goal of the prediction. 
+          While machine learning has become a vital part of crime detection as well as crime prevention, a question arises about the fairness of its use.
+           Historical crime data reveals higher offense rates in minority dominant neighborhoods. Many crime prediction algorithms utilize three main factors;
+            type of crime, location, and the time of the event. As a result, police patrol routes are focused in the neighborhoods with historically high crime rates.
+             So, we must ask ourselves, should we continue to use this method for predicting crime? </p>
+        </div>
+        
+        <div class="col-1"></div>
+      </div>
+      <!--End of Explanation div-->
+      <div class="row">
+       
+       
+      </div>
+
+
   
-</div>
+      </div>
       <!-- end of example -->
 
 
@@ -112,34 +161,7 @@
        
         <!--End button Row-->
 
-        <!--Result-->
-        <div class="row">
-          <div class="col-12"><h4>Result</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="result1"></div>
-          <div class="col-1"></div>
-        </div>
-
-        <!--End result div-->
-
-        <!--Explanation div-->
-        <div class="row">
-          <div class="col-12"> <h4>Explanation</h4></div>
-        </div>
-        <div class="row">
-          <div class="col-11" id="machine-explanation1"><p>Amongst all of the machine learning algorithms that the dataset was tested with, k-nearest neighbors (KNN) provided the highest prediction accuracy. It is crucial to note that a skew in the training data had a large impact on the testing accuracy. This is due to the fact that the count of certain offense types were exponentially higher than others, making it difficult to have representation across classes. While it is possible to reduce the skews in the data by reclassifying, this can only happen if doing so doesn't change the goal of the prediction. 
-            While machine learning has become a vital part of crime detection as well as crime prevention, a question arises about the fairness of its use. Historical crime data reveals higher offense rates in minority dominant neighborhoods. Many crime prediction algorithms utilize three main factors; type of crime, location, and the time of the event. As a result, police patrol routes are focused in the neighborhoods with historically high crime rates. So, we must ask ourselves, should we continue to use this method for predicting crime? </p></div>
-          
-          <div class="col-1"></div>
-        </div>
-        <!--End of Explanation div-->
-        <div class="row">
-         
-         
-        </div>
-
-
+        
         
 
       </div>

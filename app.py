@@ -3,7 +3,16 @@ from flask import (
     Flask,
     render_template,
     jsonify,
-    redirect)
+    redirect,
+    request)
+
+from flask_caching import Cache
+
+cache_config = {
+    "DEBUG": True,          # some Flask specific configs
+    "CACHE_TYPE": "simple", # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 18000
+}
 
 # importing necessary libraries
 import pandas as pd
@@ -16,15 +25,27 @@ from sqlalchemy import create_engine
 import pymysql 
 pymysql.install_as_MySQLdb()
 
+import os
+is_heroku = False
+if 'IS_HEROKU' in os.environ:
+    is_heroku = True
 
 
-#Database setup
-from config import (
-username,
-password,
-host,
-database
-)
+API_KEY=os.environ['API_KEY']
+census_api=os.environ['census_api']
+database=os.environ['database']
+geocode_key=os.environ['geocode_key']
+host=os.environ['host']
+port=os.environ['port']
+username=os.environ['username']
+password=os.environ['password']
+# #Database setup
+# from config import (
+# username,
+# password,
+# host,
+# database
+# )
 
 
 #Deep Learning requirements
@@ -36,13 +57,10 @@ pymysql.install_as_MySQLdb()
 
 engine = create_engine(f"mysql://{username}:{password}@{host}/{database}",echo = True)
 
-from flask_caching import Cache
 
-cache_config = {
-    "DEBUG": True,          # some Flask specific configs
-    "CACHE_TYPE": "simple", # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 18000
-}
+
+
+
 # tell Flask to use the above defined config
 
 app=Flask(__name__)
@@ -76,6 +94,7 @@ def news_scrape():
 
 
 @app.route("/census")
+@cache.cached(timeout=18000)
 def census():
     results=pd.read_sql('SELECT * FROM census',engine)
     results_json=results.to_json(orient='records')
@@ -178,11 +197,14 @@ def prischool():
     results=pd.read_sql('SELECT * FROM dc_pri_schools',engine)
     results_json=results.to_json(orient='records')
     return results_json
+
 @app.route("/unemployment")
+@cache.cached(timeout=18000)
 def unemployment():
     results=pd.read_sql('SELECT * FROM unemployment',engine)
     results_json=results.to_json(orient='records')
     return results_json
+
 @app.route("/ml", methods=["GET", "POST"])
 def ml():
 

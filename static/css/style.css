@@ -96,9 +96,10 @@ p{
 
 #timeseries1 {
     margin-bottom:20px;
-    height: 400px;
+    height: 540px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
 }
 
 
@@ -107,6 +108,7 @@ p{
     height: 400px;
     background-color:#FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
 
 }
 #unemployment-crime1{
@@ -352,10 +354,13 @@ p{
 	box-shadow: none;
 }
 #sources{
-    height: 200px;
+    height: 600px;
     background-color: white;
     margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
 }
 
 /* End of cards on about page */
@@ -375,14 +380,23 @@ p{
 #all-selectors{
     margin-left: 50px;
 }
-
+#explanation1 {
+    overflow-y: auto;
+}
+#explanation2 {
+    overflow-y: auto;
+}
+#explanation3 {
+    overflow-y: auto;
+}
   
 #result1{
     height: 200px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
-    margin-left: 50px;
+    margin-left: 100px;
+    margin-right: 50px;
 
 }
 
@@ -392,6 +406,7 @@ p{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
     margin-left: 50px;
+    overflow-y: auto;
   
 }
 

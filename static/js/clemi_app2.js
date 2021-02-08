@@ -1,163 +1,80 @@
-var c_2014="/crime2014";
-var c_2015="/crime2015";
-var c_2016="/crime2016";
-var c_2017="/crime2017";
-var c_2018="/crime2018";
+var sun_2014="/static/crime_json/sun_2014.json";
+var sun_2015="/static/crime_json/sun_2015.json";
+var sun_2016="/static/crime_json/sun_2016.json";
+var sun_2017="/static/crime_json/sun_2017.json";
+var sun_2018="/static/crime_json/sun_2018.json";
 
 /* Sunburst Chart*/
 
-d3.json(c_2014).then(function(c14){
-    d3.json(c_2015).then(function(c15){
-        d3.json(c_2016).then(function(c16){
-            d3.json(c_2017).then(function(c17){
-                d3.json(c_2018).then(function(c18){
+d3.json(sun_2014).then(function(c14){
+    d3.json(sun_2015).then(function(c15){
+        d3.json(sun_2016).then(function(c16){
+            d3.json(sun_2017).then(function(c17){
+                d3.json(sun_2018).then(function(c18){
 
                     //console.log(c14)
-                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    ////////////           Creating new object with just date and offense type         ///////////////////////////
-                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                    // function to create new object
-                    function omit(obj, props) {
-                    props = props instanceof Array ? props : [props]
-                    return eval(`(({${props.join(',')}, ...o}) => o)(obj)`)
-                    }
-                
-                    
-                    ///////////////////                  2014                ////////////////
-                
-                    offense_by_time_14=[];
-
-                    for (var i = 0; i < c14.length; i++){
-                        //console.log(c14[i])
-                        const obj=c14[i]
-                        const offense_time_14 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
-                                                    'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
-                                                    'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
-                                                    'YBLOCK','XBLOCK'])
-                        //console.log(offense_time)
-                        offense_by_time_14.push(offense_time_14)
-                    }
-                    //console.log("OFFENSE AND DATE KEY VALUE PAIRS")
-                    //console.log(offense_by_time_14)
-                    var total_2014=offense_by_time_14.length
-                    //console.log(total_2014)
-
-
-                    var arson_14=offense_by_time_14.filter(c=>c.OFFENSE=='ARSON').length
-                    var assault_weapon_14=offense_by_time_14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
-                    var burglary_14=offense_by_time_14.filter(c=>c.OFFENSE=='BURGLARY').length
-                    var homicide_14=offense_by_time_14.filter(c=>c.OFFENSE=='HOMICIDE').length
-                    var vehicle_theft_14=offense_by_time_14.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
-                    var robbery_14=offense_by_time_14.filter(c=>c.OFFENSE=='ROBBERY').length
-                    var sex_abuse_14=offense_by_time_14.filter(c=>c.OFFENSE=='SEX ABUSE').length
-                    var auto_theft_14=offense_by_time_14.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
-                    var theft_other_14=offense_by_time_14.filter(c=>c.OFFENSE=='THEFT/OTHER').length
+                    total_2014=c14.length
+                    var arson_14=c14.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_14=c14.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_14=c14.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_14=c14.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_14=c14.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_14=c14.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_14=c14.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_14=c14.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_14=c14.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
                    
 
-                    ////////////////////////                2015                      ///////////////////////////
-                    offense_by_time_15=[];
-                    
-                    for (var i = 0; i < c15.length; i++){
-                            const obj=c15[i]
-                            const offense_time_15 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
-                                                    'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
-                                                    'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
-                                                    'YBLOCK','XBLOCK'])
-                            offense_by_time_15.push(offense_time_15)
-                    }
-
-                    var total_2015=offense_by_time_15.length
-                    //console.log(total_2015)
-
-
-                    var arson_15=offense_by_time_15.filter(c=>c.OFFENSE=='ARSON').length
-                    var assault_weapon_15=offense_by_time_15.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
-                    var burglary_15=offense_by_time_15.filter(c=>c.OFFENSE=='BURGLARY').length
-                    var homicide_15=offense_by_time_15.filter(c=>c.OFFENSE=='HOMICIDE').length
-                    var vehicle_theft_15=offense_by_time_15.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
-                    var robbery_15=offense_by_time_15.filter(c=>c.OFFENSE=='ROBBERY').length
-                    var sex_abuse_15=offense_by_time_15.filter(c=>c.OFFENSE=='SEX ABUSE').length
-                    var auto_theft_15=offense_by_time_15.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
-                    var theft_other_15=offense_by_time_15.filter(c=>c.OFFENSE=='THEFT/OTHER').length
+                    // ////////////////////////                2015                      ///////////////////////////
+                   
+                    total_2015=c15.length
+                    var arson_15=c15.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_15=c15.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_15=c15.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_15=c15.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_15=c15.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_15=c15.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_15=c15.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_15=c15.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_15=c15.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
                     //////////////////////                 2016                     //////////////////////////////
-                    offense_by_time_16=[];
-                    
-                    for (var i = 0; i < c16.length; i++){
-                            const obj=c16[i]
-                            const offense_time_16 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
-                                                    'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
-                                                    'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
-                                                    'YBLOCK','XBLOCK'])
-                            offense_by_time_16.push(offense_time_16)
-                    }
-                    var total_2016=offense_by_time_16.length
-                    //console.log(total_2016)
-
-                    var arson_16=offense_by_time_16.filter(c=>c.OFFENSE=='ARSON').length
-                    var assault_weapon_16=offense_by_time_16.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
-                    var burglary_16=offense_by_time_16.filter(c=>c.OFFENSE=='BURGLARY').length
-                    var homicide_16=offense_by_time_16.filter(c=>c.OFFENSE=='HOMICIDE').length
-                    var vehicle_theft_16=offense_by_time_16.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
-                    var robbery_16=offense_by_time_16.filter(c=>c.OFFENSE=='ROBBERY').length
-                    var sex_abuse_16=offense_by_time_16.filter(c=>c.OFFENSE=='SEX ABUSE').length
-                    var auto_theft_16=offense_by_time_16.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
-                    var theft_other_16=offense_by_time_16.filter(c=>c.OFFENSE=='THEFT/OTHER').length
+                    total_2016=c16.length
+                    var arson_16=c16.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_16=c16.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_16=c16.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_16=c16.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_16=c16.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_16=c16.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_16=c16.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_16=c16.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_16=c16.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
                     //////////////////////                 2017                     //////////////////////////////
-                    offense_by_time_17=[];
-                    
-                    for (var i = 0; i < c17.length; i++){
-                            const obj=c17[i]
-                            const offense_time_17 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
-                                                    'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
-                                                    'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
-                                                    'YBLOCK','XBLOCK'])
-                            offense_by_time_17.push(offense_time_17)
-                    }
-                    var total_2017=offense_by_time_17.length
-                    //console.log(total_2017)
-
-                    var arson_17=offense_by_time_17.filter(c=>c.OFFENSE=='ARSON').length
-                    var assault_weapon_17=offense_by_time_17.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
-                    var burglary_17=offense_by_time_17.filter(c=>c.OFFENSE=='BURGLARY').length
-                    var homicide_17=offense_by_time_17.filter(c=>c.OFFENSE=='HOMICIDE').length
-                    var vehicle_theft_17=offense_by_time_17.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
-                    var robbery_17=offense_by_time_17.filter(c=>c.OFFENSE=='ROBBERY').length
-                    var sex_abuse_17=offense_by_time_17.filter(c=>c.OFFENSE=='SEX ABUSE').length
-                    var auto_theft_17=offense_by_time_17.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
-                    var theft_other_17=offense_by_time_17.filter(c=>c.OFFENSE=='THEFT/OTHER').length
+                    total_2017=c17.length
+                    var arson_17=c17.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_17=c17.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_17=c17.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_17=c17.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_17=c17.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_17=c17.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_17=c17.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_17=c17.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_17=c17.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
                     ///////////////////////                 2018                     //////////////////////////////
-                    offense_by_time_18=[];
-                    
-                    for (var i = 0; i < c18.length; i++){
-                            const obj=c18[i]
-                            const offense_time_18 = omit(obj, ['ANC', 'BID','BLOCK','BLOCK_GROUP','CCN','CENSUS_TRACT','DISTRICT',
-                                                    'END_DATE','LATITUDE','LONGITUDE','METHOD','NEIGHBORHOOD_CLUSTER','OBJECTID',
-                                                    'OCTO_RECORD_ID','PSA','SHIFT','START_DATE','VOTING_PRECINCT','WARD','X','Y',
-                                                    'YBLOCK','XBLOCK'])
-                            offense_by_time_18.push(offense_time_18)
-                    }
+                    total_2018=c18.length
+                    var arson_18=c18.filter(c=>c.OFFENSE=='ARSON').length
+                    var assault_weapon_18=c18.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
+                    var burglary_18=c18.filter(c=>c.OFFENSE=='BURGLARY').length
+                    var homicide_18=c18.filter(c=>c.OFFENSE=='HOMICIDE').length
+                    var vehicle_theft_18=c18.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
+                    var robbery_18=c18.filter(c=>c.OFFENSE=='ROBBERY').length
+                    var sex_abuse_18=c18.filter(c=>c.OFFENSE=='SEX ABUSE').length
+                    var auto_theft_18=c18.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
+                    var theft_other_18=c18.filter(c=>c.OFFENSE=='THEFT/OTHER').length
 
-                    var total_2018=offense_by_time_18.length
-                    //console.log(total_2018)
-                    
-                    var arson_18=offense_by_time_18.filter(c=>c.OFFENSE=='ARSON').length
-                    var assault_weapon_18=offense_by_time_18.filter(c=>c.OFFENSE=='ASSAULT W/DANGEROUS WEAPON').length
-                    var burglary_18=offense_by_time_18.filter(c=>c.OFFENSE=='BURGLARY').length
-                    var homicide_18=offense_by_time_18.filter(c=>c.OFFENSE=='HOMICIDE').length
-                    var vehicle_theft_18=offense_by_time_18.filter(c=>c.OFFENSE=='MOTOR VEHICLE THEFT').length
-                    var robbery_18=offense_by_time_18.filter(c=>c.OFFENSE=='ROBBERY').length
-                    var sex_abuse_18=offense_by_time_18.filter(c=>c.OFFENSE=='SEX ABUSE').length
-                    var auto_theft_18=offense_by_time_18.filter(c=>c.OFFENSE=='THEFT F/AUTO').length
-                    var theft_other_18=offense_by_time_18.filter(c=>c.OFFENSE=='THEFT/OTHER').length
-
-
-
-                   
 
 
                     var data = [{
@@ -210,16 +127,14 @@ d3.json(c_2014).then(function(c14){
 
 
 
-                })
+                });
 
-            })
-        })
+            });
+        });
 
-    })
+    });
 
-})
-
-
+});
 
 
 
@@ -238,71 +153,5 @@ d3.json(c_2014).then(function(c14){
 
 
 
-// news_list="/news";
 
-// d3.json(news_list).then(function(article){
-//         console.log(article)
 
-    
-//         /////////////////////               News Code                 ///////////////////////////////////////////////
-        
-//         //turning each news title into a hyperlink
-//         hyperlinks=[]
-//         for(var i = 0; i < article.length; ++i) {
-//             var each_article=article[i]
-//             //console.log(each_article);
-//             var each_title=each_article.title
-//             //console.log(each_title);
-//             var each_link=each_article.link;
-//             //console.log(each_link);
-//             var story_link=each_title.link(each_link);
-//             //console.log(story_link);
-//             hyperlinks.push(story_link)
-//         }
-//         var news_id=article.map(s=>s.id)
-//         var news_date=article.map(s=>s.date)
-
-//         //console.log(news_id)
-
-//         var values = [
-//             news_date,
-//             hyperlinks
-//           ]
-        
-//         var table_data = [{
-//             type: 'table',
-//             columnwidth:[100,300],
-//             header: {
-            
-//             values: [["<b>Date</b>"],
-//                         ["<b>Link</b>"]],
-//             align: "center",
-//             line: {width: 1, color: 'black'},
-//             fill: {color: "#61892F"},
-//             font: {family: "Arial", size: 12, color: "white"}
-//             },
-//             cells: {
-//             values: values,
-//             align: "center",
-//             line: {color: "black", width: 1},
-//             font: {family: "Arial", size: 11, color: ["black"]}
-//             }
-//         }];
-
-        
-//         var layout = {
-//             autosize: true,
-//             height: 650,
-//             margin: {
-//                 l: 50,
-//                 r: 50,
-//                 b: 50,
-//                 t: 50,
-//                 pad: 4
-//                 }
-//         };
-//         var config = {responsive: true};
-
-//         Plotly.newPlot('news', table_data,layout,config);
-        
-// });
